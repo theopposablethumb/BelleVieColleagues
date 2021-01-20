@@ -18,6 +18,8 @@ class App extends React.Component {
       isUserLoggedIn: false,
       accessToken: null
     };
+    this.responseGoogle = this.responseGoogle.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   responseGoogle = response => {

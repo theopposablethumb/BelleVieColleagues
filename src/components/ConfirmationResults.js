@@ -1,4 +1,3 @@
-import react from 'react';
 import Result from './Result';
 
 let Confirmation = (props) => {
