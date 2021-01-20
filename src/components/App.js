@@ -14,7 +14,6 @@ class App extends React.Component {
       userDetails: {
         name: null,
         email: null,
-        accessToken: null
       },
       isUserLoggedIn: false,
       accessToken: null
@@ -28,8 +27,9 @@ class App extends React.Component {
   logout = () => {
     this.setState({isUserLoggedIn: false})
   };
-
+  
   render() {
+    console.log(this.state.userDetails);
     return (
       <>
        <Header />
