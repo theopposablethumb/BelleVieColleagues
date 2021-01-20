@@ -11,7 +11,11 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      userDetails: {},
+      userDetails: {
+        name: null,
+        email: null,
+        accessToken: null
+      },
       isUserLoggedIn: false,
       accessToken: null
     };
