@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 
   responseGoogle = response => {
-    console.log('Google'+response);
+    console.log(response);
     this.setState({ userDetails: response.profileObj, isUserLoggedIn: true, accessToken: response.accessToken });
   };
 
