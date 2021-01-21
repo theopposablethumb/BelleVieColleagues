@@ -1,12 +1,13 @@
 import React from 'react';
 
 let Profile = (props) => {
+    console.log(props.user.attributes);
     return (
         <div className="flex profile left">
-            <img src={props.userDetails.imageUrl}  alt={props.userDetails.name} />
+            <img src={props.user.attributes.picture}  alt={props.user.attributes.name} />
             <div>
-                <h2>Welcome {props.userDetails.givenName}</h2>
-                <p>{props.userDetails.email}</p>
+                <h2>Welcome {props.user.attributes.name}</h2>
+                <p>{props.user.attributes.email}</p>
             </div>
         </div>
     ); 

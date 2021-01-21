@@ -1,8 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Amplify, { Auth, Hub } from 'aws-amplify';
 import awsconfig from '../aws-exports';
 
+import Header from './Header';
+import Footer from './Footer';
+import Profile from './Profile';
 import ConfirmationPractices from './ConfirmationPractices';
+import ConfirmationResults from './ConfirmationResults';
 
 Amplify.configure(awsconfig);
 
@@ -16,7 +20,6 @@ class App extends React.Component {
 
     this.state = {
       user: '',
-      token: ''
     }
   }
 
@@ -26,7 +29,6 @@ class App extends React.Component {
         case 'signIn':
           case 'cognitoHostedUI':
             this.getUser();
-            this.getToken();
             break;
           case 'signOut':
             this.setState({user: null});
@@ -45,25 +47,25 @@ class App extends React.Component {
       .catch(err => this.setState({ user: null}));
   }
 
-  getToken() {
-    Auth.currentSession()
-      .then(tokenData => this.setState({ token: tokenData}));
-  }
-
   renderLogin() {
-    console.log(this.state);
     if (!this.state.user) {
       return (
         <>
-          <button onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Sign In</button>
+          <button className="login dark" onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Sign In</button>
         </>
       )
-      
+      //"ya29.a0AfH6SMD67Ux8z4Zf53_hwP3e6bOF58Gey86qxrz3oNlt7t0_LoVEG-WlTqs4An4c5yL1DyCepVJdiPFHeOmVXUkbStUBQgfDJkyMD-jLrZZL2Q4qS6U2Lv7lRBasig-ts-OqwSXTw-AT9mNnolOKJOgb3y_jjwTsFiXQ8MM0Ms-e"
+
     } else {
       return (
         <>
-          <button onClick={() => Auth.signOut()}>Sign Out</button>
-          <ConfirmationPractices accessToken={this.state.token.idToken} />
+          <div className="content">
+            <button className="logout dark" onClick={() => Auth.signOut()}>Sign Out</button>
+            <Profile user={this.state.user} />
+          </div>
+          <div className="content">
+            <ConfirmationPractices user={this.state.user} />
+          </div>
         </>
       )
     }
@@ -71,9 +73,15 @@ class App extends React.Component {
 
   render() {
     return(
-      <div>
-        {this.renderLogin()}
-      </div>
+      <>
+        <Header />
+        <main>
+          <div className="section offWhiteBg">
+            {this.renderLogin()}
+          </div>
+        </main>
+        <Footer />
+      </>
     )
   }
 

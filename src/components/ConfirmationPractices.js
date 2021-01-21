@@ -78,10 +78,10 @@ class confirmationPractices extends React.Component {
     }
 
     render() {
-        console.log(this.props.accessToken);
+        console.log(this.props.user.attributes);
         return(
             <>
-            <form onSubmit={(event) => this.handleSubmit(event, this.props.name, this.props.email, this.props.accessToken.payload.at_hash)}>
+            <form onSubmit={(event) => this.handleSubmit(event, this.props.user.attributes.name, this.props.user.attributes.email, this.props.user.attributes.website)}>
                     <label htmlFor="team"><strong>First please select your team</strong></label>
                     <select name="team" defaultValue="default" required onChange={this.saveValue}>
                         <option value="default" disabled>Select Team</option>
