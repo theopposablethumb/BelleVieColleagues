@@ -1,82 +1,154 @@
-import React from "react";
-import GoogleLogin from "react-google-login";
-import { GoogleLogout } from "react-google-login";
+import React from 'react';
+import Amplify, { Auth, Hub } from 'aws-amplify';
+import awsconfig from '../aws-exports';
 
-import ConfirmationPractices from "./ConfirmationPractices";
 import Header from './Header';
-import Profile from './Profile'
-import Footer from './Footer'
+import Footer from './Footer';
+import Profile from './Profile';
+import ConfirmationPractices from './ConfirmationPractices';
+import ConfirmationResults from './ConfirmationResults';
+
+Amplify.configure(awsconfig);
+
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+
+    this.getUser = this.getUser.bind(this);
+    this.renderLogin = this.renderLogin.bind(this);
+
     this.state = {
-      userDetails: {
-        name: null,
-        email: null,
-      },
-      isUserLoggedIn: false,
-      accessToken: null
-    };
-    this.responseGoogle = this.responseGoogle.bind(this);
-    this.logout = this.logout.bind(this);
+      user: '',
+    }
   }
 
-  responseGoogle = response => {
-    console.log(response);
-    this.setState({ userDetails: response.profileObj, isUserLoggedIn: true, accessToken: response.accessToken });
-  };
-
-  logout = () => {
-    this.setState({isUserLoggedIn: false})
-  };
+  componentDidMount() {
+    Hub.listen('auth', ({ payload: { event } }) => {
+      switch (event) {
+        case 'signIn':
+          case 'cognitoHostedUI':
+            this.getUser();
+            break;
+          case 'signOut':
+            this.setState({user: null});
+            break;
+          case 'signIn_failure':
+              console.log('sign in failure');
+              break;
+      }
+    });
+    this.getUser();
+  }
   
+  getUser() {
+    Auth.currentAuthenticatedUser()
+      .then(userData => this.setState({ user: userData}))
+      .catch(err => this.setState({ user: null}));
+  }
+
+  renderLogin() {
+    if (!this.state.user) {
+      return (
+        <>
+          <button className="login dark" onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Sign In</button>
+        </>
+      )
+      //"ya29.a0AfH6SMD67Ux8z4Zf53_hwP3e6bOF58Gey86qxrz3oNlt7t0_LoVEG-WlTqs4An4c5yL1DyCepVJdiPFHeOmVXUkbStUBQgfDJkyMD-jLrZZL2Q4qS6U2Lv7lRBasig-ts-OqwSXTw-AT9mNnolOKJOgb3y_jjwTsFiXQ8MM0Ms-e"
+
+    } else {
+      return (
+        <>
+          <div className="content">
+            <button className="logout dark" onClick={() => Auth.signOut()}>Sign Out</button>
+            <Profile user={this.state.user} />
+          </div>
+          <div className="content">
+            <ConfirmationPractices user={this.state.user} />
+          </div>
+        </>
+      )
+    }
+  }
+
   render() {
-    console.log(this.state);
-    return (
+    return(
       <>
-       <Header />
+        <Header />
         <main>
           <div className="section offWhiteBg">
-
-        {!this.state.isUserLoggedIn && (
-          <div className="content">
-            <GoogleLogin
-              clientId={process.env.REACT_APP_GC_ID}
-              render={renderProps => (
-                <button className="dark login" onClick={renderProps.onClick} disabled={renderProps.disabled} >Log in with Google </button>
-              )}
-              onSuccess={this.responseGoogle}
-              onFailure={this.responseGoogle}
-              scope={'email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.resource https://www.googleapis.com/auth/spreadsheets https://spreadsheets.google.com/feeds https://spreadsheets.google.com/feeds/ http://spreadsheets.google.com/feeds http://spreadsheets.google.com/feeds/ https://spreadsheets.google.com/feeds/spreadsheets https://spreadsheets.google.com/feeds/spreadsheets/private/full http://spreadsheets.google.com/feeds/spreadsheets/private/full https://spreadsheets.google.com/feeds/worksheets/ https://spreadsheets.google.com/tq https://spreadsheets.google.com/feeds/list/ https://spreadsheets.google.com/feeds/worksheet/ https://spreadsheets.google.com/feeds/cell/'}
-              isSignedIn={true}
-            />
-          </div>
-
-        )}
-
-        {this.state.isUserLoggedIn && (
-          <>
-            <div className="content">
-              <Profile userDetails={this.state.userDetails} />
-              <GoogleLogout
-                render={renderProps => (
-                  <button className="dark logout" onClick={renderProps.onClick} >Log Out </button>
-                )}
-                onLogoutSuccess={this.logout}
-              />
-            </div>
-            <div className="content">
-              <ConfirmationPractices name={this.state.userDetails.name} email={this.state.userDetails.email} accessToken={this.state.accessToken} />
-            </div>
-          </>
-        )}
+            {this.renderLogin()}
           </div>
         </main>
         <Footer />
       </>
-    );
+    )
   }
+
 }
 
+
+
+
+/*
+function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    Hub.listen('auth', ({ payload: { event, data } }) => {
+      switch (event) {
+        case 'signIn':
+        case 'cognitoHostedUI':
+          getUser().then(userData => setUser(userData));
+          break;
+        case 'signOut':
+          setUser(null);
+          break;
+        case 'signIn_failure':
+        case 'cognitoHostedUI_failure':
+          console.log('Sign in failure', data);
+          break;
+      }
+    });
+
+    getUser().then(userData => setUser(userData));
+  }, []);
+
+  function getUser() {
+    return Auth.currentAuthenticatedUser()
+      .then(userData => userData)
+      .catch(() => console.log('Not signed in'));
+  }
+
+/*function getToken() {
+  return Auth.currentUserCredentials()
+  .then(let token = )
+  let token = 
+    let access = token.secretAccessKey;
+    return access;
+  }
+console.log(Auth.currentAuthenticatedUser());
+
+if (user !== undefined) {
+  getToken();
+  console.log(setUser());
+}
+//Auth.currentUserCredentials()
+  return (
+    <div>
+      <p>User: {user ? JSON.stringify(user.attributes) : 'None'}</p>
+      {user ? (
+        <>
+        <button onClick={() => Auth.signOut()}>Sign Out</button>
+      
+        </>
+      ) : (
+          <button onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Federated Sign In</button>
+      )}
+    </div>
+  );
+}
+
+*/
 export default App;
+

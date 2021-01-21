@@ -70,8 +70,8 @@ form p.error {margin-top: 0.5em; color: #CC0300;}
 
 .flex {display: flex;}
 
-.profile {width: 80%;}
-.profile img {border-radius: 50%; margin-right: 1em; height: 100px; width: 100px;}
+.profile {width: 80%; padding: 2em 2.25em; box-sizing: border-box;}
+.profile img {border-radius: 50%; margin-right: 2.25em; height: 100px; width: 100px;}
 .profile h2 {margin: 0; border-bottom: 2px solid #eee;}
 .profile p {margin: 0.5em 0}
 
@@ -99,12 +99,12 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
 
     input, label, select, textarea {font-size: 1em; width: 100%; box-sizing: border-box;}
     
-    header .content, footer .content {width: 90%;}
+    .content {width: 90%; margin: auto;}
 
     .flex {display: block;}
     .left, .right {float: none; overflow: visible; }
 
-    .profile {width: 100%; }
+    .profile {width: 100%; padding: 0;}
     .profile img {display: block; margin: auto;}
     .profile div {text-align: center;}
 
