@@ -78,7 +78,9 @@ class App extends React.Component {
         <Header />
         <main>
           <div className="section offWhiteBg">
-            {this.renderLogin()}
+            <div className="content">
+              {this.renderLogin()}
+            </div>
           </div>
         </main>
         <Footer />

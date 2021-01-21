@@ -29,7 +29,7 @@
         "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
         "UserPoolName": "BelleVieColleagues"
       },
-      "lastPushTimeStamp": "2021-01-21T19:48:34.226Z",
+      "lastPushTimeStamp": "2021-01-21T21:01:39.014Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35d59827aab74-staging-130501-deployment/amplify-cfn-templates/auth/BelleVieColleagues-cloudformation-template.yml",
         "logicalId": "authBelleVieColleagues"
