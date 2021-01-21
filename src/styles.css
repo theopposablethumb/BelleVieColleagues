@@ -82,11 +82,7 @@ footer h3 {font-weight: 400;}
 footer p, footer .sub-menu {font-size: 0.875em;}
 footer a {color: #FFF;}
 
-a.facebook, a.twitter, a.instagram, a.linkedin {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75em 1.25em 0 0;}
-a.facebook {background: url('icons/facebook.svg') no-repeat; background-size: 24px;}
-a.twitter {background: url('icons/twitter.svg') no-repeat; background-size: 24px;}
-a.instagram {background: url('icons/instagram.svg') no-repeat; background-size: 24px;}
-a.linkedin {background: url('icons/linkedin.svg') no-repeat; background-size: 24px;}
+a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75em 1.25em 0 0;}
 
 @media screen and (max-width: 1200px) {
     .content {max-width: 1024px;}

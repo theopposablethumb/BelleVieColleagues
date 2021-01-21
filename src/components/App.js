@@ -48,7 +48,6 @@ class App extends React.Component {
               )}
               onSuccess={this.responseGoogle}
               onFailure={this.responseGoogle}
-              cookiePolicy={'single_host_origin'}
               scope={'email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.resource https://www.googleapis.com/auth/spreadsheets https://spreadsheets.google.com/feeds https://spreadsheets.google.com/feeds/ http://spreadsheets.google.com/feeds http://spreadsheets.google.com/feeds/ https://spreadsheets.google.com/feeds/spreadsheets https://spreadsheets.google.com/feeds/spreadsheets/private/full http://spreadsheets.google.com/feeds/spreadsheets/private/full https://spreadsheets.google.com/feeds/worksheets/ https://spreadsheets.google.com/tq https://spreadsheets.google.com/feeds/list/ https://spreadsheets.google.com/feeds/worksheet/ https://spreadsheets.google.com/feeds/cell/'}
               isSignedIn={true}
             />
