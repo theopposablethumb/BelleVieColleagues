@@ -18,6 +18,11 @@
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35d59827aab74-staging-130501-deployment/amplify-cfn-templates/auth/BelleVieColleagues-cloudformation-template.yml",
+        "logicalId": "authBelleVieColleagues"
+      },
+      "lastPushTimeStamp": "2021-01-21T21:06:49.855Z",
       "output": {
         "AppClientSecret": "3nro57k37pv3ah0mphe7ibclrj4haoj7pcqq7iu3n24315ut09l",
         "UserPoolId": "eu-west-2_N1uJOXyx1",
@@ -29,11 +34,7 @@
         "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
         "UserPoolName": "BelleVieColleagues"
       },
-      "lastPushTimeStamp": "2021-01-21T21:01:39.014Z",
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35d59827aab74-staging-130501-deployment/amplify-cfn-templates/auth/BelleVieColleagues-cloudformation-template.yml",
-        "logicalId": "authBelleVieColleagues"
-      }
+      "lastPushDirHash": "K4ygVJvPbYlPTFs6prSBNNH2ojw="
     }
   }
 }
