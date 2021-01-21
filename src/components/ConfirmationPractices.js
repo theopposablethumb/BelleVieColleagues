@@ -68,9 +68,7 @@ class confirmationPractices extends React.Component {
     } 
 
     renderFormConfirmation() {
-        console.log(this.state.isSubmitted + this.state.team)
         if (this.state.isSubmitted === true && this.state.team) {
-            console.log('YOOHOO');
             return (
                 <Confirmation values={this.state} />
             )
@@ -78,7 +76,6 @@ class confirmationPractices extends React.Component {
     }
 
     render() {
-        console.log(this.props.user.attributes);
         return(
             <>
             <form onSubmit={(event) => this.handleSubmit(event, this.props.user.attributes.name, this.props.user.attributes.email, this.props.user.attributes.website)}>

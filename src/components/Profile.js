@@ -1,7 +1,6 @@
 import React from 'react';
 
 let Profile = (props) => {
-    console.log(props.user.attributes);
     return (
         <div className="flex profile left">
             <img src={props.user.attributes.picture}  alt={props.user.attributes.name} />

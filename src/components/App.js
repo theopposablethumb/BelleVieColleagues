@@ -6,7 +6,6 @@ import Header from './Header';
 import Footer from './Footer';
 import Profile from './Profile';
 import ConfirmationPractices from './ConfirmationPractices';
-import ConfirmationResults from './ConfirmationResults';
 
 Amplify.configure(awsconfig);
 
@@ -36,6 +35,9 @@ class App extends React.Component {
           case 'signIn_failure':
               console.log('sign in failure');
               break;
+          default:
+            this.setState({user: null});
+            break;
       }
     });
     this.getUser();
@@ -54,7 +56,6 @@ class App extends React.Component {
           <button className="login dark" onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Sign In</button>
         </>
       )
-      //"ya29.a0AfH6SMD67Ux8z4Zf53_hwP3e6bOF58Gey86qxrz3oNlt7t0_LoVEG-WlTqs4An4c5yL1DyCepVJdiPFHeOmVXUkbStUBQgfDJkyMD-jLrZZL2Q4qS6U2Lv7lRBasig-ts-OqwSXTw-AT9mNnolOKJOgb3y_jjwTsFiXQ8MM0Ms-e"
 
     } else {
       return (
@@ -87,68 +88,4 @@ class App extends React.Component {
 
 }
 
-
-
-
-/*
-function App() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    Hub.listen('auth', ({ payload: { event, data } }) => {
-      switch (event) {
-        case 'signIn':
-        case 'cognitoHostedUI':
-          getUser().then(userData => setUser(userData));
-          break;
-        case 'signOut':
-          setUser(null);
-          break;
-        case 'signIn_failure':
-        case 'cognitoHostedUI_failure':
-          console.log('Sign in failure', data);
-          break;
-      }
-    });
-
-    getUser().then(userData => setUser(userData));
-  }, []);
-
-  function getUser() {
-    return Auth.currentAuthenticatedUser()
-      .then(userData => userData)
-      .catch(() => console.log('Not signed in'));
-  }
-
-/*function getToken() {
-  return Auth.currentUserCredentials()
-  .then(let token = )
-  let token = 
-    let access = token.secretAccessKey;
-    return access;
-  }
-console.log(Auth.currentAuthenticatedUser());
-
-if (user !== undefined) {
-  getToken();
-  console.log(setUser());
-}
-//Auth.currentUserCredentials()
-  return (
-    <div>
-      <p>User: {user ? JSON.stringify(user.attributes) : 'None'}</p>
-      {user ? (
-        <>
-        <button onClick={() => Auth.signOut()}>Sign Out</button>
-      
-        </>
-      ) : (
-          <button onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Federated Sign In</button>
-      )}
-    </div>
-  );
-}
-
-*/
 export default App;
-
