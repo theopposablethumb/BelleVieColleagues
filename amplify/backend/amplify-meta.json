@@ -22,7 +22,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35d59827aab74-staging-130501-deployment/amplify-cfn-templates/auth/BelleVieColleagues-cloudformation-template.yml",
         "logicalId": "authBelleVieColleagues"
       },
-      "lastPushTimeStamp": "2021-01-21T21:06:49.855Z",
+      "lastPushTimeStamp": "2021-01-21T22:27:44.335Z",
       "output": {
         "AppClientSecret": "3nro57k37pv3ah0mphe7ibclrj4haoj7pcqq7iu3n24315ut09l",
         "UserPoolId": "eu-west-2_N1uJOXyx1",
