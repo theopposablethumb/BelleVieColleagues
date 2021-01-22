@@ -54,6 +54,7 @@ class App extends React.Component {
     if (!this.state.user) {
       return (
         <>
+          <p>Please login with your BelleVieCare.co.uk email address</p>
           <button className="login dark" onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Sign In</button>
         </>
       )
