@@ -69,4 +69,5 @@
     "usernameCaseSensitive": false,
     "dependsOn": [],
     "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\",\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\"],\"LogoutURLs\":[\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\",\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\"]}"
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\"],\"LogoutURLs\":[\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\"]}"
 }
