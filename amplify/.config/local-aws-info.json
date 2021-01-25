@@ -1,7 +1,5 @@
 {
-  "staging": {
-    "configLevel": "project",
-    "useProfile": true,
-    "profileName": "default"
+  "dev": {
+    "configLevel": "amplifyAdmin"
   }
 }
