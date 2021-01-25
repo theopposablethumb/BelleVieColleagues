@@ -1,4 +1,3 @@
-import React from 'react';
 import {ReadSpreadSheet} from '../api/Sheets';
 
 let Rota = (props) => {
