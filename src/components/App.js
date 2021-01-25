@@ -6,6 +6,8 @@ import Header from './Header';
 import Footer from './Footer';
 import Profile from './Profile';
 import ConfirmationPractices from './ConfirmationPractices';
+import Rota from './Rota';
+
 
 Amplify.configure(awsconfig);
 
@@ -65,6 +67,7 @@ class App extends React.Component {
           <div className="content">
             <button className="logout dark" onClick={() => Auth.signOut()}>Sign Out</button>
             <Profile user={this.state.user} />
+            <Rota user={this.state.user} />
           </div>
           <div className="content">
             <ConfirmationPractices user={this.state.user} />
