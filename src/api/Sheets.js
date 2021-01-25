@@ -30,6 +30,14 @@ export const ReadSpreadSheet = (token) => {
         Authorization: `Bearer ${token}`,
       },
       body: JSON.stringify({})
+  }).then(response => {
+    if (response.ok) {
+      console.log(response);
+      return response.json();
+    }
+    throw new Error('Request failed!');
+  }, networkError => {
+    console.log(networkError.message)
   })
    
 }
