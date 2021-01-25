@@ -18,11 +18,6 @@
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
-      "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35d59827aab74-staging-130501-deployment/amplify-cfn-templates/auth/BelleVieColleagues-cloudformation-template.yml",
-        "logicalId": "authBelleVieColleagues"
-      },
-      "lastPushTimeStamp": "2021-01-22T10:52:14.854Z",
       "output": {
         "AppClientSecret": "3nro57k37pv3ah0mphe7ibclrj4haoj7pcqq7iu3n24315ut09l",
         "UserPoolId": "eu-west-2_N1uJOXyx1",
@@ -31,10 +26,15 @@
         "HostedUIDomain": "5d7cl01ksw3s-staging",
         "IdentityPoolId": "eu-west-2:0d0e5938-bad1-404b-a024-c2d6047c4930",
         "IdentityPoolName": "testAuthIdentityPool__staging",
-        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\",\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\",\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\"],\"LogoutURLs\":[\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\",\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\"]}",
+        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\"],\"LogoutURLs\":[\"https://main.d3ihtjzvgz37vw.amplifyapp.com/\"]}",
         "UserPoolName": "BelleVieColleagues"
       },
-      "lastPushDirHash": "7anE1zl1QykIxNkfRiC8Hx8mcSI="
+      "lastPushTimeStamp": "2021-01-25T16:37:16.044Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35d59827aab74-staging-130501-deployment/amplify-cfn-templates/auth/BelleVieColleagues-cloudformation-template.yml",
+        "logicalId": "authBelleVieColleagues"
+      },
+      "lastPushDirHash": "Jrbw7E8oh8U2JzNPmvO+aqHgpvA="
     }
   }
 }
