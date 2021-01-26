@@ -49,7 +49,6 @@ class confirmationPractices extends React.Component {
         event.preventDefault();
         let inputs = this.state;
         let values = Object.values(inputs);
-        //let team = values.shift();
         values.pop();
         if (this.state.team === null) {
             alert('Please select your team');

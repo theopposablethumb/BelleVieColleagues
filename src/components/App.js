@@ -6,7 +6,6 @@ import Header from './Header';
 import Footer from './Footer';
 import Profile from './Profile';
 import ConfirmationPractices from './ConfirmationPractices';
-import Rota from './Rota';
 
 
 Amplify.configure(awsconfig);
@@ -21,7 +20,7 @@ class App extends React.Component {
     this.renderLogin = this.renderLogin.bind(this);
 
     this.state = {
-      user: '',
+      user: null,
     }
   }
 
@@ -52,6 +51,7 @@ class App extends React.Component {
       .catch(err => this.setState({ user: null}));
   }
 
+
   renderLogin() {
     if (!this.state.user) {
       return (
@@ -67,7 +67,6 @@ class App extends React.Component {
           <div className="content">
             <button className="logout dark" onClick={() => Auth.signOut()}>Sign Out</button>
             <Profile user={this.state.user} />
-            <Rota user={this.state.user} />
           </div>
           <div className="content">
             <ConfirmationPractices user={this.state.user} />

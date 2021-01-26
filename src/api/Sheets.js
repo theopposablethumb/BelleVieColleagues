@@ -6,7 +6,6 @@ let date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
 
 export const UpdateSpreadSheet = (name, email, token, values) => {
     values.unshift(date, name, email);
-    //let sheet = team;
 
     fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadSheetId}/values/!A1:X1:append?valueInputOption=USER_ENTERED`, {
         method: "POST",
@@ -23,13 +22,11 @@ export const UpdateSpreadSheet = (name, email, token, values) => {
 };
 
 export const ReadSpreadSheet = (token) => {
-  fetch(`https://sheets.googleapis.com/v4/spreadsheets/${rotaId}/values`, {
+  fetch(`https://sheets.googleapis.com/v4/spreadsheets/${rotaId}/values/Rota%20Summary!B3:E145?majorDimension=ROWS`, {
     method: "GET",
       headers: {
-        "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({})
   }).then(response => {
     if (response.ok) {
       console.log(response);
