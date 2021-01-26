@@ -20,3 +20,8 @@ https://spreadsheets.google.com/tq
 https://spreadsheets.google.com/feeds/list/ 
 https://spreadsheets.google.com/feeds/worksheet/ 
 https://spreadsheets.google.com/feeds/cell/
+
+Amplify Redirect URIs are stored in
+amplify-meta.json (in amplify > backend)
+parameters.json (in amplify > backend > auth > APPNAME) 
+aws-exports.js

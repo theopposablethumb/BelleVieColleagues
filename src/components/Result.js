@@ -1,7 +1,6 @@
 import React from 'react';
 
 let Result = (props) => {
-    console.log(props);
     return(
         <>
             <h2>{props.value} Score {props.valueScore}</h2>

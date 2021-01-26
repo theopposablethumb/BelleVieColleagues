@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Profile from './Profile';
 import ConfirmationPractices from './ConfirmationPractices';
 
+
 Amplify.configure(awsconfig);
 
 
@@ -19,7 +20,7 @@ class App extends React.Component {
     this.renderLogin = this.renderLogin.bind(this);
 
     this.state = {
-      user: '',
+      user: null,
     }
   }
 
@@ -49,6 +50,7 @@ class App extends React.Component {
       .then(userData => this.setState({ user: userData}))
       .catch(err => this.setState({ user: null}));
   }
+
 
   renderLogin() {
     if (!this.state.user) {

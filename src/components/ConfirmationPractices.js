@@ -1,5 +1,5 @@
 import React from 'react';
-import FetchSpreadSheet from './Sheets'; 
+import {UpdateSpreadSheet} from '../api/Sheets'; 
 
 import Confirmation from './ConfirmationResults'
 
@@ -49,13 +49,12 @@ class confirmationPractices extends React.Component {
         event.preventDefault();
         let inputs = this.state;
         let values = Object.values(inputs);
-        let team = values.shift();
         values.pop();
         if (this.state.team === null) {
             alert('Please select your team');
         } else {
             this.setState({isSubmitted: true})
-            FetchSpreadSheet(name, email, token, team, values);
+            UpdateSpreadSheet(name, email, token, values);
         }
         
     }

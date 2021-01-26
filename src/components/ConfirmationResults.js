@@ -1,8 +1,6 @@
 import Result from './Result';
 
 let Confirmation = (props) => {
-    console.log(props.values);
-
     return(
         <>
             <h2>Thank you for submitting your confirmation practices</h2>
