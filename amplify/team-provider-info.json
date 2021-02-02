@@ -1,0 +1,38 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-belleviecolleagues-dev-164130-authRole",
+      "UnauthRoleArn": "arn:aws:iam::245111508555:role/amplify-belleviecolleagues-dev-164130-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::245111508555:role/amplify-belleviecolleagues-dev-164130-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-belleviecolleagues-dev-164130-deployment",
+      "UnauthRoleName": "amplify-belleviecolleagues-dev-164130-unauthRole",
+      "StackName": "amplify-belleviecolleagues-dev-164130",
+      "StackId": "arn:aws:cloudformation:eu-west-2:245111508555:stack/amplify-belleviecolleagues-dev-164130/2d5e0bf0-5f2c-11eb-b1e6-0a4625f9b43e",
+      "AmplifyAppId": "d3ihtjzvgz37vw"
+    },
+    "categories": {
+      "auth": {
+        "BelleVieColleagues": {}
+      }
+    }
+  },
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplify35d59827aab74-staging-130501-authRole",
+      "UnauthRoleArn": "arn:aws:iam::245111508555:role/amplify-amplify35d59827aab74-staging-130501-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::245111508555:role/amplify-amplify35d59827aab74-staging-130501-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-amplify35d59827aab74-staging-130501-deployment",
+      "UnauthRoleName": "amplify-amplify35d59827aab74-staging-130501-unauthRole",
+      "StackName": "amplify-amplify35d59827aab74-staging-130501",
+      "StackId": "arn:aws:cloudformation:eu-west-2:245111508555:stack/amplify-amplify35d59827aab74-staging-130501/45fc91e0-5be9-11eb-b254-06dfe0db4c2c",
+      "AmplifyAppId": "d3ihtjzvgz37vw"
+    },
+    "categories": {
+      "auth": {
+        "BelleVieColleagues": {}
+      }
+    }
+  }
+}
