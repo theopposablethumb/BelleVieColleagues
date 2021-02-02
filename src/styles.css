@@ -5,14 +5,16 @@ body {font-size: 16px; line-height: 1.5em; font-family: 'Roboto', sans-serif; fo
 h1 {font-size: 3em; font-weight: 400; line-height: 1.5em; color: #185D6F; margin: 0;}
 .dark h1 {color: #FFF;}
 h2 {font-size: 2em; line-height: 1.5em; margin: 2.75em 0 0; font-weight: 400; color: #185D6F;}
-h3 {font-size: 1.25em; line-height: 1.5em; font-weight: 500; margin: 2em 0 0 0;}
+h3 {font-size: 1.75em; line-height: 1.5em; font-weight: 500; margin: 2em 0 0 0;}
 
-p, ul, ol, label {font-size: 1.25em; line-height: 1.5em; margin: 1em 0 0 0;}
+h4, p, ul, ol, label {font-size: 1.25em; line-height: 1.5em; margin: 1em 0 0 0;}
+h4 {font-weight:500;}
 input, textarea, select {font-size: 1.1em; line-height: 1.5em; }
 textarea {font-family: 'Roboto', sans-serif; font-weight: 400;}
 
 ul {padding: 0 1em;}
-ul ul {font-size: 1em;}
+ul ul {font-size: 1em; margin: 0; padding: 0 1em 0.75em 1em;}
+li {margin: 0.75em 0;}
 a {color: #BA7800; text-decoration: none;}
 a:hover {text-decoration: underline;} 
 
@@ -28,6 +30,7 @@ img, .rounded {border-radius: 4px;}
 
 .whitebg {background: #FFF;}
 .offwhitebg {background: #FAFAFA;}
+.teal {background: #D3F1F1}
 
 button {font-size: 1em; font-weight: 500; padding: 0.625em 2em; display: inline-block; margin: 1.5em 1.5em 0 0; border-radius: 8px; border: none;}
 
@@ -43,7 +46,8 @@ button.ghost:hover {border: 2px solid #BA7800;}
 button.ghost:focus:before {border: 1px solid #BA7800;}
 
 .section {overflow: auto;}
-.content {max-width: 1200px; margin: 2.375em auto 0 auto; box-sizing: border-box; overflow: auto;}
+nav, .content {max-width: 1200px; margin: 0 auto 0 auto; box-sizing: border-box; overflow: auto;}
+.content {margin-top: 2.375em; margin-bottom: 2.375em;}
 
 header, main, footer {width: 100%; box-sizing: border-box;}
 header .content {margin-top: 0;}
@@ -51,6 +55,11 @@ header {padding: 1.6em 0;}
 
 footer {background: #185D6F; color: #FFF; padding-bottom: 6.25em;}
 footer .content {margin: 0 auto; position: relative;}
+
+nav {padding: 1em 0;}
+nav a {display: inline-block; padding: 1em; font-size: 1.25em; line-height: 1.5em; color: #333;}
+nav a:first-child {padding-left: 0;}
+nav a.active {text-decoration: underline; color: #185D6F;}
 
 .content form {background: #FFF; padding: 0 2.5em 1em 2.5em; margin: 1.25em 0 2.5em 0; border-radius: 4px; border: 1px solid #E4E4E4;}
 .content form p {color: #333;}
@@ -77,7 +86,6 @@ form p.error {margin-top: 0.5em; color: #CC0300;}
 
 .logout {float: right;}
 
-footer {margin-top: 4em;}
 footer h3 {font-weight: 400;}
 footer p, footer .sub-menu {font-size: 0.875em;}
 footer a {color: #FFF;}
@@ -85,11 +93,11 @@ footer a {color: #FFF;}
 a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75em 1.25em 0 0;}
 
 @media screen and (max-width: 1200px) {
-    .content {max-width: 1024px;}
+    nav, .content {max-width: 1024px;}
 }
 
 @media screen and (max-width: 1024px) {
-    .content {max-width: 960px;}
+    nav, .content {max-width: 960px;}
 }
 
 @media screen and (max-width: 768px) {
@@ -99,7 +107,7 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
 
     input, label, select, textarea {font-size: 1em; width: 100%; box-sizing: border-box;}
     
-    .content {width: 90%; margin: auto;}
+    nav, .content {width: 90%; margin: auto;}
 
     .flex {display: block;}
     .left, .right {float: none; overflow: visible; }

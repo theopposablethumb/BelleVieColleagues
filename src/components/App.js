@@ -9,6 +9,8 @@ import Navigation from './Navigation';
 import Profile from './Profile';
 import ConfirmationPractices from './ConfirmationPractices';
 import Faq from './Faq';
+import Policies from './Policies';
+import Contact from './Contact';
 
 
 Amplify.configure(awsconfig);
@@ -58,9 +60,11 @@ class App extends React.Component {
   renderLogin() {
     if (!this.state.user) {
       return (
-        <div className="content">
-          <p>Please login with your BelleVieCare.co.uk email address</p>
-          <button className="login dark" onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Sign In</button>
+        <div className="section offWhiteBg">
+          <div className="content">
+            <p>Please login with your BelleVieCare.co.uk email address</p>
+            <button className="login dark" onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Sign In</button>
+          </div>
         </div>
       )
 
@@ -68,13 +72,23 @@ class App extends React.Component {
       return (
         <BrowserRouter>
           <Navigation />
-          <div className="content">
-            <button className="logout dark" onClick={() => Auth.signOut()}>Sign Out</button>
-            <Profile user={this.state.user} />
+          <div className="section whitebg">
+            <div className="content">
+              <button className="logout dark" onClick={() => Auth.signOut()}>Sign Out</button>
+              <Profile user={this.state.user} />
+            </div>
           </div>
-          <div className="content">
-            <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} /> ) } />
-            <Route path="/faqs" component={Faq} />
+          <div className="section offwhitebg">
+            <div className="content">
+              <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} /> ) } />
+              <Route path="/faqs" component={Faq} />
+              <Route path="/policies" component={Policies} />
+            </div>
+          </div>
+          <div className="section whitebg">
+            <div className="content">
+              <Contact />
+            </div>
           </div>
         </BrowserRouter>
       )
@@ -86,11 +100,7 @@ class App extends React.Component {
       <>
         <Header />
         <main>
-          <div className="section offWhiteBg">
-            
               {this.renderLogin()}
-            
-          </div>
         </main>
         <Footer />
       </>
