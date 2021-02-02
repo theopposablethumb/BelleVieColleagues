@@ -1,11 +1,14 @@
 import React from 'react';
 import Amplify, { Auth, Hub } from 'aws-amplify';
 import awsconfig from '../aws-exports';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from './Header';
 import Footer from './Footer';
+import Navigation from './Navigation';
 import Profile from './Profile';
 import ConfirmationPractices from './ConfirmationPractices';
+import Faq from './Faq';
 
 
 Amplify.configure(awsconfig);
@@ -55,23 +58,25 @@ class App extends React.Component {
   renderLogin() {
     if (!this.state.user) {
       return (
-        <>
+        <div className="content">
           <p>Please login with your BelleVieCare.co.uk email address</p>
           <button className="login dark" onClick={() => Auth.federatedSignIn({provider: 'Google'})}>Sign In</button>
-        </>
+        </div>
       )
 
     } else {
       return (
-        <>
+        <BrowserRouter>
+          <Navigation />
           <div className="content">
             <button className="logout dark" onClick={() => Auth.signOut()}>Sign Out</button>
             <Profile user={this.state.user} />
           </div>
           <div className="content">
-            <ConfirmationPractices user={this.state.user} />
+            <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} /> ) } />
+            <Route path="/faqs" component={Faq} />
           </div>
-        </>
+        </BrowserRouter>
       )
     }
   }
@@ -82,9 +87,9 @@ class App extends React.Component {
         <Header />
         <main>
           <div className="section offWhiteBg">
-            <div className="content">
+            
               {this.renderLogin()}
-            </div>
+            
           </div>
         </main>
         <Footer />
