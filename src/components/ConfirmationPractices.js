@@ -75,6 +75,7 @@ class confirmationPractices extends React.Component {
     }
 
     render() {
+        console.log(this.props);
         return(
             <>
             <form onSubmit={(event) => this.handleSubmit(event, this.props.user.attributes.name, this.props.user.attributes.email, this.props.user.attributes.website)}>
