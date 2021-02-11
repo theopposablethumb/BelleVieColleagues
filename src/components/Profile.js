@@ -14,10 +14,10 @@ class Profile extends React.Component {
     render() {
         return (
             <div className="flex profile left">
-                <img src={props.user.attributes.picture}  alt={props.user.attributes.name} />
+                <img src={this.props.user.attributes.picture}  alt={props.user.attributes.name} />
                 <div>
-                    <h2>Welcome {props.user.attributes.name}</h2>
-                    <p>{props.user.attributes.email}</p>
+                    <h2>Welcome {this.props.user.attributes.name}</h2>
+                    <p>{this.props.user.attributes.email}</p>
                     <p>{this.state.colleagues}}</p>
                 </div>
             </div>
