@@ -20,7 +20,14 @@ const awsmobile = {
         "redirectSignOut": "http://localhost:3000/",
         "responseType": "code"
     },
-    "federationTarget": "COGNITO_USER_POOLS"
+    "federationTarget": "COGNITO_USER_POOLS",
+    "aws_cloud_logic_custom": [
+        {
+            "name": "colleagues",
+            "endpoint": "https://z8un72vpt1.execute-api.eu-west-2.amazonaws.com/dev",
+            "region": "eu-west-2"
+        }
+    ]
 };
 
 

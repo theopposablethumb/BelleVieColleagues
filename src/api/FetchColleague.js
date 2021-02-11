@@ -1,11 +1,11 @@
-let endpoint = "https://api.hrpartner.io/bellevie";
+let endpoint = "https://api.hrpartner.io/employees";
 
 let FetchProfile = () => {
   fetch(endpoint, {
     method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "x-api-key": process.env.HR_PARTNER,
+        "x-api-key": process.env.REACT_APP_HR_PARTNER,
       }
     }).then(response => {
       if (response.ok) {
