@@ -6,7 +6,7 @@ class Profile extends React.Component {
     state = {colleagues: []};
 
     async componentDidMount() {
-        const data await API.get('colleagues', '/colleagues');
+        const data = await API.get('colleagues', '/colleagues');
         this.setState({ colleagues: data.colleagues })
     }
     
