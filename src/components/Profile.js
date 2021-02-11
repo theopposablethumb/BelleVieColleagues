@@ -9,6 +9,7 @@ let Profile = (props) => {
             <div>
                 <h2>Welcome {props.user.attributes.name}</h2>
                 <p>{props.user.attributes.email}</p>
+                <p>Team</p>
             </div>
         </div>
     ); 
