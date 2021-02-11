@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-belleviecolleagues-dev-164130-deployment",
-          "S3Key": "amplify-builds/bellevieColleagues-6e3635326837794e5969-build.zip"
+          "S3Key": "amplify-builds/bellevieColleagues-325a59555233324c7668-build.zip"
         }
       }
     },

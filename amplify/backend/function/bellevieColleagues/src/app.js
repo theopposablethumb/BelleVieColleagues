@@ -34,7 +34,6 @@ let axios = require('axios');
 
 app.get('/colleagues', function(req, res) {
   // Add your code here
-  //const colleagues = []
   axios.get('https://api.hrpartner.io/employees', {
     headers: {
       "Content-Type": "application/json",
@@ -54,7 +53,6 @@ app.get('/colleagues', function(req, res) {
         colleagues: null
       })
     })
-  res.json({colleagues});
 });
 
 app.get('/colleagues/*', function(req, res) {
