@@ -1,5 +1,4 @@
 import React from 'react';
-import FetchProfile from '../api/FetchColleague';
 import { API } from 'aws-amplify';
 
 class Profile extends React.Component {
@@ -7,13 +6,10 @@ class Profile extends React.Component {
 
     async componentDidMount() {
         const data = await API.get('colleagues', '/colleagues');
-        console.log(data.colleagues);
         this.setState({ colleagues: data.colleagues })
     }
     
-    //FetchProfile();
     render() {
-        console.log(this.props.user);
         return (
             <div className="flex profile left">
                 <img src={this.props.user.attributes.picture}  alt={this.props.user.attributes.name} />
