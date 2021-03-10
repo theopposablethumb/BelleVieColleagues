@@ -1,8 +1,6 @@
 import React from 'react';
-import FetchProfile from '../api/FetchColleague';
 
 let Profile = (props) => {
-    FetchProfile();
     return (
         <div className="flex profile left">
             <img src={props.user.attributes.picture}  alt={props.user.attributes.name} />

@@ -8,7 +8,7 @@
       "DeploymentBucketName": "amplify-belleviecolleagues-prod-95147-deployment",
       "UnauthRoleName": "amplify-belleviecolleagues-prod-95147-unauthRole",
       "StackName": "amplify-belleviecolleagues-prod-95147",
-      "StackId": "arn:aws:cloudformation:eu-west-2:245111508555:stack/amplify-belleviecolleagues-prod-95147/426a1530-69f3-11eb-b35e-023a5acac3f0",
+      "StackId": "arn:aws:clonpm udformation:eu-west-2:245111508555:stack/amplify-belleviecolleagues-prod-95147/426a1530-69f3-11eb-b35e-023a5acac3f0",
       "AmplifyAppId": "d3ihtjzvgz37vw"
     },
     "categories": {

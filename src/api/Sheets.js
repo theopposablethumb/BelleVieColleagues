@@ -1,5 +1,4 @@
 const spreadSheetId = '16orC3dyb1ASO76p7TZttgEB0FMRSl4iuv-9AHvSd_6E';
-const rotaId = '1LDYrXR_gUf1hdZYin4yJFFE6gbXkDIuFqZnQqo32Mj8';
 
 let today = new Date();
 let date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
@@ -20,21 +19,3 @@ export const UpdateSpreadSheet = (name, email, token, values) => {
         })
       })
 };
-
-export const ReadSpreadSheet = (token) => {
-  fetch(`https://sheets.googleapis.com/v4/spreadsheets/${rotaId}/values/Rota%20Summary!B3:E145?majorDimension=ROWS`, {
-    method: "GET",
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-  }).then(response => {
-    if (response.ok) {
-      console.log(response);
-      return response.json();
-    }
-    throw new Error('Request failed!');
-  }, networkError => {
-    console.log(networkError.message)
-  })
-   
-}

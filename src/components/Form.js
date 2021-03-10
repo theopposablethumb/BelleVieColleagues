@@ -1,7 +1,6 @@
 import React from 'react';
 
 let Form = (props) => {
-    console.log(props);
     <>
         <label htmlFor="props.score">Score</label>
         <p className="rangeVal">{props.updateRangeValue()}</p>
