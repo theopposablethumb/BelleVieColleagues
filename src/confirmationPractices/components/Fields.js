@@ -17,6 +17,7 @@ class Fields extends React.Component {
         e.preventDefault()
         if (this.props.level < questions.length - 1) {
             this.props.saveAnswers(this.state);
+            document.getElementById('title').scrollIntoView({ behavior: 'smooth' });
         } else {
             this.props.complete();
         }
@@ -38,8 +39,7 @@ class Fields extends React.Component {
     
         return (
             <form onSubmit={ (e) => this.save(e) }>
-                <label htmlFor={score} >Score</label>
-                <p className="rangeVal">{this.state.score}</p>
+                <label htmlFor={score} >Score <strong>{this.state.score}</strong></label>
                 <input type="range" min="1" max="5" name={score} defaultValue="3" onChange={ (e) => this.updateValue(e, 'score')} ></input>
     
                 <label htmlFor={reason}>Why I gave myself this score</label>

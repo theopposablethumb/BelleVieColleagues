@@ -28,12 +28,14 @@ class confirmationPractices extends React.Component {
         let name = this.props.user.attributes.name;
         let email = this.props.user.attributes.email;
         let token = this.props.user.attributes.website;
-        let answers = this.state.answers;
+        let team = this.state.team;
+        let answers = this.state.answers.map(answer => Object.values(answer));
+        let values = Array.prototype.concat(...answers);
         if (this.state.team === null) {
             alert('Please select your team');
         } else {
             this.setState({isSubmitted: true});
-            UpdateSpreadSheet(name, email, token, answers);
+            UpdateSpreadSheet(name, email, team, token, values);
         }
     }
 
@@ -43,15 +45,13 @@ class confirmationPractices extends React.Component {
         } else {
             return (
                 <>
-                    <form>
-                        <label htmlFor="team"><strong>First please select your team</strong></label>
-                        <select name="team" defaultValue="default" required onChange={(e) => {this.team(e)}}>
-                            <option value="default" disabled>Select Team</option>
-                            {teams.map( team => {return <option key={team} value={team}>{team}</option>})}
-                        </select>
-                    </form>
+                    <label htmlFor="team"><strong>First please select your team</strong></label>
+                    <select name="team" defaultValue="default" required onChange={(e) => {this.team(e)}}>
+                        <option value="default" disabled>Select Team</option>
+                        {teams.map( team => {return <option key={team} value={team}>{team}</option>})}
+                    </select>
 
-                    <div>
+                    <div className="form">
                         <Question question={questions[this.state.level]} />
                         <Fields question={questions[this.state.level].title} saveAnswers={this.setAnswers} level={this.state.level} complete={this.completeForm} />
                     </div>
