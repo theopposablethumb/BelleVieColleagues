@@ -1,16 +1,16 @@
 import React from 'react';
 import Amplify, { Auth, Hub } from 'aws-amplify';
-import awsconfig from '../aws-exports';
+import awsconfig from './aws-exports';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Header from './Header';
-import Footer from './Footer';
-import Navigation from './Navigation';
-import Profile from './Profile';
-import ConfirmationPractices from './ConfirmationPractices';
-import Faq from './Faq';
-import Policies from './Policies';
-import Contact from './Contact';
+import Header from './confirmationPractices/components/Header';
+import Footer from './confirmationPractices/components/Footer';
+import Navigation from './confirmationPractices/components/Navigation';
+import Profile from './confirmationPractices/components/Profile';
+import ConfirmationPractices from './confirmationPractices/components/ConfirmationPractices';
+import Faq from './confirmationPractices/components/Faq';
+import Policies from './confirmationPractices/components/Policies';
+import Contact from './confirmationPractices/components/Contact';
 
 
 Amplify.configure(awsconfig);
