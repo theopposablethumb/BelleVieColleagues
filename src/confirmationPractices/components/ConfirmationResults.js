@@ -2,7 +2,6 @@ import Result from './Result';
 import {questions} from './../data'
 
 let Confirmation = (props) => {
-    console.log(props);
     document.querySelector('h2').scrollIntoView({ behavior: 'smooth' });
     return(
         <>
