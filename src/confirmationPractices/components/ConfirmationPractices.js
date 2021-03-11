@@ -21,27 +21,31 @@ class confirmationPractices extends React.Component {
 
     setAnswers = (answer) => {
         this.setState({answers: [...this.state.answers, answer]});
-        this.setState({level: this.state.level +1})
+        this.setState({level: this.state.level +1});
+
+        if (!this.state.team) {
+            alert('Please select your team');
+            document.querySelector('select').scrollIntoView({ behavior: 'smooth' });
+        } 
     }
 
     completeForm = () => {
-        let name = this.props.user.attributes.name;
-        let email = this.props.user.attributes.email;
-        let token = this.props.user.attributes.website;
-        let team = this.state.team;
-        let answers = this.state.answers.map(answer => Object.values(answer));
-        let values = Array.prototype.concat(...answers);
-        if (this.state.team === null) {
-            alert('Please select your team');
-        } else {
-            this.setState({isSubmitted: true});
-            UpdateSpreadSheet(name, email, team, token, values);
-        }
+        this.setState({isSubmitted: true});
     }
 
     renderFormConfirmation() {
         if (this.state.isSubmitted === true && this.state.team) {
-            return <Confirmation values={this.state} />
+            let name = this.props.user.attributes.name;
+            let email = this.props.user.attributes.email;
+            let token = this.props.user.attributes.website;
+            let team = this.state.team;
+        
+            let answers = this.state.answers.map(answer => Object.values(answer));
+            let values = Array.prototype.concat(...answers);
+
+            UpdateSpreadSheet(name, email, team, token, values);
+
+            return <Confirmation answers={this.state.answers} questions={questions} team={this.state.team} />
         } else {
             return (
                 <>
