@@ -24,7 +24,7 @@ class Fields extends React.Component {
         delete answers.improvementDisplay;
         if (this.props.level < questions.length - 1) {
             this.props.saveAnswers(answers);
-            document.getElementById('title').scrollIntoView({ behavior: 'smooth' });
+            document.querySelector('.title').scrollIntoView({ behavior: 'smooth' });
         } else {
             this.props.saveAnswers(answers);
             this.props.complete();

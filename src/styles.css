@@ -102,6 +102,12 @@ footer a {color: #FFF;}
 
 a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75em 1.25em 0 0;}
 
+.progress {display: flex; justify-content: space-between; list-style: none; width: 100vw; padding: 0; margin: 0; background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); font-size: 0.9em; color: #aaa;}
+.progress.hide {display: none;}
+.progress.show { position: fixed; top: 0; left: 0; }
+.progress li {display: inline-block; margin: 0; padding: 0.8em;}
+.progress li.youAreHere {color: #333;}
+
 @media screen and (max-width: 1200px) {
     nav, .content {max-width: 1024px;}
 }
@@ -115,7 +121,7 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
 	h1.custom {font-size: 3em;}
 	p {margin-top: 0.8em;}
 
-    input, label, select, textarea {font-size: 1em; width: 100%; box-sizing: border-box;}
+    p, ul, input, label, select, textarea {font-size: 1em; width: 100%; box-sizing: border-box;}
     
     nav, .content {width: 90%; margin: auto;}
 
@@ -127,6 +133,8 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
     .profile div {text-align: center;}
 
     .login, .logout {float: none; display: block; margin: 1.5em auto; }
+
+    .progress span {display: none;}
 }
 
 
@@ -167,3 +175,4 @@ ul.team {list-style-type: none; padding: 0;}
 .free p {color: #185D6F;}
 
 .support {width: 100%; box-sizing: border-box; border-top: 1px solid #BFBFBF; background: #fff; padding: 0.85em 1em; margin-top: 1em;}
+
