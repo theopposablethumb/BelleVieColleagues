@@ -1,11 +1,10 @@
-const spreadSheetId = '16orC3dyb1ASO76p7TZttgEB0FMRSl4iuv-9AHvSd_6E';
+const spreadSheetId = '1FS_8aXPeRqzTDXShYoNWcoZZZjC3n7JthW_PyQK038w';
 
 let today = new Date();
 let date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
 
-export const UpdateSpreadSheet = (name, email, token, values) => {
-    values.unshift(date, name, email);
-
+export const UpdateSpreadSheet = (name, email, team, token, values) => {
+    values.unshift(date, name, email, team);
     fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadSheetId}/values/!A1:X1:append?valueInputOption=USER_ENTERED`, {
         method: "POST",
         headers: {
@@ -14,8 +13,7 @@ export const UpdateSpreadSheet = (name, email, token, values) => {
         },
         body: JSON.stringify({
                 majorDimension: 'ROWS',
-                values: [values,
-                []]
+                values: [values, []]
         })
       })
 };
