@@ -207,216 +207,991 @@ export let week = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'satu
 
 export let shifts = [
     {
+        id: 1,
         day: 'monday',
-        startTime: '08:00',
-        visits: [],
-        colleagues: []
+        startTime: '7am',
+        endTime: '12pm',
+        activities: [
+            {
+                person: 'Sean Pertwee',
+                type: 'visit',
+                day: 'monday',
+                startTime: '7am',
+                endTime: '9am',
+                duration: 2
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'monday',
+                startTime: '9am',
+                endTime: '10am',
+                duration: 1
+            },
+            {
+                person: 'William Hartnell',
+                type: 'visit',
+                day: 'monday',
+                startTime: '10am',
+                endTime: '12pm',
+                duration: 2
+            },   
+        ],
+        colleagues: [
+            {id: 1, name: 'Adam Mitchell'}
+        ]
     },
     {
+        id: 2,
         day: 'monday',
-        startTime: '08:00',
-        visits: [],
-        colleagues: []
+        startTime: '8am',
+        endTime: '1pm',
+        activities: [
+            {
+                person: 'Peter Capaldi',
+                type: 'visit',
+                day: 'monday',
+                startTime: '8am',
+                endTime: '9.30am',
+                duration: 1.5
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'monday',
+                startTime: '9.30am',
+                endTime: '1pm',
+                duration: 3.5
+            }
+        ],
+        colleagues: [
+            {id: 3, name: 'Bill Potts'}
+        ]
     },
     {
+        id: 'shift3',
         day: 'monday',
-        startTime: '09:00',
-        visits: [],
-        colleagues: []
+        startTime: '9am',
+        endTime: '2pm',
+        activities: [
+            {
+                person: '',
+                type: 'free',
+                day: 'monday',
+                startTime: '9am',
+                endTime: '1pm',
+                duration: 4
+            },
+            {
+                person: 'Jodie Whittaker',
+                type: 'visit',
+                day: 'monday',
+                startTime: '1pm',
+                endTime: '2pm',
+                duration: 1
+            },
+        ],
+        colleagues: [
+            {id: 5, name: 'Jack Harkness'}
+        ]
     },
     {
+        id: 3,
         day: 'monday',
-        startTime: '16:00',
-        visits: [],
-        colleagues: []
+        startTime: '4pm',
+        endTime: '9pm',
+        activities: [
+            {
+                person: 'Peter Capaldi',
+                type: 'visit',
+                day: 'monday',
+                startTime: '4pm',
+                endTime: '5.30pm',
+                duration: 1.5
+            },
+            {
+                person: '',
+                type: '',
+                day: 'monday',
+                startTime: '5.30pm',
+                endTime: '8pm',
+                duration: 2.5
+            },
+            {
+                person: 'Sean Pertwee',
+                type: 'visit',
+                day: 'monday',
+                startTime: '8pm',
+                endTime: '9pm',
+                duration: 1
+            },
+        ],
+        colleagues: [
+            {id: 1, name: 'Adam Mitchell'}
+        ]
     },
     {
-        day: 'monday',
-        startTime: '16:30',
-        visits: [],
-        colleagues: []
-    },
-    {
+        id: 4,
         day: 'tuesday',
-        startTime: '07:00',
-        visits: [],
-        colleagues: []
+        startTime: '7am',
+        endTime: '12pm',
+        activities: [
+            {
+                person: 'Patrick Troughton',
+                type: 'visit',
+                day: 'tuesday',
+                startTime: '7am',
+                endTime: '8.30am',
+                duration: 1.5
+            },
+            {
+                person: 'Tom Baker',
+                type: 'visit',
+                day: 'tuesday',
+                startTime: '9am',
+                endTime: '11am',
+                duration: 2
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'tuesday',
+                startTime: '11am',
+                endTime: '12pm',
+                duration: 1
+            }
+        ],
+        colleagues: [
+            {id: 7, name: 'Rose Tyler'}
+        ]
     },
     {
+        id: 5,
         day: 'tuesday',
-        startTime: '08:30',
-        visits: [],
-        colleagues: []
+        startTime: '10am',
+        endTime: '3pm',
+        activities: [
+            {
+                person: '',
+                type: 'free',
+                day: 'tuesday',
+                startTime: '10am',
+                endTime: '2pm',
+                duration: 4
+            },
+            {
+                person: 'Matthew Smith',
+                type: 'visit',
+                day: 'tuesday',
+                startTime: '2pm',
+                endTime: '3pm',
+                duration: 1
+            }
+        ],
+        colleagues: [
+            {id: 4, name: 'Clara Oswald'}
+        ]
     },
     {
+        id: 6,
         day: 'tuesday',
-        startTime: '10:00',
-        visits: [],
-        colleagues: []
+        startTime: '4pm',
+        endTime: '9pm',
+        activities: [
+            {
+                person: 'Peter Capaldi',
+                type: 'visit',
+                day: 'tuesday',
+                startTime: '4pm',
+                endTime: '5.30pm',
+                duration: 1.5
+            },
+            {
+                person: 'River Song',
+                type: 'visit',
+                day: 'tuesday',
+                startTime: '6pm',
+                endTime: '7pm',
+                duration: 1
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'tuesday',
+                startTime: '7pm',
+                endTime: '9pm',
+                duration: 2
+            },
+        ],
+        colleagues: [
+            {id: 7, name: 'Rose Tyler'}
+        ]
     },
     {
-        day: 'tuesday',
-        startTime: '16:00',
-        visits: [],
-        colleagues: []
-    },
-    {
-        day: 'tuesday',
-        startTime: '16:30',
-        visits: [],
-        colleagues: []
-    },
-    {
+        id: 7,
         day: 'wednesday',
-        startTime: '07:00',
-        visits: [],
-        colleagues: []
+        startTime: '7am',
+        endTime: '12pm',
+        activities: [
+            {
+                person: 'Jodie Whittaker',
+                type: 'visit',
+                day: 'wednesday',
+                startTime: '7am',
+                endTime: '9am',
+                duration: 2
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'wednesday',
+                startTime: '9am',
+                endTime: '12pm',
+                duration: 5
+            },
+        ],
+        colleagues: [
+            {id: 1, name: 'Adam Mitchell'}
+        ]
     },
     {
+        id: 8,
         day: 'wednesday',
-        startTime: '08:30',
-        visits: [],
-        colleagues: []
+        startTime: '9am',
+        endTime: '2pm',
+        activities: [
+            {
+                person: 'Tom Baker',
+                type: 'visit',
+                day: 'wednesday',
+                startTime: '9am',
+                endTime: '11am',
+                duration: 2
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'wednesday',
+                startTime: '11am',
+                endTime: '2pm',
+                duration: 3
+            },
+        ],
+        colleagues: [
+            {id: 3, name: 'Bill Potts'}
+        ]
     },
     {
+        id: 9,
         day: 'wednesday',
-        startTime: '10:00',
-        visits: [],
-        colleagues: []
+        startTime: '10am',
+        endTime: '3pm',
+        activities: [
+            {
+                person: '',
+                type: 'free',
+                day: 'wednesday',
+                startTime: '10pm',
+                endTime: '2pm',
+                duration: 4
+            },
+            {
+                person: 'Matthew Smith',
+                type: 'visit',
+                day: 'wednesday',
+                startTime: '2pm',
+                endTime: '3pm',
+                duration: 1
+            },
+        ],
+        colleagues: [
+            {id: 3, name: 'Clara Oswald'}
+        ]
     },
     {
+        id: 10,
         day: 'wednesday',
-        startTime: '16:00',
-        visits: [],
-        colleagues: []
+        startTime: '5pm',
+        endTime: '10pm',
+        activities: [
+            {
+                person: '',
+                type: 'free',
+                day: 'wednesday',
+                startTime: '5pm',
+                endTime: '6pm',
+                duration: 1
+            },
+            {
+                person: 'River Song',
+                type: 'visit',
+                day: 'wednesday',
+                startTime: '6pm',
+                endTime: '7pm',
+                duration: 1
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'wednesday',
+                startTime: '5pm',
+                endTime: '6pm',
+                duration: 1
+            },
+            {
+                person: 'Sean Pertwee',
+                type: 'visit',
+                day: 'wednesday',
+                startTime: '8pm',
+                endTime: '10pm',
+                duration: 2
+            },
+        ],
+        colleagues: [
+            {id: 7, name: 'Rose Tyler'}
+        ]
     },
     {
-        day: 'wednesday',
-        startTime: '17:00',
-        visits: [],
-        colleagues: []
-    },
-    {
-        day: 'wednesday',
-        startTime: '17:00',
-        visits: [],
-        colleagues: []
-    },
-    {
+        id: 11,
         day: 'thursday',
-        startTime: '07:00',
-        visits: [],
-        colleagues: []
+        startTime: '7am',
+        endTime: '12pm',
+        activities: [
+            {
+                person: 'Patrick Troughton',
+                type: 'visit',
+                day: 'thursday',
+                startTime: '7am',
+                endTime: '8.30am',
+                duration: 1.5
+            },
+            {
+                person: 'Tom Baker',
+                type: 'visit',
+                day: 'thursday',
+                startTime: '9am',
+                endTime: '11am',
+                duration: 2
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'thursday',
+                startTime: '11am',
+                endTime: '12pm',
+                duration: 1
+            }
+        ],
+        colleagues: [
+            {id: 4, name: 'Clara Oswald'}
+        ]
     },
     {
+        id: 12,
         day: 'thursday',
-        startTime: '08:30',
-        visits: [],
-        colleagues: []
+        startTime: '10am',
+        endTime: '3pm',
+        activities: [
+            {
+                person: '',
+                type: 'free',
+                day: 'thursday',
+                startTime: '10am',
+                endTime: '2pm',
+                duration: 4
+            },
+            {
+                person: 'William Hartnell',
+                type: 'visit',
+                day: 'thursday',
+                startTime: '2pm',
+                endTime: '3pm',
+                duration: 1
+            }
+        ],
+        colleagues: [
+            {id: 8, name: 'Ryan Sinclair'}
+        ]
     },
     {
+        id: 13,
         day: 'thursday',
-        startTime: '10:00',
-        visits: [],
-        colleagues: []
+        startTime: '4pm',
+        endTime: '9pm',
+        activities: [
+            {
+                person: 'Jodie Whittaker',
+                type: 'visit',
+                day: 'thursday',
+                startTime: '4pm',
+                endTime: '5.30pm',
+                duration: 1.5
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'thursday',
+                startTime: '5.30pm',
+                endTime: '9pm',
+                duration: 3.5
+            }
+        ],
+        colleagues: [
+            {id: 5, name: 'Jack Harkness'}
+        ]
     },
     {
-        day: 'thursday',
-        startTime: '16:00',
-        visits: [],
-        colleagues: []
-    },
-    {
-        day: 'thursday',
-        startTime: '16:30',
-        visits: [],
-        colleagues: []
-    },
-    {
-        day: 'thursday',
-        startTime: '17:00',
-        visits: [],
-        colleagues: []
-    },
-    {
+        id: 14,
         day: 'friday',
-        startTime: '07:00',
-        visits: [],
-        colleagues: []
+        startTime: '7am',
+        endTime: '12pm',
+        activities: [
+            {
+                person: 'Patrick Troughton',
+                type: 'visit',
+                day: 'friday',
+                startTime: '7am',
+                endTime: '8.30am',
+                duration: 1.5
+            },
+            {
+                person: 'Tom Baker',
+                type: 'visit',
+                day: 'friday',
+                startTime: '9am',
+                endTime: '11am',
+                duration: 2
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'friday',
+                startTime: '11am',
+                endTime: '12pm',
+                duration: 1
+            },
+        ],
+        colleagues: [
+            {id: 2, name: 'Amelia Pond'}
+        ]
     },
     {
+        id: 15,
         day: 'friday',
-        startTime: '08:30',
-        visits: [],
-        colleagues: []
+        startTime: '8.30am',
+        endTime: '1.30pm',
+        activities: [
+            {
+                person: 'Matthew Smith',
+                type: 'visit',
+                day: 'friday',
+                startTime: '8.30am',
+                endTime: '10am',
+                duration: 1.5
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'friday',
+                startTime: '10am',
+                endTime: '1.30m',
+                duration: 3.5
+            },
+        ],
+        colleagues: [
+            {id: 6, name: 'Rory Williams'}
+        ]
     },
     {
+        id: 16,
         day: 'friday',
-        startTime: '10:00',
-        visits: [],
-        colleagues: []
+        startTime: '4pm',
+        endTime: '9pm',
+        activities: [
+            {
+                person: 'William Hartnell',
+                type: 'visit',
+                day: 'friday',
+                startTime: '4pm',
+                endTime: '5pm',
+                duration: 1
+            },
+            {
+                person: 'free',
+                type: 'visit',
+                day: 'friday',
+                startTime: '5pm',
+                endTime: '9pm',
+                duration: 4
+            },
+        ],
+        colleagues: [
+            {id: 1, name: 'Adam Mitchell'}
+        ]
     },
     {
+        id: 17,
         day: 'friday',
-        startTime: '16:00',
-        visits: [],
-        colleagues: []
+        startTime: '4.30pm',
+        endTime: '9.30pm',
+        activities: [
+            {
+                person: '',
+                type: 'free',
+                day: 'friday',
+                startTime: '4.30pm',
+                endTime: '8.30pm',
+                duration: 4
+            },
+            {
+                person: 'Patrick Troughton',
+                type: 'visit',
+                day: 'friday',
+                startTime: '8.30pm',
+                endTime: '9.30pm',
+                duration: 1
+            },
+        ],
+        colleagues: [
+            {id: 3, name: 'Bill Potts'}
+        ]
     },
     {
-        day: 'friday',
-        startTime: '16:30',
-        visits: [],
-        colleagues: []
-    },
-    {
+        id: 18,
         day: 'saturday',
-        startTime: '08:30',
-        visits: [],
-        colleagues: []
+        startTime: '8am',
+        endTime: '1pm',
+        activities: [
+            {
+                person: 'River Song',
+                type: 'visit',
+                day: 'saturday',
+                startTime: '8am',
+                endTime: '9am',
+                duration: 1
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'saturday',
+                startTime: '9am',
+                endTime: '10am',
+                duration: 1
+            },
+            {
+                person: 'Tom Baker',
+                type: 'visit',
+                day: 'saturday',
+                startTime: '10am',
+                endTime: '12pm',
+                duration: 2
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'saturday',
+                startTime: '12pm',
+                endTime: '1pm',
+                duration: 1
+            },
+        ],
+        colleagues: [
+            {id: 4, name: 'Clara Oswald'}
+        ]
     },
     {
+        id: 19,
         day: 'saturday',
-        startTime: '10:00',
-        visits: [],
-        colleagues: []
+        startTime: '9am',
+        endTime: '2pm',
+        activities: [
+            {
+                person: '',
+                type: 'free',
+                day: 'saturday',
+                startTime: '9am',
+                endTime: '12.30pm',
+                duration: 3.5
+            },
+            {
+                person: 'Jodie Whittaker',
+                type: 'visit',
+                day: 'saturday',
+                startTime: '12.30pm',
+                endTime: '2pm',
+                duration: 1.5
+            },
+        ],
+        colleagues: [
+            {id: 6, name: 'Rory Williams'}
+        ]
     },
     {
+        id: 20,
         day: 'saturday',
-        startTime: '16:00',
-        visits: [],
-        colleagues: []
+        startTime: '4pm',
+        endTime: '9pm',
+        activities: [
+            {
+                person: 'River Song',
+                type: 'visit',
+                day: 'saturday',
+                startTime: '4pm',
+                endTime: '5pm',
+                duration: 1
+            },
+            {
+                person: 'River Song',
+                type: 'free',
+                day: 'saturday',
+                startTime: '5pm',
+                endTime: '8pm',
+                duration: 3
+            },
+            {
+                person: 'Sean Pertwee',
+                type: 'visit',
+                day: 'saturday',
+                startTime: '8pm',
+                endTime: '9pm',
+                duration: 1
+            },
+        ],
+        colleagues: [
+            {id: 2, name: 'Amelia Pond'}
+        ]
     },
     {
-        day: 'saturday',
-        startTime: '16:00',
-        visits: [],
-        colleagues: []
-    },
-    {
+        id: 21,
         day: 'sunday',
-        startTime: '08:30',
-        visits: [],
-        colleagues: []
+        startTime: '8.30am',
+        endTime: '1.30pm',
+        activities: [
+            {
+                person: 'River Song',
+                type: 'visit',
+                day: 'sunday',
+                startTime: '8.30am',
+                endTime: '9.30am',
+                duration: 1
+            },
+            {
+                person: 'Tom Baker',
+                type: 'visit',
+                day: 'sunday',
+                startTime: '10am',
+                endTime: '12pm',
+                duration: 2
+            },
+            {
+                person: '',
+                type: 'free',
+                day: 'sunday',
+                startTime: '12pm',
+                endTime: '1.30pm',
+                duration: 1.5
+            },
+        ],
+        colleagues: [
+            {id: 10, name: 'Yasmin Khan'}
+        ]
     },
     {
+        id: 22,
         day: 'sunday',
-        startTime: '10:00',
-        visits: [],
-        colleagues: []
+        startTime: '9am',
+        endTime: '2pm',
+        activities: [
+            {
+                person: '',
+                type: 'free',
+                day: 'sunday',
+                startTime: '9am',
+                endTime: '12.30pm',
+                duration: 3.5
+            },
+            {
+                person: 'Jodie Whittaker',
+                type: 'visit',
+                day: 'sunday',
+                startTime: '12.30pm',
+                endTime: '2pm',
+                duration: 1.5
+            },
+        ],
+        colleagues: [
+            {id: 9, name: 'Sarah J Smith'}
+        ]
     },
     {
+        id: 23,
         day: 'sunday',
-        startTime: '16:00',
-        visits: [],
-        colleagues: []
+        startTime: '4pm',
+        endTime: '9pm',
+        activities: [
+            {
+                person: 'River Song',
+                type: 'visit',
+                day: 'sunday',
+                startTime: '4pm',
+                endTime: '5pm',
+                duration: 1
+            },
+            {
+                person: 'River Song',
+                type: 'free',
+                day: 'sunday',
+                startTime: '5pm',
+                endTime: '9pm',
+                duration: 4
+            }
+        ],
+        colleagues: [
+            {id: 2, name: 'Rose Tyler'}
+        ]
     },
-    {
-        day: 'sunday',
-        startTime: '17:00',
-        visits: [],
-        colleagues: []
-    }
 ];
+
+export let visits = [
+    {
+        person: 'Sean Pertwee',
+        day: 'monday',
+        startTime: '7pm',
+        endTime: '9pm',
+        duration: 2
+    },
+    {
+        person: 'Peter Capaldi',
+        day: 'monday',
+        startTime: '8am',
+        endTime: '9.30am',
+        duration: 1.5
+    },
+    {
+        person: 'William Hartnell',
+        day: 'monday',
+        startTime: '10am',
+        endTime: '12pm',
+        duration: 2
+    },   
+    {
+        person: 'Jodie Whittaker',
+        day: 'monday',
+        startTime: '1pm',
+        endTime: '2pm',
+        duration: 1
+    },
+    {
+        person: 'Peter Capaldi',
+        day: 'monday',
+        startTime: '4pm',
+        endTime: '5.30pm',
+        duration: 1.5
+    },
+    {
+        person: 'Sean Pertwee',
+        day: 'monday',
+        startTime: '8pm',
+        endTime: '9pm',
+        duration: 1
+    },
+    {
+        person: 'Patrick Troughton',
+        day: 'tuesday',
+        startTime: '7am',
+        endTime: '8.30am',
+        duration: 1.5
+    },
+    {
+        person: 'Tom Baker',
+        day: 'tuesday',
+        startTime: '9am',
+        endTime: '11am',
+        duration: 2
+    },
+    {
+        person: 'Matthew Smith',
+        day: 'tuesday',
+        startTime: '2pm',
+        endTime: '3pm',
+        duration: 1
+    },
+    {
+        person: 'Peter Capaldi',
+        day: 'tuesday',
+        startTime: '4pm',
+        endTime: '5.30pm',
+        duration: 1.5
+    },
+    {
+        person: 'River Song',
+        day: 'tuesday',
+        startTime: '6pm',
+        endTime: '7pm',
+        duration: 1
+    },
+    {
+        person: 'Jodie Whittaker',
+        day: 'wednesday',
+        startTime: '7am',
+        endTime: '9am',
+        duration: 2
+    },
+    {
+        person: 'Tom Baker',
+        day: 'wednesday',
+        startTime: '9am',
+        endTime: '11am',
+        duration: 2
+    },
+    {
+        person: 'Matthew Smith',
+        day: 'wednesday',
+        startTime: '2pm',
+        endTime: '3pm',
+        duration: 1
+    },
+    {
+        person: 'River Song',
+        day: 'wednesday',
+        startTime: '6pm',
+        endTime: '7pm',
+        duration: 1
+    },
+    {
+        person: 'Sean Pertwee',
+        day: 'wednesday',
+        startTime: '8pm',
+        endTime: '10pm',
+        duration: 2
+    },
+    {
+        person: 'Patrick Troughton',
+        day: 'thursday',
+        startTime: '7am',
+        endTime: '8.30am',
+        duration: 1.5
+    },
+    {
+        person: 'Tom Baker',
+        day: 'thursday',
+        startTime: '9am',
+        endTime: '11am',
+        duration: 2
+    },
+    {
+        person: 'William Hartnell',
+        day: 'thursday',
+        startTime: '2pm',
+        endTime: '3pm',
+        duration: 1
+    },
+    {
+        person: 'Jodie Whittaker',
+        day: 'thursday',
+        startTime: '4pm',
+        endTime: '5.30pm',
+        duration: 1.5
+    },
+    {
+        person: 'Patrick Troughton',
+        day: 'friday',
+        startTime: '7am',
+        endTime: '8.30am',
+        duration: 1.5
+    },
+    {
+        person: 'Tom Baker',
+        day: 'friday',
+        startTime: '9am',
+        endTime: '11am',
+        duration: 2
+    },
+    {
+        person: 'Matthew Smith',
+        day: 'friday',
+        startTime: '2pm',
+        endTime: '3pm',
+        duration: 1
+    },
+    {
+        person: 'William Hartnell',
+        day: 'friday',
+        startTime: '4pm',
+        endTime: '5pm',
+        duration: 1
+    },
+    {
+        person: 'Patrick Troughton',
+        day: 'friday',
+        startTime: '8.30pm',
+        endTime: '9.30pm',
+        duration: 1
+    },
+    {
+        person: 'River Song',
+        day: 'saturday',
+        startTime: '8am',
+        endTime: '9am',
+        duration: 1
+    },
+    {
+        person: 'Tom Baker',
+        day: 'saturday',
+        startTime: '10am',
+        endTime: '12pm',
+        duration: 2
+    },
+    {
+        person: 'Jodie Whittaker',
+        day: 'saturday',
+        startTime: '12.30pm',
+        endTime: '2pm',
+        duration: 1.5
+    },
+    {
+        person: 'River Song',
+        day: 'saturday',
+        startTime: '4pm',
+        endTime: '5pm',
+        duration: 1
+    },
+    {
+        person: 'Sean Pertwee',
+        day: 'saturday',
+        startTime: '8pm',
+        endTime: '9pm',
+        duration: 1
+    },
+    {
+        person: 'River Song',
+        day: 'sunday',
+        startTime: '8.30am',
+        endTime: '9.30am',
+        duration: 1
+    },
+    {
+        person: 'Tom Baker',
+        day: 'sunday',
+        startTime: '10am',
+        endTime: '12pm',
+        duration: 2
+    },
+    {
+        person: 'Jodie Whittaker',
+        day: 'sunday',
+        startTime: '12.30pm',
+        endTime: '2pm',
+        duration: 1
+    },
+    {
+        person: 'River Song',
+        day: 'sunday',
+        startTime: '4pm',
+        endTime: '5pm',
+        duration: 1
+    }
+]
 
 export let activities = ['Visit', 'Team rota', 'Storytelling', 'Marketing', 'Link Worker', 'Training and eLearning', 'PPE'];
 
@@ -425,36 +1200,254 @@ export let people = [
         name: 'William Hartnell',
         address: '21 Gallifrey Drive',
         linkWorker: {id: 1, name: 'Adam Mitchell'},
-        visits: []
+        visits: [
+            {
+                day: 'monday',
+                startTime: '10am',
+                endTime: '12pm',
+                duration: 2
+            },
+            {
+                day: 'thursday',
+                startTime: '2pm',
+                endTime: '3pm',
+                duration: 1
+            },
+            {
+                day: 'friday',
+                startTime: '4pm',
+                endTime: '5pm',
+                duration: 1
+            },
+        ]
     },
     {
         name: 'Patrick Troughton',
         address: '12 Mondas Close',
         linkWorker: {id: 3, name: 'Bill Potts'},
-        visits: []
+        visits: [
+            {
+                day: 'tuesday',
+                startTime: '7am',
+                endTime: '8.30am',
+                duration: 1.5
+            },
+            {
+                day: 'thursday',
+                startTime: '7am',
+                endTime: '8.30am',
+                duration: 1.5
+            },
+            {
+                day: 'friday',
+                startTime: '7am',
+                endTime: '8.30am',
+                duration: 1.5
+            },
+            {
+                day: 'friday',
+                startTime: '8.30pm',
+                endTime: '9.30pm',
+                duration: 1
+            },
+        ]
     },
     {
         name: 'Sean Pertwee',
         address: '8 Skaro Road',
         linkWorker: {id: 4, name: 'Clara Oswald'},
-        visits: []
+        visits: [
+            {
+                day: 'monday',
+                startTime: '7pm',
+                endTime: '9pm',
+                duration: 2
+            },
+            {
+                day: 'wednesday',
+                startTime: '8pm',
+                endTime: '10pm',
+                duration: 2
+            },
+            {
+                day: 'saturday',
+                startTime: '8pm',
+                endTime: '9pm',
+                duration: 1
+            }
+        ]
     },
     {
         name: 'Tom Baker',
         address: '10 Moebius Strip',
         linkWorker: {id: 6, name: 'Rory Williams'},
-        visits: []
+        visits: [
+            {
+                day: 'tuesday',
+                startTime: '9am',
+                endTime: '11am',
+                duration: 2
+            },
+            {
+                day: 'wednesday',
+                startTime: '9am',
+                endTime: '11am',
+                duration: 2
+            },
+            {
+                day: 'thursday',
+                startTime: '9am',
+                endTime: '11am',
+                duration: 2
+            },
+            {
+                day: 'friday',
+                startTime: '9am',
+                endTime: '11am',
+                duration: 2
+            },
+            {
+                day: 'saturday',
+                startTime: '10am',
+                endTime: '12pm',
+                duration: 2
+            },
+            {
+                day: 'sunday',
+                startTime: '10am',
+                endTime: '12pm',
+                duration: 2
+            }
+        ]
     },
     {
         name: 'Matthew Smith',
         address: '4 Androzani Manor',
         linkWorker: {id: 8, name: 'Ryan Sinclair'},
-        visits: []
+        visits: [
+            {
+                day: 'tuesday',
+                startTime: '2pm',
+                endTime: '3pm',
+                duration: 1
+            },
+            {
+                day: 'wednesday',
+                startTime: '2pm',
+                endTime: '3pm',
+                duration: 1
+            },
+            {
+                day: 'friday',
+                startTime: '2pm',
+                endTime: '3pm',
+                duration: 1
+            }
+        ]
+    },
+    {
+        name: 'Peter Capaldi',
+        address: '10 Diner Close',
+        linkWorker: {id: 8, name: 'Ryan Sinclair'},
+        visits: [
+            {
+                day: 'monday',
+                startTime: '8am',
+                endTime: '9.30am',
+                duration: 1.5
+            },
+            {
+                day: 'monday',
+                startTime: '4pm',
+                endTime: '5.30pm',
+                duration: 1.5
+            },
+            {
+                day: 'tuesday',
+                startTime: '4pm',
+                endTime: '5.30pm',
+                duration: 1.5
+            }
+        ]
     },
     {
         name: 'Jodie Whittaker',
         address: '8 Indigo Prime',
         linkWorker: {id: 7, name: 'Rose Tyler'},
-        visits: []
+        visits: [
+            {
+                day: 'monday',
+                startTime: '1pm',
+                endTime: '2pm',
+                duration: 1
+            },
+            {
+                day: 'wednesday',
+                startTime: '7am',
+                endTime: '9am',
+                duration: 2
+            },
+            {
+                day: 'thursday',
+                startTime: '4pm',
+                endTime: '5.30pm',
+                duration: 1.5
+            },
+            {
+                day: 'saturday',
+                startTime: '12.30pm',
+                endTime: '2pm',
+                duration: 1
+            },
+            {
+                day: 'sunday',
+                startTime: '12.30pm',
+                endTime: '2pm',
+                duration: 1
+            }
+        ]
+    },
+    {
+        name: 'River Song',
+        address: '38 Library Road',
+        linkWorker: {id: 7, name: 'Rose Tyler'},
+        visits: [
+            {
+                day: 'tuesday',
+                startTime: '6pm',
+                endTime: '7pm',
+                duration: 1
+            },
+            {
+                day: 'wednesday',
+                startTime: '6pm',
+                endTime: '7pm',
+                duration: 1
+            },
+            {
+                day: 'saturday',
+                startTime: '8am',
+                endTime: '9am',
+                duration: 1
+            },
+            {
+                day: 'saturday',
+                startTime: '4pm',
+                endTime: '5pm',
+                duration: 1
+            },
+            {
+                day: 'sunday',
+                startTime: '8.30am',
+                endTime: '9.30am',
+                duration: 1
+            },
+            {
+                day: 'sunday',
+                startTime: '4pm',
+                endTime: '5pm',
+                duration: 1
+            }
+        ]
     },
 ];

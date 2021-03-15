@@ -135,7 +135,35 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
 
 ul.team {list-style-type: none; padding: 0;}
 .team li {display: inline-block; width: 50%;}
-.team img {width: 50px; height: 50px;}
-.team li p {font-size: 0.75em; display: inline-block; margin: 0 0.5em;}
+.team img, .support img {width: 50px; height: 50px;}
+.team li p, .support p {font-size: 1em; display: inline-block; margin: 0 0.5em;}
+.support p {font-size: 1.25em}
 
-.shift {padding: 0.85em 1em; margin-bottom: 2em; border-radius: 4px; background: #F5F5F5; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);}
+.shift {padding-top: 1em; margin-bottom: 2em; border-radius: 4px; background: #F5F5F5; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); position: relative;}
+
+.shift button {padding: 0.5em; margin: 0; background: none; position: absolute; top: 0; right: 0.5em; height: fit-content;}
+.shift button:focus {border: none; outline: 0; box-shadow: 0 0 0;}
+.shift button {transform: none;}
+.shift.close button {transform: rotate(180deg);}
+
+.stats.close, .close .stats.open {display: none;}
+.close .stats.close {display: block;}
+
+
+.shift h4, .shift p {color: #185D6F; margin-left: 1em; margin-right: 1em; }
+.shift h4 {margin: 0;}
+.shift p {margin-top: 0.4em}
+
+.shift.close .visit, .shift.close .free {display: none}
+
+.visit, .free { padding: 0.85em; margin: 0.85em 1em 0 1em; border-radius: 4px;}
+.visit {background: #fff;}
+.free {background: #F2FFFF; border: #DAF1F1 2px solid;}
+
+.shift h4 {margin: 0 1em 0; color: #185D6F;}
+.free h4 {color: #333;}
+.visit h4, .free h4 {margin: 0;}
+.visit p, .free p {font-weight: 500; color: #333; margin: 0.85em 0 0;}
+.free p {color: #185D6F;}
+
+.support {width: 100%; box-sizing: border-box; border-top: 1px solid #BFBFBF; background: #fff; padding: 0.85em 1em; margin-top: 1em;}
