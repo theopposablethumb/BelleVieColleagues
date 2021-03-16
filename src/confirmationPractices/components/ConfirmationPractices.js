@@ -5,6 +5,7 @@ import {teams} from '../data';
 import Question from './Question';
 import Fields from './Fields';
 import Confirmation from './ConfirmationResults'
+import Progress from './Progress';
 
 
 class confirmationPractices extends React.Component {
@@ -12,7 +13,7 @@ class confirmationPractices extends React.Component {
         answers: [],
         level: 0,
         team: null,
-        isSubmitted: false
+        isSubmitted: false,
     };
     
     team(e) {
@@ -25,7 +26,7 @@ class confirmationPractices extends React.Component {
 
         if (!this.state.team) {
             alert('Please select your team');
-            document.querySelector('select').scrollIntoView({ behavior: 'smooth' });
+            document.querySelector('select[name="team"]').scrollIntoView({ behavior: 'smooth' });
         } 
     }
 
@@ -54,11 +55,12 @@ class confirmationPractices extends React.Component {
                         <option value="default" disabled>Select Team</option>
                         {teams.map( team => {return <option key={team} value={team}>{team}</option>})}
                     </select>
-
+                    
                     <div className="form">
-                        <Question question={questions[this.state.level]} />
-                        <Fields question={questions[this.state.level].title} saveAnswers={this.setAnswers} level={this.state.level} complete={this.completeForm} />
-                    </div>
+                        <Question question={questions[this.state.level]} level={this.state.level} />
+                        <Progress total={questions} progress={this.state.level} />
+                        <Fields question={questions[this.state.level].title} saveAnswers={this.setAnswers} level={this.state.level} complete={this.completeForm} />  
+                    </div> 
                 </>
             )
         }

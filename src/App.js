@@ -12,6 +12,8 @@ import Faq from './confirmationPractices/components/Faq';
 import Policies from './confirmationPractices/components/Policies';
 import Contact from './confirmationPractices/components/Contact';
 
+import TeamShifts from './rota/components/TeamShifts';
+
 
 Amplify.configure(awsconfig);
 
@@ -83,12 +85,16 @@ class App extends React.Component {
               <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} /> ) } />
               <Route path="/faqs" component={Faq} />
               <Route path="/policies" component={Policies} />
+              
             </div>
           </div>
           <div className="section whitebg">
             <div className="content">
               <Contact />
             </div>
+          </div>
+          <div className="rota">
+            <Route path="/rota" component={TeamShifts} />
           </div>
         </BrowserRouter>
       )
