@@ -102,7 +102,7 @@ footer a {color: #FFF;}
 
 a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75em 1.25em 0 0;}
 
-.progress {display: flex; justify-content: space-between; list-style: none; width: 100vw; padding: 0; margin: 0; background: #fff; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); font-size: 0.9em; color: #aaa;}
+.progress {display: flex; justify-content: space-between; list-style: none; width: 100vw; padding: 0; margin: 0; background: #fff; box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25); font-size: 0.9em; color: #aaa;}
 .progress.hide {display: none;}
 .progress.show { position: fixed; top: 0; left: 0; }
 .progress li {display: inline-block; margin: 0; padding: 0.8em;}
