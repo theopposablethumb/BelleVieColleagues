@@ -33,7 +33,7 @@ export let colleagues = [
         mobile: '07778987650',
         email: 'adam.mitchell@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 1}, {id: 4}, {id: 5}, {id: 8}, {id: 17}],
         visits: [],
         contractStartDate: '2020-11-02',
         probation: true,
@@ -51,7 +51,7 @@ export let colleagues = [
         mobile: '07778987651',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 15}, {id: 2}],
         visits: [],
         contractStartDate: '2020-8-12',
         probation: false,
@@ -69,7 +69,7 @@ export let colleagues = [
         mobile: '07778987652',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 2}, {id: 9}, {id: 18}],
         visits: [],
         contractStartDate: '2020-8-12',
         probation: false,
@@ -87,7 +87,7 @@ export let colleagues = [
         mobile: '07778987653',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 6}, {id: 10}, {id: 12}, {id: 19}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -105,7 +105,7 @@ export let colleagues = [
         mobile: '07778987654',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 3}, {id: 14}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -123,7 +123,7 @@ export let colleagues = [
         mobile: '07778987655',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 6}, {id: 20}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -141,7 +141,7 @@ export let colleagues = [
         mobile: '07778987656',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 5}, {id: 7}, {id: 11}, {id: 24}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -159,7 +159,7 @@ export let colleagues = [
         mobile: '07778987657',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 8}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -177,7 +177,7 @@ export let colleagues = [
         mobile: '07778987658',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 23}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -195,7 +195,7 @@ export let colleagues = [
         mobile: '07778987659',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 22}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -269,7 +269,7 @@ export let shifts = [
         ]
     },
     {
-        id: 'shift3',
+        id: 3,
         day: 'monday',
         startTime: '9am',
         endTime: '2pm',
@@ -296,7 +296,7 @@ export let shifts = [
         ]
     },
     {
-        id: 3,
+        id: 4,
         day: 'monday',
         startTime: '4pm',
         endTime: '9pm',
@@ -331,7 +331,7 @@ export let shifts = [
         ]
     },
     {
-        id: 4,
+        id: 5,
         day: 'tuesday',
         startTime: '7am',
         endTime: '12pm',
@@ -366,7 +366,7 @@ export let shifts = [
         ]
     },
     {
-        id: 5,
+        id: 6,
         day: 'tuesday',
         startTime: '10am',
         endTime: '3pm',
@@ -393,7 +393,7 @@ export let shifts = [
         ]
     },
     {
-        id: 6,
+        id: 7,
         day: 'tuesday',
         startTime: '4pm',
         endTime: '9pm',
@@ -428,7 +428,7 @@ export let shifts = [
         ]
     },
     {
-        id: 7,
+        id: 8,
         day: 'wednesday',
         startTime: '7am',
         endTime: '12pm',
@@ -455,7 +455,7 @@ export let shifts = [
         ]
     },
     {
-        id: 8,
+        id: 9,
         day: 'wednesday',
         startTime: '9am',
         endTime: '2pm',
@@ -482,7 +482,7 @@ export let shifts = [
         ]
     },
     {
-        id: 9,
+        id: 10,
         day: 'wednesday',
         startTime: '10am',
         endTime: '3pm',
@@ -505,11 +505,11 @@ export let shifts = [
             },
         ],
         colleagues: [
-            {id: 3, name: 'Clara Oswald'}
+            {id: 4, name: 'Clara Oswald'}
         ]
     },
     {
-        id: 10,
+        id: 11,
         day: 'wednesday',
         startTime: '5pm',
         endTime: '10pm',
@@ -552,7 +552,7 @@ export let shifts = [
         ]
     },
     {
-        id: 11,
+        id: 12,
         day: 'thursday',
         startTime: '7am',
         endTime: '12pm',
@@ -587,7 +587,7 @@ export let shifts = [
         ]
     },
     {
-        id: 12,
+        id: 13,
         day: 'thursday',
         startTime: '10am',
         endTime: '3pm',
@@ -614,7 +614,7 @@ export let shifts = [
         ]
     },
     {
-        id: 13,
+        id: 14,
         day: 'thursday',
         startTime: '4pm',
         endTime: '9pm',
@@ -641,7 +641,7 @@ export let shifts = [
         ]
     },
     {
-        id: 14,
+        id: 15,
         day: 'friday',
         startTime: '7am',
         endTime: '12pm',
@@ -676,7 +676,7 @@ export let shifts = [
         ]
     },
     {
-        id: 15,
+        id: 16,
         day: 'friday',
         startTime: '8.30am',
         endTime: '1.30pm',
@@ -703,7 +703,7 @@ export let shifts = [
         ]
     },
     {
-        id: 16,
+        id: 17,
         day: 'friday',
         startTime: '4pm',
         endTime: '9pm',
@@ -730,7 +730,7 @@ export let shifts = [
         ]
     },
     {
-        id: 17,
+        id: 18,
         day: 'friday',
         startTime: '4.30pm',
         endTime: '9.30pm',
@@ -757,7 +757,7 @@ export let shifts = [
         ]
     },
     {
-        id: 18,
+        id: 19,
         day: 'saturday',
         startTime: '8am',
         endTime: '1pm',
@@ -800,7 +800,7 @@ export let shifts = [
         ]
     },
     {
-        id: 19,
+        id: 20,
         day: 'saturday',
         startTime: '9am',
         endTime: '2pm',
@@ -827,7 +827,7 @@ export let shifts = [
         ]
     },
     {
-        id: 20,
+        id: 21,
         day: 'saturday',
         startTime: '4pm',
         endTime: '9pm',
@@ -862,7 +862,7 @@ export let shifts = [
         ]
     },
     {
-        id: 21,
+        id: 22,
         day: 'sunday',
         startTime: '8.30am',
         endTime: '1.30pm',
@@ -897,7 +897,7 @@ export let shifts = [
         ]
     },
     {
-        id: 22,
+        id: 23,
         day: 'sunday',
         startTime: '9am',
         endTime: '2pm',
@@ -924,7 +924,7 @@ export let shifts = [
         ]
     },
     {
-        id: 23,
+        id: 24,
         day: 'sunday',
         startTime: '4pm',
         endTime: '9pm',
@@ -947,7 +947,7 @@ export let shifts = [
             }
         ],
         colleagues: [
-            {id: 2, name: 'Rose Tyler'}
+            {id: 7, name: 'Rose Tyler'}
         ]
     },
 ];

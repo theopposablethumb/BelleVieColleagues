@@ -144,8 +144,10 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
 ul.team {list-style-type: none; padding: 0;}
 .team li {display: inline-block; width: 50%;}
 .team img, .support img {width: 50px; height: 50px;}
-.team li p, .support p {font-size: 1em; display: inline-block; margin: 0 0.5em;}
-.support p {font-size: 1.25em}
+.team li p {font-size: 0.75em; margin: 0 0.5em;}
+
+.colleague {display: flex;}
+.colleague div p {margin-top: 0;}
 
 .shift {padding-top: 1em; margin-bottom: 2em; border-radius: 4px; background: #F5F5F5; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); position: relative;}
 

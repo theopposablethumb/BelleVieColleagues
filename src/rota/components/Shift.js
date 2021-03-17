@@ -1,8 +1,14 @@
 import React from 'react';
+
+import Activity from './Activity';
+import Colleague from './Colleague';
+
 import {colleagues} from './../data';
 
 class Shift extends React.Component {
-    state = { open: false }
+    state = { 
+        open: false,
+    }
 
     capitalise = (s) => {
         return s.charAt(0).toUpperCase() + s.slice(1);
@@ -57,14 +63,10 @@ class Shift extends React.Component {
 
     getWsw() {
         let wswId = this.props.assignedSupport[0].id;
-        let wsw = colleagues.find(colleague => {return colleague.id === wswId});
-
-        console.log(wsw);
-
+        
         return (
             <div className="support">
-                <img src={wsw.photo} alt={wsw.name} title={wsw.name} />
-                <p>{wsw.contractedHours}</p>
+                <Colleague id={wswId} />
             </div>
         )
     }
@@ -84,7 +86,7 @@ class Shift extends React.Component {
                     <p>X hour Y minutes travel time</p>
                 </div>
 
-                {this.props.activities.map(activity => this.renderActivity(activity))}
+                {this.props.activities.map(activity => <Activity activity={activity} />)}
                 {this.getWsw()}
             </div>
         );
