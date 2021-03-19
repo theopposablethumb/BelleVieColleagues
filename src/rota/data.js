@@ -17,12 +17,12 @@ export let teams = [
         utilisation: 65
     }
 ];
-
+ 
 export let colleagues = [
     {
         id: 1,
         name: 'Adam Mitchell',
-        photo: './colleagues/adam-mitchell.png',
+        photo: './colleagues/adam-mitchell.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -41,7 +41,7 @@ export let colleagues = [
     {
         id: 2,
         name: 'Amelia Pond',
-        photo: './colleagues/amelia-pond.png',
+        photo: './colleagues/amelia-pond.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -59,7 +59,7 @@ export let colleagues = [
     {
         id: 3,
         name: 'Bill Potts',
-        photo: './colleagues/bill-potts.png',
+        photo: './colleagues/bill-potts.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -77,7 +77,7 @@ export let colleagues = [
     {
         id: 4,
         name: 'Clara Oswald',
-        photo: './colleagues/clara-oswald.png',
+        photo: './colleagues/clara-oswald.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -95,7 +95,7 @@ export let colleagues = [
     {
         id: 5,
         name: 'Jack Harkness',
-        photo: './colleagues/jack-harkness.png',
+        photo: './colleagues/jack-harkness.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -113,7 +113,7 @@ export let colleagues = [
     {
         id: 6,
         name: 'Rory Williams',
-        photo: './colleagues/rory-williams.png',
+        photo: './colleagues/rory-williams.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -126,12 +126,12 @@ export let colleagues = [
         shifts: [{id: 6}, {id: 20}],
         visits: [],
         contractStartDate: '2020-04-06',
-        probation: false,
+        probation: true
     },
     {
         id: 7,
         name: 'Rose Tyler',
-        photo: './colleagues/rose-tyler.png',
+        photo: './colleagues/rose-tyler.jpg',
         role: 'Rota Champion',
         team: 'Oxford',
         linkWorker: null,
@@ -149,7 +149,7 @@ export let colleagues = [
     {
         id: 8,
         name: 'Ryan Sinclair',
-        photo: './colleagues/ryan-sinclair.png',
+        photo: './colleagues/ryan-sinclair.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -167,7 +167,7 @@ export let colleagues = [
     {
         id: 9,
         name: 'Sarah J Smith',
-        photo: './colleagues/sarah-j-smith.png',
+        photo: './colleagues/sarah-j-smith.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -185,7 +185,7 @@ export let colleagues = [
     {
         id: 10,
         name: 'Yasmin Khan',
-        photo: './colleagues/yasmin-khan.png',
+        photo: './colleagues/yasmin-khan.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -239,7 +239,8 @@ export let shifts = [
         ],
         colleagues: [
             {id: 1, name: 'Adam Mitchell'}
-        ]
+        ],
+        shadow: true
     },
     {
         id: 2,
@@ -930,7 +931,7 @@ export let shifts = [
         endTime: '9pm',
         activities: [
             {
-                person: 'River Song',
+                person: '',
                 type: 'visit',
                 day: 'sunday',
                 startTime: '4pm',

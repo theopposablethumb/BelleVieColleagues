@@ -140,29 +140,77 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
 
 /* Rota Styles */
 .rota {padding: 1.5em;}
+.rota h2, .assignSupport h2 {font-size: 1.25em; font-weight: 500;}
 
-ul.team {list-style-type: none; padding: 0;}
-.team li {display: inline-block; width: 50%;}
-.team img, .support img {width: 50px; height: 50px;}
+em {font-style: normal; color: #747474;}
+p.overtime {color: #7E2323;}
+
+.capacity {padding: 0.5em 1.5em 1em 1.5em; background: #DAF1F1; text-align: center;}
+.utilisation {padding: 0.5em 1.5em 1em 1.5em; background: #F5F5F5;}
+.barChart {margin-top: 0.85em; height: 1.4em; width: 100%; background: #ddd; position: relative;} 
+.barChart div {height: 100%; display: inline-block;}
+
+.utilisation ul {list-style-type: none; padding: 0; column-count: 2; column-fill: balance; column-gap: 0;}
+.utilisation li {margin: 0 0 0.75em 0;}
+.utilisation li:before {content: " "; display: inline-block; height: 1em; width: 1em; margin: 0 0.5em 0 0;}
+
+.barChart .visits, .utilisation li.visits:before {background: #009688;}
+.barChart .travel, .utilisation li.travel:before {background: #91DBD4;}
+.barChart .benchTime, .utilisation li.benchTime:before {background: #F0B387;}
+.barChart .overTime, .utilisation li.overTime:before {background: #7E2323;}
+.barChart .overTime {position: absolute; top: 0; right: 0;}
+
+.assignSupport {padding: 1.4em; background: #fff; border-radius: 8px 8px 0 0; border: 1px solid #ccc; box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.25);}
+.assignSupport div.progress {width: 100%; height: 4px; margin: 0.25em 0; box-shadow: none; background: #C8C8C8; padding: 0;}
+.assignSupport .colleague div.progress {padding: 0;}
+div.progress .completed {height: 100%; background: #009688; padding: 0;}
+
+.assignSupport {position: fixed; bottom: 0; left: 0; z-index: 4; box-sizing: border-box; width: 100vw; height: 5vh; transition: height 0.25s ease-out;}
+.assignSupport.open {height: 60vh; }
+.assignSupport .inner {margin-top: 1em; height: 60vh; overflow-y: scroll;}
+
+.handle {height: 4px; border-top: 1px solid #C3C3C3; border-bottom: 1px solid #C3C3C3; width: 60%; margin: auto;}
+
+ul.team, .assignSupport ul {list-style-type: none; padding: 0.2em; margin: 0;}
+.assignSupport li {margin-top: 2.8em;}
+.team li {display: inline-block; width: 50%; opacity: 1; transition: opacity 0.25s ease-out;}
+.assignSupport li {opacity: 1; transition: opacity 0.25s ease-out;}
+.team li.unselected, .assignSupport li.unselected {opacity: 0.4;}
+.team li.selected img, .assignSupport li.selected img {box-shadow: 0 0 0 2px #fff, 0 0 0 4px #009688;}
+.team img {width: 40px; height: 40px;}
+.support img {width: 50px; height: 50px;}
+.assignSupport img {width: 60px; height: 60px;}
 .team li p {font-size: 0.75em; margin: 0 0.5em;}
+.assignSupport .colleague div {padding: 0 1em;}
+.assignSupport .colleague p {margin: 0.2em 0;}
 
 .colleague {display: flex;}
+.colleague img {border-radius: 50%; border: 1px solid #333;}
+.colleague h4 {margin: 0; font-size: 1em;}
+.colleague div {padding-top: 0.25em;}
+.shift .colleague div {padding: 0;}
 .colleague div p {margin-top: 0;}
 
-.shift {padding-top: 1em; margin-bottom: 2em; border-radius: 4px; background: #F5F5F5; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); position: relative;}
+.shifts {margin-top: 1.25em;}
+.shift, .meeting {padding-top: 1em; margin-bottom: 2em; border-radius: 4px; background: #F5F5F5; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); position: relative;}
+.meeting {margin-top: 1.5em; padding-bottom: 1em; padding-left: 1em; display: flex;}
+
+.shift.selected {border: 2px solid #009688;}
 
 .shift button {padding: 0.5em; margin: 0; background: none; position: absolute; top: 0; right: 0.5em; height: fit-content;}
 .shift button:focus {border: none; outline: 0; box-shadow: 0 0 0;}
 .shift button {transform: none;}
 .shift.close button {transform: rotate(180deg);}
 
+.shift .support button {position: relative; transform: rotate(0); background: #185D6F; padding: 0.625em 2em; font-weight: 500;}
+
 .stats.close, .close .stats.open {display: none;}
 .close .stats.close {display: block;}
 
 
-.shift h4, .shift p {color: #185D6F; margin-left: 1em; margin-right: 1em; }
-.shift h4 {margin: 0;}
-.shift p {margin-top: 0.4em}
+.shift h4, .shift p, .meeting h4, .meeting p {color: #185D6F; margin: 0 0 0 1em;}
+.shift h4, .meeting h4 {margin-left: 0.75em;}
+.shift p, .meeting p {margin-top: 0.4em}
 
 .shift.close .visit, .shift.close .free {display: none}
 
@@ -170,11 +218,10 @@ ul.team {list-style-type: none; padding: 0;}
 .visit {background: #fff;}
 .free {background: #F2FFFF; border: #DAF1F1 2px solid;}
 
-.shift h4 {margin: 0 1em 0; color: #185D6F;}
 .free h4 {color: #333;}
 .visit h4, .free h4 {margin: 0;}
 .visit p, .free p {font-weight: 500; color: #333; margin: 0.85em 0 0;}
 .free p {color: #185D6F;}
 
-.support {width: 100%; box-sizing: border-box; border-top: 1px solid #BFBFBF; background: #fff; padding: 0.85em 1em; margin-top: 1em;}
+.support {width: 100%; box-sizing: border-box; border-radius: 0 0 4px 4px; border-top: 1px solid #BFBFBF; background: #fff; padding: 0.85em 1em; margin-top: 1em;}
 

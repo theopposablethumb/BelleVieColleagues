@@ -1,5 +1,7 @@
 import React from 'react';
-import {colleagues, shifts, visits} from './../data'; 
+import {colleagues, shifts} from './../data'; 
+import Progress from './Progress';
+import {reducer} from '../util/helpers';
 
 let Colleague = (props) => {
 
@@ -27,23 +29,57 @@ let Colleague = (props) => {
         )
     });
 
-    let reducer = (accumulator, currentValue) => accumulator + currentValue;
-
     let hoursScheduled = activities.reduce(reducer);
     let visitingHours = visits.reduce(reducer);
+    let contractedHours = wsw.contractedHours;
+    let scheduled = 'hours scheduled';
+    let contactTime = 'hours contact time'
 
-    if (props.monthView) {
-        hoursScheduled = hoursScheduled * 4;
-        visitingHours = visitingHours * 4;
+    let renderColleagueDetails = () => {
+        if (props.monthView) {
+            hoursScheduled = hoursScheduled * 4;
+            contractedHours = contractedHours * 4;
+            visitingHours = visitingHours * 4;
+            scheduled = 'hrs';
+            contactTime = 'hrs contact time';
+            return (
+                <div>
+                    <p>{hoursScheduled} / {contractedHours} {scheduled}</p>
+                    <p>{visitingHours} {contactTime}</p>
+                </div>
+            )
+        } else if (props.supportView) {
+            hoursScheduled = hoursScheduled * 4;
+            contractedHours = contractedHours * 4;
+            visitingHours = visitingHours * 4;
+            scheduled = 'hours';
+            contactTime = 'hours contact time';
+            return (
+                <div>
+                    <h4>{wsw.name}</h4>
+                    <p><em>{wsw.role}</em></p>
+                    <Progress total={contractedHours} complete={hoursScheduled} />
+                    <p>{hoursScheduled} / {contractedHours} {scheduled}</p>
+                    <p>{visitingHours} {contactTime}</p>
+                </div>
+            )
+        } else {
+            return (
+                <div>
+                    <p>{hoursScheduled} / {contractedHours} hours scheduled</p>
+                    <p>{visitingHours} hours contact time</p>
+                </div>
+            )
+        }
     }
+    
+
+
 
     return (
         <div className="colleague">
             <img src={wsw.photo} alt={wsw.name} title={wsw.name} />
-            <div>
-                <p>{hoursScheduled} / {wsw.contractedHours} hours scheduled</p>
-                <p>{visitingHours} hours contact time</p>
-            </div>
+            {renderColleagueDetails()}
         </div>
     )
 }

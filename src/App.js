@@ -93,9 +93,7 @@ class App extends React.Component {
               <Contact />
             </div>
           </div>
-          <div className="rota">
-            <Route path="/rota" component={TeamShifts} />
-          </div>
+          <Route path="/rota" component={TeamShifts} />
         </BrowserRouter>
       )
     }
