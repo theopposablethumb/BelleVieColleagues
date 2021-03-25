@@ -17,12 +17,12 @@ export let teams = [
         utilisation: 65
     }
 ];
-
+ 
 export let colleagues = [
     {
         id: 1,
         name: 'Adam Mitchell',
-        photo: './colleagues/adam-mitchell.png',
+        photo: './colleagues/adam-mitchell.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -33,7 +33,7 @@ export let colleagues = [
         mobile: '07778987650',
         email: 'adam.mitchell@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 1}, {id: 4}, {id: 5}, {id: 8}, {id: 17}],
         visits: [],
         contractStartDate: '2020-11-02',
         probation: true,
@@ -41,7 +41,7 @@ export let colleagues = [
     {
         id: 2,
         name: 'Amelia Pond',
-        photo: './colleagues/amelia-pond.png',
+        photo: './colleagues/amelia-pond.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -51,7 +51,7 @@ export let colleagues = [
         mobile: '07778987651',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 15}, {id: 21}],
         visits: [],
         contractStartDate: '2020-8-12',
         probation: false,
@@ -59,7 +59,7 @@ export let colleagues = [
     {
         id: 3,
         name: 'Bill Potts',
-        photo: './colleagues/bill-potts.png',
+        photo: './colleagues/bill-potts.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -69,7 +69,7 @@ export let colleagues = [
         mobile: '07778987652',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 2}, {id: 9}, {id: 18}],
         visits: [],
         contractStartDate: '2020-8-12',
         probation: false,
@@ -77,7 +77,7 @@ export let colleagues = [
     {
         id: 4,
         name: 'Clara Oswald',
-        photo: './colleagues/clara-oswald.png',
+        photo: './colleagues/clara-oswald.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -87,7 +87,7 @@ export let colleagues = [
         mobile: '07778987653',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 6}, {id: 10}, {id: 12}, {id: 19}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -95,7 +95,7 @@ export let colleagues = [
     {
         id: 5,
         name: 'Jack Harkness',
-        photo: './colleagues/jack-harkness.png',
+        photo: './colleagues/jack-harkness.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -105,7 +105,7 @@ export let colleagues = [
         mobile: '07778987654',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 3}, {id: 14}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -113,7 +113,7 @@ export let colleagues = [
     {
         id: 6,
         name: 'Rory Williams',
-        photo: './colleagues/rory-williams.png',
+        photo: './colleagues/rory-williams.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -123,15 +123,15 @@ export let colleagues = [
         mobile: '07778987655',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 6}, {id: 20}],
         visits: [],
         contractStartDate: '2020-04-06',
-        probation: false,
+        probation: true
     },
     {
         id: 7,
         name: 'Rose Tyler',
-        photo: './colleagues/rose-tyler.png',
+        photo: './colleagues/rose-tyler.jpg',
         role: 'Rota Champion',
         team: 'Oxford',
         linkWorker: null,
@@ -141,7 +141,7 @@ export let colleagues = [
         mobile: '07778987656',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 5}, {id: 7}, {id: 11}, {id: 24}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -149,7 +149,7 @@ export let colleagues = [
     {
         id: 8,
         name: 'Ryan Sinclair',
-        photo: './colleagues/ryan-sinclair.png',
+        photo: './colleagues/ryan-sinclair.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -159,7 +159,7 @@ export let colleagues = [
         mobile: '07778987657',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 8}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -167,7 +167,7 @@ export let colleagues = [
     {
         id: 9,
         name: 'Sarah J Smith',
-        photo: './colleagues/sarah-j-smith.png',
+        photo: './colleagues/sarah-j-smith.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -177,7 +177,7 @@ export let colleagues = [
         mobile: '07778987658',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 23}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -185,7 +185,7 @@ export let colleagues = [
     {
         id: 10,
         name: 'Yasmin Khan',
-        photo: './colleagues/yasmin-khan.png',
+        photo: './colleagues/yasmin-khan.jpg',
         role: 'Wellbeing Support Worker',
         team: 'Oxford',
         linkWorker: null,
@@ -195,7 +195,7 @@ export let colleagues = [
         mobile: '07778987659',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [],
+        shifts: [{id: 22}],
         visits: [],
         contractStartDate: '2020-04-06',
         probation: false,
@@ -213,6 +213,7 @@ export let shifts = [
         endTime: '12pm',
         activities: [
             {
+                id: 1,
                 person: 'Sean Pertwee',
                 type: 'visit',
                 day: 'monday',
@@ -221,6 +222,7 @@ export let shifts = [
                 duration: 2
             },
             {
+                id: 2,
                 person: '',
                 type: 'free',
                 day: 'monday',
@@ -229,6 +231,7 @@ export let shifts = [
                 duration: 1
             },
             {
+                id: 3,
                 person: 'William Hartnell',
                 type: 'visit',
                 day: 'monday',
@@ -238,8 +241,9 @@ export let shifts = [
             },   
         ],
         colleagues: [
-            {id: 1, name: 'Adam Mitchell'}
-        ]
+            {id: 1, name: 'Adam Mitchell'} 
+        ],
+        shadow: true
     },
     {
         id: 2,
@@ -248,6 +252,7 @@ export let shifts = [
         endTime: '1pm',
         activities: [
             {
+                id: 4,
                 person: 'Peter Capaldi',
                 type: 'visit',
                 day: 'monday',
@@ -256,6 +261,7 @@ export let shifts = [
                 duration: 1.5
             },
             {
+                id: 5,
                 person: '',
                 type: 'free',
                 day: 'monday',
@@ -269,12 +275,13 @@ export let shifts = [
         ]
     },
     {
-        id: 'shift3',
+        id: 3,
         day: 'monday',
         startTime: '9am',
         endTime: '2pm',
         activities: [
             {
+                id: 6,
                 person: '',
                 type: 'free',
                 day: 'monday',
@@ -283,6 +290,7 @@ export let shifts = [
                 duration: 4
             },
             {
+                id: 7,
                 person: 'Jodie Whittaker',
                 type: 'visit',
                 day: 'monday',
@@ -296,12 +304,13 @@ export let shifts = [
         ]
     },
     {
-        id: 3,
+        id: 4,
         day: 'monday',
         startTime: '4pm',
         endTime: '9pm',
         activities: [
             {
+                id: 8,
                 person: 'Peter Capaldi',
                 type: 'visit',
                 day: 'monday',
@@ -310,6 +319,7 @@ export let shifts = [
                 duration: 1.5
             },
             {
+                id: 9,
                 person: '',
                 type: '',
                 day: 'monday',
@@ -318,6 +328,7 @@ export let shifts = [
                 duration: 2.5
             },
             {
+                id: 10,
                 person: 'Sean Pertwee',
                 type: 'visit',
                 day: 'monday',
@@ -331,12 +342,13 @@ export let shifts = [
         ]
     },
     {
-        id: 4,
+        id: 5,
         day: 'tuesday',
         startTime: '7am',
         endTime: '12pm',
         activities: [
             {
+                id: 11,
                 person: 'Patrick Troughton',
                 type: 'visit',
                 day: 'tuesday',
@@ -345,6 +357,7 @@ export let shifts = [
                 duration: 1.5
             },
             {
+                id: 12,
                 person: 'Tom Baker',
                 type: 'visit',
                 day: 'tuesday',
@@ -353,6 +366,7 @@ export let shifts = [
                 duration: 2
             },
             {
+                id: 13,
                 person: '',
                 type: 'free',
                 day: 'tuesday',
@@ -366,12 +380,13 @@ export let shifts = [
         ]
     },
     {
-        id: 5,
+        id: 6,
         day: 'tuesday',
         startTime: '10am',
         endTime: '3pm',
         activities: [
             {
+                id: 14,
                 person: '',
                 type: 'free',
                 day: 'tuesday',
@@ -380,6 +395,7 @@ export let shifts = [
                 duration: 4
             },
             {
+                id: 15,
                 person: 'Matthew Smith',
                 type: 'visit',
                 day: 'tuesday',
@@ -393,12 +409,13 @@ export let shifts = [
         ]
     },
     {
-        id: 6,
+        id: 7,
         day: 'tuesday',
         startTime: '4pm',
         endTime: '9pm',
         activities: [
             {
+                id: 16,
                 person: 'Peter Capaldi',
                 type: 'visit',
                 day: 'tuesday',
@@ -407,6 +424,7 @@ export let shifts = [
                 duration: 1.5
             },
             {
+                id: 17,
                 person: 'River Song',
                 type: 'visit',
                 day: 'tuesday',
@@ -415,6 +433,7 @@ export let shifts = [
                 duration: 1
             },
             {
+                id: 18,
                 person: '',
                 type: 'free',
                 day: 'tuesday',
@@ -428,12 +447,13 @@ export let shifts = [
         ]
     },
     {
-        id: 7,
+        id: 8,
         day: 'wednesday',
         startTime: '7am',
         endTime: '12pm',
         activities: [
             {
+                id: 19,
                 person: 'Jodie Whittaker',
                 type: 'visit',
                 day: 'wednesday',
@@ -442,6 +462,7 @@ export let shifts = [
                 duration: 2
             },
             {
+                id: 20,
                 person: '',
                 type: 'free',
                 day: 'wednesday',
@@ -455,12 +476,13 @@ export let shifts = [
         ]
     },
     {
-        id: 8,
+        id: 9,
         day: 'wednesday',
         startTime: '9am',
         endTime: '2pm',
         activities: [
             {
+                id: 21,
                 person: 'Tom Baker',
                 type: 'visit',
                 day: 'wednesday',
@@ -469,6 +491,7 @@ export let shifts = [
                 duration: 2
             },
             {
+                id: 22,
                 person: '',
                 type: 'free',
                 day: 'wednesday',
@@ -482,12 +505,13 @@ export let shifts = [
         ]
     },
     {
-        id: 9,
+        id: 10,
         day: 'wednesday',
         startTime: '10am',
         endTime: '3pm',
         activities: [
             {
+                id: 23,
                 person: '',
                 type: 'free',
                 day: 'wednesday',
@@ -496,6 +520,7 @@ export let shifts = [
                 duration: 4
             },
             {
+                id: 24,
                 person: 'Matthew Smith',
                 type: 'visit',
                 day: 'wednesday',
@@ -505,16 +530,17 @@ export let shifts = [
             },
         ],
         colleagues: [
-            {id: 3, name: 'Clara Oswald'}
+            {id: 4, name: 'Clara Oswald'}
         ]
     },
     {
-        id: 10,
+        id: 11,
         day: 'wednesday',
         startTime: '5pm',
         endTime: '10pm',
         activities: [
             {
+                id: 25,
                 person: '',
                 type: 'free',
                 day: 'wednesday',
@@ -523,6 +549,7 @@ export let shifts = [
                 duration: 1
             },
             {
+                id: 26,
                 person: 'River Song',
                 type: 'visit',
                 day: 'wednesday',
@@ -531,6 +558,7 @@ export let shifts = [
                 duration: 1
             },
             {
+                id: 27,
                 person: '',
                 type: 'free',
                 day: 'wednesday',
@@ -539,6 +567,7 @@ export let shifts = [
                 duration: 1
             },
             {
+                id: 28,
                 person: 'Sean Pertwee',
                 type: 'visit',
                 day: 'wednesday',
@@ -552,12 +581,13 @@ export let shifts = [
         ]
     },
     {
-        id: 11,
+        id: 12,
         day: 'thursday',
         startTime: '7am',
         endTime: '12pm',
         activities: [
             {
+                id: 29,
                 person: 'Patrick Troughton',
                 type: 'visit',
                 day: 'thursday',
@@ -566,6 +596,7 @@ export let shifts = [
                 duration: 1.5
             },
             {
+                id: 30,
                 person: 'Tom Baker',
                 type: 'visit',
                 day: 'thursday',
@@ -574,6 +605,7 @@ export let shifts = [
                 duration: 2
             },
             {
+                id: 31,
                 person: '',
                 type: 'free',
                 day: 'thursday',
@@ -587,12 +619,13 @@ export let shifts = [
         ]
     },
     {
-        id: 12,
+        id: 13,
         day: 'thursday',
         startTime: '10am',
         endTime: '3pm',
         activities: [
             {
+                id: 32,
                 person: '',
                 type: 'free',
                 day: 'thursday',
@@ -601,6 +634,7 @@ export let shifts = [
                 duration: 4
             },
             {
+                id: 33,
                 person: 'William Hartnell',
                 type: 'visit',
                 day: 'thursday',
@@ -614,12 +648,13 @@ export let shifts = [
         ]
     },
     {
-        id: 13,
+        id: 14,
         day: 'thursday',
         startTime: '4pm',
         endTime: '9pm',
         activities: [
             {
+                id: 34,
                 person: 'Jodie Whittaker',
                 type: 'visit',
                 day: 'thursday',
@@ -628,6 +663,7 @@ export let shifts = [
                 duration: 1.5
             },
             {
+                id: 35,
                 person: '',
                 type: 'free',
                 day: 'thursday',
@@ -641,12 +677,13 @@ export let shifts = [
         ]
     },
     {
-        id: 14,
+        id: 15,
         day: 'friday',
         startTime: '7am',
         endTime: '12pm',
         activities: [
             {
+                id: 36,
                 person: 'Patrick Troughton',
                 type: 'visit',
                 day: 'friday',
@@ -655,6 +692,7 @@ export let shifts = [
                 duration: 1.5
             },
             {
+                id: 37,
                 person: 'Tom Baker',
                 type: 'visit',
                 day: 'friday',
@@ -663,6 +701,7 @@ export let shifts = [
                 duration: 2
             },
             {
+                id: 38,
                 person: '',
                 type: 'free',
                 day: 'friday',
@@ -676,12 +715,13 @@ export let shifts = [
         ]
     },
     {
-        id: 15,
+        id: 16,
         day: 'friday',
         startTime: '8.30am',
         endTime: '1.30pm',
         activities: [
             {
+                id: 39,
                 person: 'Matthew Smith',
                 type: 'visit',
                 day: 'friday',
@@ -690,6 +730,7 @@ export let shifts = [
                 duration: 1.5
             },
             {
+                id: 40,
                 person: '',
                 type: 'free',
                 day: 'friday',
@@ -703,12 +744,13 @@ export let shifts = [
         ]
     },
     {
-        id: 16,
+        id: 17,
         day: 'friday',
         startTime: '4pm',
         endTime: '9pm',
         activities: [
             {
+                id: 41,
                 person: 'William Hartnell',
                 type: 'visit',
                 day: 'friday',
@@ -717,6 +759,7 @@ export let shifts = [
                 duration: 1
             },
             {
+                id: 42,
                 person: 'free',
                 type: 'visit',
                 day: 'friday',
@@ -730,12 +773,13 @@ export let shifts = [
         ]
     },
     {
-        id: 17,
+        id: 18,
         day: 'friday',
         startTime: '4.30pm',
         endTime: '9.30pm',
         activities: [
             {
+                id: 43,
                 person: '',
                 type: 'free',
                 day: 'friday',
@@ -744,6 +788,7 @@ export let shifts = [
                 duration: 4
             },
             {
+                id: 44,
                 person: 'Patrick Troughton',
                 type: 'visit',
                 day: 'friday',
@@ -757,12 +802,13 @@ export let shifts = [
         ]
     },
     {
-        id: 18,
+        id: 19,
         day: 'saturday',
         startTime: '8am',
         endTime: '1pm',
         activities: [
             {
+                id: 45,
                 person: 'River Song',
                 type: 'visit',
                 day: 'saturday',
@@ -771,6 +817,7 @@ export let shifts = [
                 duration: 1
             },
             {
+                id: 46,
                 person: '',
                 type: 'free',
                 day: 'saturday',
@@ -779,6 +826,7 @@ export let shifts = [
                 duration: 1
             },
             {
+                id: 47,
                 person: 'Tom Baker',
                 type: 'visit',
                 day: 'saturday',
@@ -787,6 +835,7 @@ export let shifts = [
                 duration: 2
             },
             {
+                id: 48,
                 person: '',
                 type: 'free',
                 day: 'saturday',
@@ -800,12 +849,13 @@ export let shifts = [
         ]
     },
     {
-        id: 19,
+        id: 20,
         day: 'saturday',
         startTime: '9am',
         endTime: '2pm',
         activities: [
             {
+                id: 49,
                 person: '',
                 type: 'free',
                 day: 'saturday',
@@ -814,6 +864,7 @@ export let shifts = [
                 duration: 3.5
             },
             {
+                id: 50,
                 person: 'Jodie Whittaker',
                 type: 'visit',
                 day: 'saturday',
@@ -827,12 +878,13 @@ export let shifts = [
         ]
     },
     {
-        id: 20,
+        id: 21,
         day: 'saturday',
         startTime: '4pm',
         endTime: '9pm',
         activities: [
             {
+                id: 51,
                 person: 'River Song',
                 type: 'visit',
                 day: 'saturday',
@@ -841,7 +893,8 @@ export let shifts = [
                 duration: 1
             },
             {
-                person: 'River Song',
+                id: 52,
+                person: '',
                 type: 'free',
                 day: 'saturday',
                 startTime: '5pm',
@@ -849,6 +902,7 @@ export let shifts = [
                 duration: 3
             },
             {
+                id: 53,
                 person: 'Sean Pertwee',
                 type: 'visit',
                 day: 'saturday',
@@ -862,12 +916,13 @@ export let shifts = [
         ]
     },
     {
-        id: 21,
+        id: 22,
         day: 'sunday',
         startTime: '8.30am',
         endTime: '1.30pm',
         activities: [
             {
+                id: 54,
                 person: 'River Song',
                 type: 'visit',
                 day: 'sunday',
@@ -876,6 +931,7 @@ export let shifts = [
                 duration: 1
             },
             {
+                id: 56,
                 person: 'Tom Baker',
                 type: 'visit',
                 day: 'sunday',
@@ -884,6 +940,7 @@ export let shifts = [
                 duration: 2
             },
             {
+                id: 57,
                 person: '',
                 type: 'free',
                 day: 'sunday',
@@ -897,12 +954,13 @@ export let shifts = [
         ]
     },
     {
-        id: 22,
+        id: 23,
         day: 'sunday',
         startTime: '9am',
         endTime: '2pm',
         activities: [
             {
+                id: 58,
                 person: '',
                 type: 'free',
                 day: 'sunday',
@@ -911,6 +969,7 @@ export let shifts = [
                 duration: 3.5
             },
             {
+                id: 59,
                 person: 'Jodie Whittaker',
                 type: 'visit',
                 day: 'sunday',
@@ -924,13 +983,14 @@ export let shifts = [
         ]
     },
     {
-        id: 23,
+        id: 24,
         day: 'sunday',
         startTime: '4pm',
         endTime: '9pm',
         activities: [
             {
-                person: 'River Song',
+                id: 60,
+                person: '',
                 type: 'visit',
                 day: 'sunday',
                 startTime: '4pm',
@@ -938,6 +998,7 @@ export let shifts = [
                 duration: 1
             },
             {
+                id: 61,
                 person: 'River Song',
                 type: 'free',
                 day: 'sunday',
@@ -947,13 +1008,14 @@ export let shifts = [
             }
         ],
         colleagues: [
-            {id: 2, name: 'Rose Tyler'}
+            {id: 7, name: 'Rose Tyler'}
         ]
     },
 ];
 
 export let visits = [
     {
+        id: 1,
         person: 'Sean Pertwee',
         day: 'monday',
         startTime: '7pm',
@@ -961,6 +1023,7 @@ export let visits = [
         duration: 2
     },
     {
+        id: 4,
         person: 'Peter Capaldi',
         day: 'monday',
         startTime: '8am',
@@ -968,6 +1031,7 @@ export let visits = [
         duration: 1.5
     },
     {
+        id: 3,
         person: 'William Hartnell',
         day: 'monday',
         startTime: '10am',
@@ -975,6 +1039,7 @@ export let visits = [
         duration: 2
     },   
     {
+        id: 7,
         person: 'Jodie Whittaker',
         day: 'monday',
         startTime: '1pm',
@@ -982,6 +1047,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 8,
         person: 'Peter Capaldi',
         day: 'monday',
         startTime: '4pm',
@@ -989,6 +1055,7 @@ export let visits = [
         duration: 1.5
     },
     {
+        id: 10,
         person: 'Sean Pertwee',
         day: 'monday',
         startTime: '8pm',
@@ -996,6 +1063,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 11,
         person: 'Patrick Troughton',
         day: 'tuesday',
         startTime: '7am',
@@ -1003,6 +1071,7 @@ export let visits = [
         duration: 1.5
     },
     {
+        id: 12,
         person: 'Tom Baker',
         day: 'tuesday',
         startTime: '9am',
@@ -1010,6 +1079,7 @@ export let visits = [
         duration: 2
     },
     {
+        id: 15,
         person: 'Matthew Smith',
         day: 'tuesday',
         startTime: '2pm',
@@ -1017,6 +1087,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 16,
         person: 'Peter Capaldi',
         day: 'tuesday',
         startTime: '4pm',
@@ -1024,6 +1095,7 @@ export let visits = [
         duration: 1.5
     },
     {
+        id: 17,
         person: 'River Song',
         day: 'tuesday',
         startTime: '6pm',
@@ -1031,6 +1103,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 19,
         person: 'Jodie Whittaker',
         day: 'wednesday',
         startTime: '7am',
@@ -1038,6 +1111,7 @@ export let visits = [
         duration: 2
     },
     {
+        id: 21,
         person: 'Tom Baker',
         day: 'wednesday',
         startTime: '9am',
@@ -1045,6 +1119,7 @@ export let visits = [
         duration: 2
     },
     {
+        id: 24,
         person: 'Matthew Smith',
         day: 'wednesday',
         startTime: '2pm',
@@ -1052,6 +1127,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 26,
         person: 'River Song',
         day: 'wednesday',
         startTime: '6pm',
@@ -1059,6 +1135,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 28,
         person: 'Sean Pertwee',
         day: 'wednesday',
         startTime: '8pm',
@@ -1066,6 +1143,7 @@ export let visits = [
         duration: 2
     },
     {
+        id: 29,
         person: 'Patrick Troughton',
         day: 'thursday',
         startTime: '7am',
@@ -1073,6 +1151,7 @@ export let visits = [
         duration: 1.5
     },
     {
+        id: 30,
         person: 'Tom Baker',
         day: 'thursday',
         startTime: '9am',
@@ -1080,6 +1159,7 @@ export let visits = [
         duration: 2
     },
     {
+        id: 33,
         person: 'William Hartnell',
         day: 'thursday',
         startTime: '2pm',
@@ -1087,6 +1167,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 34,
         person: 'Jodie Whittaker',
         day: 'thursday',
         startTime: '4pm',
@@ -1094,6 +1175,7 @@ export let visits = [
         duration: 1.5
     },
     {
+        id: 36,
         person: 'Patrick Troughton',
         day: 'friday',
         startTime: '7am',
@@ -1101,6 +1183,7 @@ export let visits = [
         duration: 1.5
     },
     {
+        id: 37,
         person: 'Tom Baker',
         day: 'friday',
         startTime: '9am',
@@ -1108,6 +1191,7 @@ export let visits = [
         duration: 2
     },
     {
+        id: 39,
         person: 'Matthew Smith',
         day: 'friday',
         startTime: '2pm',
@@ -1115,6 +1199,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 41,
         person: 'William Hartnell',
         day: 'friday',
         startTime: '4pm',
@@ -1122,6 +1207,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 44,
         person: 'Patrick Troughton',
         day: 'friday',
         startTime: '8.30pm',
@@ -1129,6 +1215,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 45,
         person: 'River Song',
         day: 'saturday',
         startTime: '8am',
@@ -1136,6 +1223,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 47,
         person: 'Tom Baker',
         day: 'saturday',
         startTime: '10am',
@@ -1143,6 +1231,7 @@ export let visits = [
         duration: 2
     },
     {
+        id: 50,
         person: 'Jodie Whittaker',
         day: 'saturday',
         startTime: '12.30pm',
@@ -1150,6 +1239,7 @@ export let visits = [
         duration: 1.5
     },
     {
+        id: 51,
         person: 'River Song',
         day: 'saturday',
         startTime: '4pm',
@@ -1157,6 +1247,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 53,
         person: 'Sean Pertwee',
         day: 'saturday',
         startTime: '8pm',
@@ -1164,6 +1255,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 54,
         person: 'River Song',
         day: 'sunday',
         startTime: '8.30am',
@@ -1171,6 +1263,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 56,
         person: 'Tom Baker',
         day: 'sunday',
         startTime: '10am',
@@ -1178,6 +1271,7 @@ export let visits = [
         duration: 2
     },
     {
+        id: 59,
         person: 'Jodie Whittaker',
         day: 'sunday',
         startTime: '12.30pm',
@@ -1185,6 +1279,7 @@ export let visits = [
         duration: 1
     },
     {
+        id: 61,
         person: 'River Song',
         day: 'sunday',
         startTime: '4pm',

@@ -68,7 +68,11 @@ class confirmationPractices extends React.Component {
 
     render() {
         return(
-            <>{this.renderFormConfirmation()}</>
+            <div className="section offwhitebg">
+                <div className="content">
+                    {this.renderFormConfirmation()}
+                </div>
+            </div>
         )
     }
 }
