@@ -2,7 +2,6 @@ import React from 'react';
 import Colleague from './Colleague';
 import Progress from './Progress';
 import {calculateTotalHours, calculateTotalVisits} from '../util/helpers';
-import {colleagues} from '../data';
 
 class AssignSupport extends React.Component {
 
@@ -22,12 +21,12 @@ class AssignSupport extends React.Component {
                 <div className="handle"></div>
                 <div className="inner">
                     <h2>Assign Support for this shift</h2>
-                    <p>{calculateTotalVisits() * 4} / {calculateTotalHours() * 4} hours scheduled</p>
-                    <Progress complete={calculateTotalVisits()} total={calculateTotalHours()} />
+                    <p>{calculateTotalVisits(this.props.visits) * 4} / {calculateTotalHours(this.props.colleagues) * 4} hours scheduled</p>
+                    <Progress complete={calculateTotalVisits(this.props.visits)} total={calculateTotalHours(this.props.colleagues)} />
                     <ul>
-                    {colleagues.map(colleague => {
+                    {this.props.colleagues.map(colleague => {
                         return(
-                            <li onClick={() => this.props.assignColleague(colleague.id)} className={this.selectedColleague(colleague.id)}>
+                            <li key={colleague.id} onClick={() => this.props.assignColleague(colleague.id)} className={this.selectedColleague(colleague.id)}>
                                 <Colleague id={colleague.id} supportView={true} />
                             </li>
                         )

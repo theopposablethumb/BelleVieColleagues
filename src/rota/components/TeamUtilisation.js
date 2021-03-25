@@ -2,17 +2,17 @@ import {calculatePercentage, calculateTotalHours, calculateTotalVisits, calculat
 
 let TeamUtilisation = (props) => {
     
-    let capacity = calculateTotalHours() * 4;
-    let totalVisitingHours = calculateTotalVisits() * 4;
+    let capacity = calculateTotalHours(props.colleagues) * 4;
+    let totalVisitingHours = calculateTotalVisits(props.visits) * 4;
     let visitsPercentage =  calculatePercentage(totalVisitingHours, capacity);
 
-    let travel = Math.round((40 * numberOfVisits()) / 60);
+    let travel = Math.round((40 * numberOfVisits(props.visits)) / 60);
     let travelPercentage = calculatePercentage(travel, capacity);
 
     let benchTime = capacity - (totalVisitingHours + travel);
     let benchPercentage = calculatePercentage(benchTime, capacity);
     
-    let overTime = calculateTotalOvertime() * 4;
+    let overTime = calculateTotalOvertime(props.colleagues) * 4;
     let overTimePercentage = calculatePercentage(overTime, capacity); 
 
     

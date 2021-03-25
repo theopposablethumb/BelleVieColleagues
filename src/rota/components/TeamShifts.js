@@ -5,12 +5,17 @@ import TeamUtilisation from './TeamUtilisation';
 import Meeting from './Meeting';
 import Shift from './Shift';
 
-import {shifts} from './../data';
+import {colleagues, shifts, visits} from './../data';
 import AssignSupport from './AssignSupport';
 
 
+//consider a seperate shifts component responsible for just managing shifts logic
+
 class TeamShifts extends React.Component {
     state = {
+        shifts: shifts,
+        visits: visits,
+        colleagues: colleagues,
         selectedColleague: null,
         assignColleague: null,
         selectedShift: null
@@ -30,16 +35,24 @@ class TeamShifts extends React.Component {
         }
     }
 
+    //update colleague in state when assigning colleague to a shift
+    updateColleague = (colleague) => {
+        this.setState(prevState => ({
+            colleagues: prevState.colleagues.map(
+                wsw => (wsw.id === colleague.id ? Object.assign(wsw, {colleague}) : wsw)
+            )
+        }));
+        console.log(this.state);
+    }
+
     selectShift = (shift) => {
-        console.log(shift);
         this.setState({selectedShift: shift});
-        console.log(this.state.selectedShift);
         if (shift === this.state.selectedShift) {
-            console.log('the same');
             this.setState({selectedShift: null});
         }
     }
 
+    // need to look at this one
     assignToShift = () => {
         if (this.state.assignColleague && this.state.selectedShift) {
             return this.state.selectedShift;
@@ -49,17 +62,17 @@ class TeamShifts extends React.Component {
     renderShifts = () => {
         let displayedShifts = [];
         if (this.state.selectedColleague) {
-            displayedShifts = shifts.filter(shift => {return shift.colleagues[0].id === this.state.selectedColleague});
+            displayedShifts = this.state.shifts.filter(shift => {return shift.colleagues[0].id === this.state.selectedColleague});
             return (
                 <div className="shifts">
-                    {displayedShifts.map(shift => <Shift key={shift.id} id={shift.id} day={shift.day} start={shift.startTime} end={shift.endTime} activities={shift.activities} assignedSupport={shift.colleagues} selectShift={this.selectShift} selected={this.state.selectedShift} assignToShift={this.assignToShift} colleagueAssignment={this.state.assignColleague} />)}
+                    {displayedShifts.map(shift => <Shift key={shift.id} colleagues={this.state.colleagues} shifts={this.state.shifts} id={shift.id} day={shift.day} start={shift.startTime} end={shift.endTime} activities={shift.activities} assignedSupport={shift.colleagues} selectShift={this.selectShift} selected={this.state.selectedShift} assignToShift={this.assignToShift} colleagueAssignment={this.state.assignColleague} updateColleague={this.updateColleague} />)}
                 </div>
             );
         } else {
-            displayedShifts = shifts;
+            displayedShifts = this.state.shifts;
             return (
                 <div className="shifts">
-                    {displayedShifts.map(shift => <Shift key={shift.id} id={shift.id} day={shift.day} start={shift.startTime} end={shift.endTime} activities={shift.activities} assignedSupport={shift.colleagues} selectShift={this.selectShift} selected={this.state.selectedShift} assignToShift={this.assignToShift} colleagueAssignment={this.state.assignColleague} />)}
+                    {displayedShifts.map(shift => <Shift key={shift.id} colleagues={this.state.colleagues} shifts={this.state.shifts} id={shift.id} day={shift.day} start={shift.startTime} end={shift.endTime} activities={shift.activities} assignedSupport={shift.colleagues} selectShift={this.selectShift} selected={this.state.selectedShift} assignToShift={this.assignToShift} colleagueAssignment={this.state.assignColleague} updateColleague={this.updateColleague} />)}
                 </div>
             );
         }
@@ -68,15 +81,15 @@ class TeamShifts extends React.Component {
     render() {
         return(
             <>
-                <TeamCapacity />
-                <TeamUtilisation team={'Oxford'} />
+                <TeamCapacity colleagues={this.state.colleagues} visits={this.state.visits} />
+                <TeamUtilisation team={'Oxford'} shifts={this.state.shifts} colleagues={this.state.colleagues} visits={this.state.visits} />
                 <div className="rota">
                     <Team selectColleague={this.selectColleague} selectedColleague={this.state.selectedColleague} />
                     <Meeting />
                     <h2>Team Commited Working Hours</h2>
                     {this.renderShifts()}
                 </div>
-                <AssignSupport assignColleague={this.assignColleague} assignedColleague={this.state.assignColleague} open={this.state.selectedShift ? 'open' : 'close'} shift={this.state.selectedShift} />
+                <AssignSupport colleagues={this.state.colleagues} visits={this.state.visits} assignColleague={this.assignColleague} assignedColleague={this.state.assignColleague} open={this.state.selectedShift ? 'open' : 'close'} shift={this.state.selectedShift} />
             </>
         )
     }

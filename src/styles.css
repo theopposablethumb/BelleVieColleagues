@@ -12,7 +12,7 @@ h4 {font-weight:500; margin-top: 2em}
 input, textarea, select {font-size: 1.1em; line-height: 1.5em; }
 textarea {font-family: 'Roboto', sans-serif; font-weight: 400;}
 
-ul {padding: 0 1em;}
+ul {padding: 0 1em; margin-left: 1em;}
 ul ul {font-size: 1em; margin: 0; padding: 0 1em 0.75em 1em;}
 li {margin: 0.75em 0;}
 a {color: #BA7800; text-decoration: none;}
@@ -65,7 +65,7 @@ nav a:last-child {border-right: none;}
 nav a.active {color: #333; text-decoration: none;}
 nav a:hover {text-decoration: none;}
 nav a.active:hover {text-decoration: underline;}
-
+button.menu {display: none}
 
 .content .form {background: #FFF; padding: 0 2.5em 1em 2.5em; margin: 1.25em 0 2.5em 0; border-radius: 4px; border: 1px solid #E4E4E4;}
 .content form p {color: #333;}
@@ -117,24 +117,41 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
 }
 
 @media screen and (max-width: 768px) {
-	h1 {font-size: 2em;}
+	h1 {font-size: 1.5em;}
 	h1.custom {font-size: 3em;}
+    h2 {font-size: 1.5em; font-weight: 500;}
+    h3 {font-size: 1.25em; font-weight: 500; margin-top: 0.25em;}
 	p {margin-top: 0.8em;}
 
     p, ul, input, label, select, textarea {font-size: 1em; width: 100%; box-sizing: border-box;}
     
-    nav, .content {width: 90%; margin: auto;}
+    .section.teal {position: relative;}
+    nav {width: 100%; padding: 0;}
+    .content {padding: 0 1em;}
+    button.menu {display: block; background: none; height: 1.5em; width: 2em; padding: 1em; margin: 0.5em 1em; position: relative; float: right;}
+    button.menu:focus {border: none; outline: 0; box-shadow: none;}
+    button.menu:before { content: ""; position: absolute; left: 0; top: 0.21em; bottom: 0.21em; height: 1.5em; width: 2em; background: linear-gradient(to bottom, #185D6F, #185D6F 20%, #D3F1F1 20%, #D3F1F1 40%, #185D6F 40%, #185D6F 60%, #D3F1F1 60%, #D3F1F1 80%, #185D6F 80%, #185D6F 100%); transition: linear-gradient 1s;}
+    button.menu.active {position: absolute; top: 0; right: 0;}
+    button.menu.active:before {background: linear-gradient(to bottom, #D3F1F1, #D3F1F1 40%, #185D6F 40%, #185D6F 60%, #D3F1F1 60%, #D3F1F1 100%);}
 
-    .flex {display: block;}
+    nav.close {display: none}
+    nav.open {display: block;}
+    nav a {width: 100%; padding: 0.5em 1em; box-sizing: border-box; border-right: none;}
+    nav a.active {background: #185D6F; color: #fff; text-decoration: none;}
+    nav a.active:hover {text-decoration: none;}
+    nav a:first-child {padding-left: 1em; margin-top: 2.5em;}
+
+
     .left, .right {float: none; overflow: visible; }
 
     .profile {width: 100%; padding: 0;}
-    .profile img {display: block; margin: auto;}
-    .profile div {text-align: center;}
+    .profile img {display: inline-block; margin: 0.2em 2em auto 0; height: 4em; width: 4em;}
 
     .login, .logout {float: none; display: block; margin: 1.5em auto; }
 
     .progress span {display: none;}
+
+    footer {margin-top: 2em;}
 }
 
 
@@ -225,3 +242,10 @@ ul.team, .assignSupport ul {list-style-type: none; padding: 0.2em; margin: 0;}
 
 .support {width: 100%; box-sizing: border-box; border-radius: 0 0 4px 4px; border-top: 1px solid #BFBFBF; background: #fff; padding: 0.85em 1em; margin-top: 1em;}
 
+.modal {position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 6; background: rgba(0, 0, 0, 0.75);}
+.modal.hide {display: none;}
+.modal div {background: #fff; width: 80vw; max-height: 90vh; box-sizing: border-box; overflow-y: scroll; padding: 1.25em 2em; box-shadow: 0 24px 24px rgba(0, 0, 0, 0.25); margin: 3em auto;}
+.modal h2, .modal p {margin: 0;}
+.modal p {margin-top: 1.5em}
+.modal .actions {width: 100%; margin: 1.5em 0 0 0; box-shadow: none; padding: 0; text-align: right;}
+.modal .actions button {position: relative; transform: rotate(0); background: none; color: #009688; text-transform: uppercase; padding: 0.625em 0.5em 0.625em 1.5em; font-weight: 500; font-size: 1em;}

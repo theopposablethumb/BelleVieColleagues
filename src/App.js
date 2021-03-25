@@ -80,20 +80,16 @@ class App extends React.Component {
               <Profile user={this.state.user} />
             </div>
           </div>
-          <div className="section offwhitebg">
-            <div className="content">
-              <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} /> ) } />
-              <Route path="/faqs" component={Faq} />
-              <Route path="/policies" component={Policies} />
-              
-            </div>
-          </div>
+          <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} /> ) } />
+          <Route path="/faqs" component={Faq} />
+          <Route path="/policies" component={Policies} />
+          
+          <Route path="/rota" component={TeamShifts} />
           <div className="section whitebg">
             <div className="content">
               <Contact />
             </div>
           </div>
-          <Route path="/rota" component={TeamShifts} />
         </BrowserRouter>
       )
     }

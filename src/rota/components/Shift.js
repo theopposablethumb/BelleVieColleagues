@@ -1,13 +1,15 @@
 import React from 'react';
-import {colleagues, shifts} from '../data';
 
 import Activity from './Activity';
 import Colleague from './Colleague';
+import Modal from './Modal';
 
 class Shift extends React.Component {
     state = { 
         open: false,
-        assign: true
+        assign: true,
+        newColleague: null,
+        modal: null
     }
 
     capitalise = (s) => {
@@ -69,6 +71,8 @@ class Shift extends React.Component {
         }
     }
 
+    // Team Shift specific functions start here
+
     getWsw() {
         let wswId = this.props.assignedSupport[0].id;
         
@@ -79,22 +83,73 @@ class Shift extends React.Component {
         )
     }
 
-    //Now we need redux :)
+    wswShifts(wsw, shift) {
+        let wswShifts = [];
+        wsw.shifts.forEach(shift => {
+            wswShifts.push(this.props.shifts.find(s => {return s.id === shift.id}))
+        });
+        let sameDay = wswShifts.filter(s => {return s.day === shift.day});
+        let sameTime = sameDay.filter(s => {return s.startTime.slice(-2) === shift.startTime.slice(-2)});
+        if (sameTime.length > 1) {
+            return sameTime;
+        } else {
+            return null;
+        }
+    }
+
+    checkOvertime(support) {
+        let hoursWorked = (support.shifts.length * 5) + 5;
+        if (hoursWorked > support.contractedHours) {
+            this.setState({
+                modal: {
+                    type: 'overtime',
+                    heading: 'You\'re about to schedule Overtime',
+                    content: 'The teams contracted hours haven’t been fully scheduled yet, and this will impact the teams magic number score. Here are a few suggestions which may help keep the rota balanced.',
+                    bullets: ['Schedule another Wellbeing Support Worker, some Support Workers haven’t had their full hours scheduled', 'Schedule another Wellbeing Support Worker, some Support Workers haven’t had their full hours scheduled', 'Review the teams shifts', 'Some shifts have free time which could accomodate a scheduled visit', 'Some shifts may have visits which can be moved to accomodate other visits'],
+                    options: [{label: 'continue', type: 'confirm'}, {label: 'cancel', type: 'cancel'}]
+                }
+            });
+        }
+    }
+
+    checkAlreadyWorking(shift, support) {
+        if (shift) {
+            this.setState({
+                modal: {
+                    type: 'alreadyWorking',
+                    heading: `${support.name} is already working at that time`,
+                    content: `${support.name.split(" ")[0]} can't be in two places at once :) please select another colleague to cover this shift`,
+                    options: [{label: 'confirm', type: 'confirm'}]
+                }
+            });
+        }
+    }
+
+    closeModal = () => {
+        this.setState(state => {return ({modal: null})});
+    }
+
+    //now need to remove previous wsw from shift. So from prev colleague remove shift with this shift ID
+    confirmModal = () => {
+        this.props.updateColleague(this.state.newColleague);
+        this.setState(state => {return ({modal: null, assign: false})});
+    }
+
+    //also need to check is doing 3 subsequent shifts in a row... how do I do that?
     assignWSW(e, wsw) {
         e.preventDefault();
-        let shift = shifts.find(shift => {return(shift.id === this.props.id)});
-        let support = colleagues.find(colleague => {return(colleague.id === wsw)});
-        let colleague = {id: support.id, name: support.name};
-        shift.colleagues[0] = colleague;
-        console.log(this.props.assignedSupport);
-        support.shifts.push(shift);
-        this.setState({assign: false});
-        
+        let shift = this.props.shifts.find(shift => {return(shift.id === this.props.id)});
+        let support = this.props.colleagues.find(colleague => {return(colleague.id === wsw)});
+        this.setState({newColleague: support});
+        shift.colleagues[0] = support;
+        support.shifts = [...support.shifts, {id: shift.id}];
+        let sameShift = this.wswShifts(support, shift);
+        this.checkOvertime(support);
+        this.checkAlreadyWorking(sameShift, support);
     }
 
     shiftAssignment() {
         if(this.props.assignToShift() === this.props.id && this.state.assign) {
-            console.log('YAY');
             return (
                 <div className="support">
                     <button className="dark" onClick={(e) => this.assignWSW(e, this.props.colleagueAssignment)}>Assign colleague</button>
@@ -106,6 +161,7 @@ class Shift extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         const open = this.state.open ? 'shift' : 'shift close';
         const classes = `${open} ${this.selectShift()}`;
         return (
@@ -122,9 +178,10 @@ class Shift extends React.Component {
                     <p>X hour Y minutes travel time</p>
                 </div>
 
-                {this.props.activities.map(activity => <Activity activity={activity} />)}
+                {this.props.activities.map(activity => <Activity key={activity.id} activity={activity} />)}
                 
                 {this.shiftAssignment()}
+                <Modal content={this.state.modal} display={this.closeModal} confirm={this.confirmModal} />
             </div>
         );
     }
