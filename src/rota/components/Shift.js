@@ -7,8 +7,13 @@ import Modal from './Modal';
 class Shift extends React.Component {
     state = { 
         open: false,
-        assign: true,
+        assign: false,
+        currentShift: this.props.id,
+        prevColleague: null,
+        currentColleague: this.props.assignedSupport,
         newColleague: null,
+        newColleagueAlreadyWorking: false,
+        newColleagueOverTime: false,
         modal: null
     }
 
@@ -73,16 +78,6 @@ class Shift extends React.Component {
 
     // Team Shift specific functions start here
 
-    getWsw() {
-        let wswId = this.props.assignedSupport[0].id;
-        
-        return (
-            <div onClick={() => {this.props.selectShift(this.props.id)}} className="support">
-                <Colleague id={wswId} />
-            </div>
-        )
-    }
-
     wswShifts(wsw, shift) {
         let wswShifts = [];
         wsw.shifts.forEach(shift => {
@@ -90,7 +85,7 @@ class Shift extends React.Component {
         });
         let sameDay = wswShifts.filter(s => {return s.day === shift.day});
         let sameTime = sameDay.filter(s => {return s.startTime.slice(-2) === shift.startTime.slice(-2)});
-        if (sameTime.length > 1) {
+        if (sameTime.length > 0) {
             return sameTime;
         } else {
             return null;
@@ -101,6 +96,7 @@ class Shift extends React.Component {
         let hoursWorked = (support.shifts.length * 5) + 5;
         if (hoursWorked > support.contractedHours) {
             this.setState({
+                newColleagueOverTime: true,
                 modal: {
                     type: 'overtime',
                     heading: 'You\'re about to schedule Overtime',
@@ -109,63 +105,92 @@ class Shift extends React.Component {
                     options: [{label: 'continue', type: 'confirm'}, {label: 'cancel', type: 'cancel'}]
                 }
             });
+            return true;
+        } else {
+            return false;
         }
     }
 
     checkAlreadyWorking(shift, support) {
         if (shift) {
             this.setState({
+                newColleagueAlreadyWorking: true,
                 modal: {
                     type: 'alreadyWorking',
                     heading: `${support.name} is already working at that time`,
                     content: `${support.name.split(" ")[0]} can't be in two places at once :) please select another colleague to cover this shift`,
-                    options: [{label: 'confirm', type: 'confirm'}]
+                    options: [{label: 'confirm', type: 'cancel'}]
                 }
             });
+            return true;
+        } else {
+            return false;
         }
     }
 
     closeModal = () => {
-        this.setState(state => {return ({modal: null})});
+        console.log('cancel');
+        this.setState(state => {return ({modal: null, assign: false, newColleague: null})});
     }
 
-    //now need to remove previous wsw from shift. So from prev colleague remove shift with this shift ID
-    confirmModal = () => {
-        this.props.updateColleague(this.state.newColleague);
-        this.setState(state => {return ({modal: null, assign: false})});
+    confirmModal = (type) => {
+        if (type === 'overtime') {
+            this.setState({newColleagueOverTime: false, modal: null, assign: false})
+        } else {
+            this.setState(state => {return ({modal: null, assign: false})}); 
+        }
+        this.setState({prevColleague: this.state.currentColleague, currentColleague: this.state.newColleague, newColleague: null});
+        this.props.updateColleague(this.state.newColleague.id, this.state.currentColleague.id, this.props.id);
     }
 
     //also need to check is doing 3 subsequent shifts in a row... how do I do that?
     assignWSW(e, wsw) {
         e.preventDefault();
-        let shift = this.props.shifts.find(shift => {return(shift.id === this.props.id)});
-        let support = this.props.colleagues.find(colleague => {return(colleague.id === wsw)});
+        let shift = this.props.shifts.find(shift => {return(shift.id === this.props.id)}); //the current shift
+        let support = this.props.colleagues.find(colleague => {return(colleague.id === wsw)}); // the new colleague
         this.setState({newColleague: support});
-        shift.colleagues[0] = support;
-        support.shifts = [...support.shifts, {id: shift.id}];
         let sameShift = this.wswShifts(support, shift);
         this.checkOvertime(support);
         this.checkAlreadyWorking(sameShift, support);
+        let overtime = this.checkOvertime(support);
+        let alreadyWorking = this.checkAlreadyWorking(sameShift, support);
+        if (!overtime && !alreadyWorking) {
+            console.log('transcendence');
+            this.setState({prevColleague: this.state.currentColleague, currentColleague: this.state.newColleague, newColleague: null});
+            this.props.updateColleague(support.id, this.state.currentColleague.id, this.props.id);
+        }
     }
 
     shiftAssignment() {
-        if(this.props.assignToShift() === this.props.id && this.state.assign) {
+        if(this.props.assignToShift() === this.props.id && this.state.newColleague === null) {
             return (
                 <div className="support">
                     <button className="dark" onClick={(e) => this.assignWSW(e, this.props.colleagueAssignment)}>Assign colleague</button>
                 </div>
             );
         } else {
-            return this.getWsw();
+            if (this.state.newColleague === null) {
+                return (
+                    <div onClick={() => {this.props.selectShift(this.props.id)}} className="support">
+                        <Colleague id={this.state.currentColleague.id} />
+                    </div>
+                );
+            } else {
+                return (
+                    <div onClick={() => {this.props.selectShift(this.props.id)}} className="support">
+                        <Colleague id={this.state.newColleague.id} />
+                    </div>
+                );
+            }
+            
         }
     }
 
     render() {
-        console.log(this.props)
+        console.log(this.state);
         const open = this.state.open ? 'shift' : 'shift close';
-        const classes = `${open} ${this.selectShift()}`;
         return (
-            <div className={classes}>
+            <div className={`${open} ${this.selectShift()}`}>
                 <button onClick={(e) => this.openShift(e)}>
                     <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTBweCIgaGVpZ2h0PSI1cHgiIHZpZXdCb3g9IjAgMCAxMCA1IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPHRpdGxlPlRyaWFuZ2xlPC90aXRsZT4KICAgIDxnIGlkPSJUZWFtLVNoaWZ0cyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IlNoaWZ0LVBsYW5uaW5nIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjgyLjAwMDAwMCwgLTg2Mi4wMDAwMDApIiBmaWxsPSIjMzAzMDMwIj4KICAgICAgICAgICAgPGcgaWQ9IlJ1bi1TdW1tYXJ5LUNvcHktMTkiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIwLjAwMDAwMCwgODU0LjAwMDAwMCkiPgogICAgICAgICAgICAgICAgPHBvbHlnb24gaWQ9IlRyaWFuZ2xlIiBwb2ludHM9IjI2NyA4IDI3MiAxMyAyNjIgMTMiPjwvcG9seWdvbj4KICAgICAgICAgICAgPC9nPgogICAgICAgIDwvZz4KICAgIDwvZz4KPC9zdmc+" alt="shift control" />
                 </button>
@@ -181,6 +206,7 @@ class Shift extends React.Component {
                 {this.props.activities.map(activity => <Activity key={activity.id} activity={activity} />)}
                 
                 {this.shiftAssignment()}
+                
                 <Modal content={this.state.modal} display={this.closeModal} confirm={this.confirmModal} />
             </div>
         );

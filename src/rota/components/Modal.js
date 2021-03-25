@@ -5,9 +5,9 @@ let Modal = (props) => {
         props.display();
     }
 
-    let confirmModel = (e) => {
+    let confirmModel = (e, type) => {
         e.preventDefault();
-        props.confirm();
+        props.confirm(type);
     }
 
     let renderBullets = () => {
@@ -28,7 +28,7 @@ let Modal = (props) => {
                     <div className="actions">
                         {props.content.options.map(option => {
                             if (option.type === 'confirm') {
-                                return <button onClick={(e) => confirmModel(e)} key={option.label}>{option.label}</button>
+                                return <button onClick={(e) => confirmModel(e, props.content.type)} key={option.label}>{option.label}</button>
                             } else {
                                 return <button onClick={(e) => closeModal(e)} key={option.label}>{option.label}</button>
                             }

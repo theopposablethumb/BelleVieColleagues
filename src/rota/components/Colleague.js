@@ -4,7 +4,6 @@ import Progress from './Progress';
 import {reducer} from '../util/helpers';
 
 let Colleague = (props) => {
-
     let wsw = colleagues.find(colleague => {return colleague.id === props.id});
     let shiftIds = [];
     let shiftsWorked = [];

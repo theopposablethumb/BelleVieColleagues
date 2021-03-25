@@ -51,7 +51,7 @@ export let colleagues = [
         mobile: '07778987651',
         email: '@belleviecare.co.uk',
         slack: 'https://bellevie-for-all.slack.com/archives/D01DYEVSJN5',
-        shifts: [{id: 15}, {id: 2}],
+        shifts: [{id: 15}, {id: 21}],
         visits: [],
         contractStartDate: '2020-8-12',
         probation: false,

@@ -35,14 +35,25 @@ class TeamShifts extends React.Component {
         }
     }
 
-    //update colleague in state when assigning colleague to a shift
-    updateColleague = (colleague) => {
-        this.setState(prevState => ({
-            colleagues: prevState.colleagues.map(
-                wsw => (wsw.id === colleague.id ? Object.assign(wsw, {colleague}) : wsw)
-            )
-        }));
-        console.log(this.state);
+    //update colleague in state when assigning colleague to a shift. Since state contains some complex data structures this isn't straight forward...
+    updateColleague = (newColleague, prevColleague, shift) => {
+        console.log('Colleague updated');
+        let updatedColleagues = [...this.state.colleagues];
+        let newCol = this.state.colleagues.find(colleague => colleague.id === newColleague);
+        let prevCol = this.state.colleagues.find(colleague => colleague.id === prevColleague);
+        let newColIndex = updatedColleagues.findIndex(x => x.id === newCol.id);
+        let prevColIndex = updatedColleagues.findIndex(x => x.id === prevCol.id);
+        
+        let newColShift = newCol.shifts = [...newCol.shifts, {id: shift}];
+        let prevColShift = prevCol.shifts.filter(s => s.id !== shift);
+
+        newCol.shifts = newColShift;
+        prevCol.shifts = prevColShift;
+        
+        colleagues[newColIndex] = newCol;
+        colleagues[prevColIndex] = prevCol;
+        
+        this.setState({colleagues: updatedColleagues});
     }
 
     selectShift = (shift) => {
@@ -52,7 +63,7 @@ class TeamShifts extends React.Component {
         }
     }
 
-    // need to look at this one
+
     assignToShift = () => {
         if (this.state.assignColleague && this.state.selectedShift) {
             return this.state.selectedShift;
@@ -72,7 +83,7 @@ class TeamShifts extends React.Component {
             displayedShifts = this.state.shifts;
             return (
                 <div className="shifts">
-                    {displayedShifts.map(shift => <Shift key={shift.id} colleagues={this.state.colleagues} shifts={this.state.shifts} id={shift.id} day={shift.day} start={shift.startTime} end={shift.endTime} activities={shift.activities} assignedSupport={shift.colleagues} selectShift={this.selectShift} selected={this.state.selectedShift} assignToShift={this.assignToShift} colleagueAssignment={this.state.assignColleague} updateColleague={this.updateColleague} />)}
+                    {displayedShifts.map(shift => <Shift key={shift.id} colleagues={this.state.colleagues} shifts={this.state.shifts} id={shift.id} day={shift.day} start={shift.startTime} end={shift.endTime} activities={shift.activities} assignedSupport={shift.colleagues[0]} selectShift={this.selectShift} selected={this.state.selectedShift} assignToShift={this.assignToShift} colleagueAssignment={this.state.assignColleague} updateColleague={this.updateColleague} />)}
                 </div>
             );
         }
