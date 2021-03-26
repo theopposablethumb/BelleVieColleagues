@@ -129,7 +129,6 @@ class Shift extends React.Component {
     }
 
     closeModal = () => {
-        console.log('cancel');
         this.setState(state => {return ({modal: null, assign: false, newColleague: null})});
     }
 
@@ -139,7 +138,7 @@ class Shift extends React.Component {
         } else {
             this.setState(state => {return ({modal: null, assign: false})}); 
         }
-        this.setState({prevColleague: this.state.currentColleague, currentColleague: this.state.newColleague, newColleague: null});
+        this.setState({assign: false, prevColleague: this.state.currentColleague, currentColleague: this.state.newColleague, newColleague: null});
         this.props.updateColleague(this.state.newColleague.id, this.state.currentColleague.id, this.props.id);
     }
 
@@ -161,33 +160,38 @@ class Shift extends React.Component {
         }
     }
 
+    clearPrevColleague() {
+        this.setState({prevColleague: null});
+    }
+
     shiftAssignment() {
-        if(this.props.assignToShift() === this.props.id && this.state.newColleague === null) {
+        if (this.props.assignToShift() === this.props.id && this.state.prevColleague !== null) {
+            console.log('selection complete');
+            return (
+                <div onClick={() => {this.props.selectShift(this.props.id)}} className="support">
+                    <Colleague id={this.state.currentColleague.id} />
+                </div>
+                
+            );
+        } if(this.props.assignToShift() === this.props.id && this.state.prevColleague === null) {
+            console.log('selecting');
             return (
                 <div className="support">
                     <button className="dark" onClick={(e) => this.assignWSW(e, this.props.colleagueAssignment)}>Assign colleague</button>
                 </div>
             );
-        } else {
-            if (this.state.newColleague === null) {
-                return (
-                    <div onClick={() => {this.props.selectShift(this.props.id)}} className="support">
-                        <Colleague id={this.state.currentColleague.id} />
-                    </div>
-                );
-            } else {
-                return (
-                    <div onClick={() => {this.props.selectShift(this.props.id)}} className="support">
-                        <Colleague id={this.state.newColleague.id} />
-                    </div>
-                );
-            }
-            
+        } 
+        else {
+            console.log('select colleague');
+            return (
+                <div onClick={() => {this.props.selectShift(this.props.id)}} className="support">
+                    <Colleague id={this.state.currentColleague.id} />
+                </div>
+            );
         }
     }
 
     render() {
-        console.log(this.state);
         const open = this.state.open ? 'shift' : 'shift close';
         return (
             <div className={`${open} ${this.selectShift()}`}>
