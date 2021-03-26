@@ -34,6 +34,14 @@ let Colleague = (props) => {
     let scheduled = 'hours scheduled';
     let contactTime = 'hours contact time'
 
+    let overtime = hoursScheduled - contractedHours;
+
+    let hasOvetime = () => {
+        if (overtime > 0) {
+            return <Progress overtime={true} total={contractedHours} complete={overtime} />
+        }
+    } 
+
     let renderColleagueDetails = () => {
         if (props.monthView) {
             hoursScheduled = hoursScheduled * 4;
@@ -58,6 +66,7 @@ let Colleague = (props) => {
                     <h4>{wsw.name}</h4>
                     <p><em>{wsw.role}</em></p>
                     <Progress total={contractedHours} complete={hoursScheduled} />
+                    {hasOvetime()}
                     <p>{hoursScheduled} / {contractedHours} {scheduled}</p>
                     <p>{visitingHours} {contactTime}</p>
                 </div>
