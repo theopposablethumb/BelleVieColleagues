@@ -154,8 +154,7 @@ class Shift extends React.Component {
         let overtime = this.checkOvertime(support);
         let alreadyWorking = this.checkAlreadyWorking(sameShift, support);
         if (!overtime && !alreadyWorking) {
-            console.log('transcendence');
-            this.setState({prevColleague: this.state.currentColleague, currentColleague: this.state.newColleague, newColleague: null});
+            this.setState({prevColleague: this.state.currentColleague, currentColleague: support, newColleague: null});
             this.props.updateColleague(support.id, this.state.currentColleague.id, this.props.id);
         }
     }
@@ -166,7 +165,6 @@ class Shift extends React.Component {
 
     shiftAssignment() {
         if (this.props.assignToShift() === this.props.id && this.state.prevColleague !== null) {
-            console.log('selection complete');
             return (
                 <div onClick={() => {this.props.selectShift(this.props.id)}} className="support">
                     <Colleague id={this.state.currentColleague.id} />
@@ -174,7 +172,6 @@ class Shift extends React.Component {
                 
             );
         } if(this.props.assignToShift() === this.props.id && this.state.prevColleague === null) {
-            console.log('selecting');
             return (
                 <div className="support">
                     <button className="dark" onClick={(e) => this.assignWSW(e, this.props.colleagueAssignment)}>Assign colleague</button>
@@ -182,7 +179,6 @@ class Shift extends React.Component {
             );
         } 
         else {
-            console.log('select colleague');
             return (
                 <div onClick={() => {this.props.selectShift(this.props.id)}} className="support">
                     <Colleague id={this.state.currentColleague.id} />

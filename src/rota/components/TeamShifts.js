@@ -37,7 +37,6 @@ class TeamShifts extends React.Component {
 
     //update colleague in state when assigning colleague to a shift. Since state contains some complex data structures this isn't straight forward...
     updateColleague = (newColleague, prevColleague, shift) => {
-        console.log('Colleague updated');
         let updatedColleagues = [...this.state.colleagues];
         let newCol = this.state.colleagues.find(colleague => colleague.id === newColleague);
         let prevCol = this.state.colleagues.find(colleague => colleague.id === prevColleague);
