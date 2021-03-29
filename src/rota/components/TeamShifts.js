@@ -91,15 +91,18 @@ class TeamShifts extends React.Component {
     render() {
         return(
             <>
-                <TeamCapacity colleagues={this.state.colleagues} visits={this.state.visits} />
-                <TeamUtilisation team={'Oxford'} shifts={this.state.shifts} colleagues={this.state.colleagues} visits={this.state.visits} />
+                <div className="teamStats">
+                    <TeamCapacity colleagues={this.state.colleagues} visits={this.state.visits} />
+                    <TeamUtilisation team={'Oxford'} shifts={this.state.shifts} colleagues={this.state.colleagues} visits={this.state.visits} />
+                </div>
                 <div className="rota">
                     <Team selectColleague={this.selectColleague} selectedColleague={this.state.selectedColleague} />
+                    <AssignSupport colleagues={this.state.colleagues} visits={this.state.visits} assignColleague={this.assignColleague} assignedColleague={this.state.assignColleague} open={this.state.selectedShift ? 'open' : 'close'} shift={this.state.selectedShift} />
                     <Meeting />
                     <h2>Team Commited Working Hours</h2>
                     {this.renderShifts()}
                 </div>
-                <AssignSupport colleagues={this.state.colleagues} visits={this.state.visits} assignColleague={this.assignColleague} assignedColleague={this.state.assignColleague} open={this.state.selectedShift ? 'open' : 'close'} shift={this.state.selectedShift} />
+                
             </>
         )
     }
