@@ -1,56 +1,88 @@
-import React from 'react';
-import Colleague from './Colleague';
+import React, {useRef, useLayoutEffect, useState} from 'react';
 import Progress from './Progress';
+import Colleague from './Colleague';
 import {calculateTotalHours, calculateTotalVisits, calculateTotalOvertime} from '../util/helpers';
 
-class AssignSupport extends React.Component {
+let AssignSupport = (props) => {
+    const [sticky, isSticky] = useState({
+        elSticky: false
+    });
 
-    selectedColleague = (id) => {
-        if (this.props.assignedColleague === id) {
+    const stickyEl = useRef(null);
+
+    useLayoutEffect(() => {
+        const topPos = (element) => element.getBoundingClientRect().top;
+        const getHeight = (element) => element.offsetHeight;
+        const stickyElPos = topPos(stickyEl.current);
+        
+        const stickyElHeight = getHeight(stickyEl.current);
+        
+        const onScroll = () => {
+            const scrollPos = window.scrollY;
+            if (stickyElPos < scrollPos) {
+                // Element scrolled to
+                isSticky((state) => ({ ...state, elSticky: true }));
+                let stickyElPercent = ((scrollPos - stickyElPos) * 100) / stickyElHeight;
+                if (stickyElPercent > 100) stickyElPercent = 100;
+                if (stickyElPercent < 0) stickyElPercent = 0;
+            } else if (stickyElPos > scrollPos) {
+                // Element scrolled away (up)
+                isSticky((state) => ({ ...state, elSticky: false }))
+            }
+        }
+        
+        window.addEventListener('scroll', onScroll)
+        return () => window.removeEventListener('scroll', onScroll)
+    }, []);
+
+    let elStyle = sticky.elSticky ? 'sticky' : 'notSticky';
+
+
+    let selectedColleague = (id) => {
+        if (props.assignedColleague === id) {
             return 'selected';
-        } else if (this.props.assignedColleague) {
+        } else if (props.assignedColleague) {
             return 'unselected';
         } else {
             return null;
         }
-    }
+    };
 
 
-    displayOvertime = () => {
-        let overtime = calculateTotalOvertime(this.props.colleagues);
+    let displayOvertime = () => {
+        let overtime = calculateTotalOvertime(props.colleagues);
         if (overtime > 0) {
             return (
                 <>
                     <p>{overtime} hours overtime, rota is unbalanced</p>
-                    <Progress overtime={true} complete={calculateTotalOvertime(this.props.colleagues)} total={calculateTotalHours(this.props.colleagues)} />
+                    <Progress overtime={true} complete={calculateTotalOvertime(props.colleagues)} total={calculateTotalHours(props.colleagues)} />
                 </>
             )
         }
-    }
+    };
 
-    render() {
-        return (
-            <div className={`${this.props.open} assignSupport`}>
-                <div className="handle"></div>
-                <div className="inner">
-                    <h2>Assign Support for this shift</h2>
-                    <p>{calculateTotalVisits(this.props.visits) * 4} / {calculateTotalHours(this.props.colleagues) * 4} hours scheduled</p>
-                    <Progress complete={calculateTotalVisits(this.props.visits)} total={calculateTotalHours(this.props.colleagues)} />
-                    {this.displayOvertime()}
-                    <ul>
-                    {this.props.colleagues.map(colleague => {
-                        return(
-                            <li key={colleague.id} onClick={() => this.props.assignColleague(colleague.id)} className={this.selectedColleague(colleague.id)}>
-                                <Colleague id={colleague.id} supportView={true} />
-                            </li>
-                        )
-                    })}
-                    </ul>
-                </div>
+    return (
+        <div className={`${props.open} assignSupport`}>
+            
+            <div className="handle"></div>
+            <div className="inner">
+                <h2>Assign Support for this shift</h2>
+                <p>{calculateTotalVisits(props.visits) * 4} / {calculateTotalHours(props.colleagues) * 4} hours scheduled</p>
+                <Progress complete={calculateTotalVisits(props.visits)} total={calculateTotalHours(props.colleagues)} />
+                {displayOvertime()}
+                <ul ref={stickyEl} className={elStyle} >
+                {props.colleagues.map(colleague => {
+                    return(
+                        <li key={colleague.id} onClick={() => props.assignColleague(colleague.id)} className={selectedColleague(colleague.id)}>
+                            <Colleague id={colleague.id} supportView={true} />
+                        </li>
+                    )
+                })}
+                </ul>
             </div>
-        )
-    }
-    
+        </div>
+    )
+
 }
 
 export default AssignSupport;

@@ -254,15 +254,20 @@ ul.team, .assignSupport ul {list-style-type: none; padding: 0.2em; margin: 0;}
     .capacity, .utilisation {width: 50%; box-sizing: border-box;}
     .utilisation ul {column-count: 4; column-fill: balance; column-gap: 0;}
 
-    .assignSupport {position: normal; background: none; padding: 0;}
+    .assignSupport {position: relative; background: none; padding: 0;}
     ul.team {display: none;}
     .team li {display: inline-block; width: 20%;}
-    .shift {width: 19%; margin-left: 0; margin-right: 1%; display: inline-block; box-sizing: border-box;}
+
+    .day {display: flex; flex-wrap: wrap;}
+    .day h2 {width: 100%; font-weight: 300; color: #333; text-transform: capitalize; margin: 0.5em 0 1em; border-bottom: 1px solid #ccc;}
+    .shift {width: 19%; margin-left: 0; margin-right: 1%; box-sizing: border-box;}
     .shift.selected {border: 2px solid #009688;}
     .support {width: 100%; box-sizing: border-box; border-radius: 0 0 4px 4px; border-top: 1px solid #BFBFBF; background: #fff; padding: 0.85em 1em; margin-top: 1em;}
     .shift .support button {position: relative; transform: rotate(0); background: #185D6F; padding: 0.625em 2em; font-weight: 500;}
 
-    .assignSupport li {width: 25%; display: inline-block;}
+    .assignSupport ul.sticky {position: fixed; top: 0; left: 0; z-index: 5; width: 100%; padding: 0 1.5em; background: #fff; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);}
+    .assignSupport li {width: 20%; display: inline-block; margin-top: 1em;}
+    .assignSupport ul.sticky p {display: none;}
 }
 
 @media screen and (max-width: 1400px) {
@@ -274,13 +279,22 @@ ul.team, .assignSupport ul {list-style-type: none; padding: 0.2em; margin: 0;}
 
     ul.team {display: none;}
     .assignSupport {position: normal; background: none; padding: 0;}
+    .assignSupport ul.sticky {position: fixed; top: 0; left: 0; z-index: 5; width: 100%; padding: 0 1.5em; background: #fff; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);}
     .assignSupport li {width: 25%; display: inline-block; margin-top: 1.5em}
+    .assignSupport ul.sticky p {display: none;}
     .team li {display: inline-block; width: 25%;}
-    .shift {width: 23%; margin-left: 1%; margin-right: 1%; display: inline-block; box-sizing: border-box;}
+
+    .day {display: flex; flex-wrap: wrap;}
+    .day h2 {width: 100%; font-weight: 300; color: #333; text-transform: capitalize; margin: 0.5em 0 1em; border-bottom: 1px solid #ccc;}
+    .shift {width: 23%; margin-left: 1%; margin-right: 1%; box-sizing: border-box;}
     .shift.selected {border: 2px solid #009688;}
     .support {width: 100%; box-sizing: border-box; border-radius: 0 0 4px 4px; border-top: 1px solid #BFBFBF; background: #fff; padding: 0.85em 1em; margin-top: 1em;}
     .shift .support button {position: relative; transform: rotate(0); background: #185D6F; padding: 0.625em 2em; font-weight: 500;}
 
+}
+
+@media screen and (max-width: 1200px) {
+    .shift {width: 31%; margin-left: 1%; margin-right: 1%; box-sizing: border-box;}
 }
 
 @media screen and (max-width: 900px) {
@@ -292,15 +306,18 @@ ul.team, .assignSupport ul {list-style-type: none; padding: 0.2em; margin: 0;}
     .assignSupport {position: fixed; bottom: 0; left: 0; z-index: 4; box-sizing: border-box; width: 100vw; height: 5vh; transition: height 0.25s ease-out; border-radius: 8px 8px 0 0; border: 1px solid #ccc; box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.25); padding: 1.4em; background: #fff; }
     .assignSupport.open {height: 60vh; }
     .assignSupport .inner {margin-top: 1em; height: 60vh; overflow-y: scroll;}
+    .assignSupport ul.sticky {position: relative; top: 0; left: 0; z-index: 5; width: 100%; padding-left: 0; background: none; box-shadow: none;}
     .assignSupport li {width: 50%; display: inline-block;}
-    
+    .assignSupport ul.sticky p {display: block;}
+
+    .shift {width: 48%; margin-left: 1%; margin-right: 1%; box-sizing: border-box;}
 }
 
 @media screen and (max-width: 850px) { 
     .teamStats {display: block;}
     .capacity, .utilisation {width: 100%;}
 
-    .shift {width: 45%; margin-left: 2%; margin-right: 2%; display: inline-block;}
+    .shift {width: 45%; margin-left: 2%; margin-right: 2%;}
 }
 
 @media screen and (max-width: 600px) {
@@ -308,6 +325,7 @@ ul.team, .assignSupport ul {list-style-type: none; padding: 0.2em; margin: 0;}
     .utilisation ul {column-count: 2; column-fill: balance; column-gap: 0;}
     .team li {display: inline-block; width: 50%;}
 
+    .shifts {display: block;}
     .shift {width: 100%; margin-left: 0; margin-right: 0; display: block;}
 
     .assignSupport {position: fixed; bottom: 0; left: 0; z-index: 4; box-sizing: border-box; width: 100vw; height: 5vh; transition: height 0.25s ease-out; border-radius: 8px 8px 0 0; border: 1px solid #ccc; box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.25);}
