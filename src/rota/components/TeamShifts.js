@@ -77,15 +77,13 @@ class TeamShifts extends React.Component {
                 <div className="shifts">
                     {week.map(day => {return (
                         <div className={`day ${day}`}>
-                            {displayedShifts.filter(
-                                shift => shift.day === day.map(
-                                    <div key={shift.id} className="shift">{shift.id}</div>
+                            {displayedShifts.filter(shift => shift.day === day).map(shift => {
+                                return(
+                                    <Shift key={shift.id} colleagues={this.state.colleagues} shifts={this.state.shifts} id={shift.id} day={shift.day} start={shift.startTime} end={shift.endTime} activities={shift.activities} assignedSupport={shift.colleagues[0]} selectShift={this.selectShift} selected={this.state.selectedShift} assignToShift={this.assignToShift} colleagueAssignment={this.state.assignColleague} updateColleague={this.updateColleague} />
                                 )
-                            )}
+                            })}
                         </div>
                     )} )}
-
-                    {displayedShifts.map(shift => <Shift key={shift.id} colleagues={this.state.colleagues} shifts={this.state.shifts} id={shift.id} day={shift.day} start={shift.startTime} end={shift.endTime} activities={shift.activities} assignedSupport={shift.colleagues} selectShift={this.selectShift} selected={this.state.selectedShift} assignToShift={this.assignToShift} colleagueAssignment={this.state.assignColleague} updateColleague={this.updateColleague} />)}
                 </div>
             );
         } else {
