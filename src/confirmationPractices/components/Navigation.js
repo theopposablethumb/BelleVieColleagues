@@ -20,6 +20,7 @@ class Navigation extends React.Component {
                     <NavLink exact to="/">Confirmation Practices</NavLink>
                     <NavLink to="/faqs">FAQs</NavLink>
                     <NavLink to="/policies">Policies</NavLink>
+                    <NavLink to="/rota">Rota Prototype</NavLink>
                 </nav>
             </div>
         )
