@@ -3,14 +3,14 @@ import Amplify, { Auth, Hub } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Header from './confirmationPractices/components/Header';
-import Footer from './confirmationPractices/components/Footer';
-import Navigation from './confirmationPractices/components/Navigation';
-import Profile from './confirmationPractices/components/Profile';
+import Header from './common/Header';
+import Footer from './common/Footer';
+import Navigation from './common/Navigation';
+import Profile from './common/Profile';
 import ConfirmationPractices from './confirmationPractices/components/ConfirmationPractices';
-import Faq from './confirmationPractices/components/Faq';
-import Policies from './confirmationPractices/components/Policies';
-import Contact from './confirmationPractices/components/Contact';
+import Faq from './static/Faq';
+import Policies from './static/Policies';
+import Contact from './common/Contact';
 
 import TeamShifts from './rota/components/TeamShifts';
 
