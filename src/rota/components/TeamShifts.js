@@ -8,9 +8,6 @@ import Shift from './Shift';
 import {colleagues, shifts, visits, week} from './../data';
 import AssignSupport from './AssignSupport';
 
-
-//consider a seperate shifts component responsible for just managing shifts logic
-
 class TeamShifts extends React.Component {
     state = {
         shifts: shifts,
