@@ -4,7 +4,7 @@ let Header = () => {
     return (
         <header className="dark">   
             <div className="content">
-                <h1>Staging - BelleVie Colleague Portal</h1>
+                <h1>BelleVie Team Hub</h1>
             </div>
         </header>
     )

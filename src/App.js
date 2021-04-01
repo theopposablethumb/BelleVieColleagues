@@ -8,6 +8,8 @@ import Footer from './common/Footer';
 import Navigation from './common/Navigation';
 import Profile from './common/Profile';
 import ConfirmationPractices from './confirmationPractices/components/ConfirmationPractices';
+import ReportingHours from './static/ReportingHours';
+import AnnualLeave from './static/AnnualLeave';
 import Faq from './static/Faq';
 import Policies from './static/Policies';
 import Contact from './common/Contact';
@@ -81,6 +83,8 @@ class App extends React.Component {
             </div>
           </div>
           <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} /> ) } />
+          <Route path="/reporting-hours" component={ReportingHours}></Route>
+          <Route path="/annual-leave" component={AnnualLeave}></Route>
           <Route path="/faqs" component={Faq} />
           <Route path="/policies" component={Policies} />
           

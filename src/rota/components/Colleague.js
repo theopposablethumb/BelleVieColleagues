@@ -56,9 +56,9 @@ let Colleague = (props) => {
                 </div>
             )
         } else if (props.supportView) {
-            hoursScheduled = hoursScheduled * 4;
-            contractedHours = contractedHours * 4;
-            visitingHours = visitingHours * 4;
+            hoursScheduled = hoursScheduled * 4.34;
+            contractedHours = contractedHours * 4.34;
+            visitingHours = visitingHours * 4.34;
             scheduled = 'hours';
             contactTime = 'hours contact time';
             return (
