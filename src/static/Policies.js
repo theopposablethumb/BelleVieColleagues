@@ -1,5 +1,3 @@
-import React from 'react';
-
 let Policies = () => {
     return (
         <div className="section offwhitebg">
