@@ -1,6 +1,10 @@
 let AnnualLeave = () => {
     return (
-        <p>Something</p>
+        <div className="section offwhitebg">
+            <div className="content">
+                <p>In progress....</p>
+            </div>
+        </div>
     )
 }
 
