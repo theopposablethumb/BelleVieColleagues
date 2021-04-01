@@ -28,7 +28,7 @@ let ReportingHours = () => {
 
                 <h2 id="hoursSpreadSheet">Where are hours reported?</h2>
                 <p>Each team has a "Reporting Hours" spreadsheet in their team folder on <a href="https://drive.google.com/">Google Drive</a>. Please make sure you are logged n to Google Drive using your @belleviecare.co.uk email, and not a personal email address.</p>
-                <h3>Finding the Reporitng Hours spreadsheet in Google Drive</h3>
+                <h3>Finding the Reporting Hours spreadsheet in Google Drive</h3>
                 <p>First you'll need to find your team folder. Your team folder is where your rota is stored, and any other documents which are shared and used within your team.</p>
                 <ol>
                     <li>Once logged into Google Drive, click "Shared with me" on the left hand side</li>
