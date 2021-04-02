@@ -3,14 +3,16 @@ import Amplify, { Auth, Hub } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import Header from './confirmationPractices/components/Header';
-import Footer from './confirmationPractices/components/Footer';
-import Navigation from './confirmationPractices/components/Navigation';
-import Profile from './confirmationPractices/components/Profile';
+import Header from './common/Header';
+import Footer from './common/Footer';
+import Navigation from './common/Navigation';
+import Profile from './common/Profile';
 import ConfirmationPractices from './confirmationPractices/components/ConfirmationPractices';
-import Faq from './confirmationPractices/components/Faq';
-import Policies from './confirmationPractices/components/Policies';
-import Contact from './confirmationPractices/components/Contact';
+import ReportingHours from './static/ReportingHours';
+import AnnualLeave from './static/AnnualLeave';
+import Faq from './static/Faq';
+import Policies from './static/Policies';
+import Contact from './common/Contact';
 
 import TeamShifts from './rota/components/TeamShifts';
 
@@ -80,21 +82,17 @@ class App extends React.Component {
               <Profile user={this.state.user} />
             </div>
           </div>
-          <div className="section offwhitebg">
-            <div className="content">
-              <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} /> ) } />
-              <Route path="/faqs" component={Faq} />
-              <Route path="/policies" component={Policies} />
-              
-            </div>
-          </div>
+          <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} /> ) } />
+          <Route path="/reporting-hours" component={ReportingHours}></Route>
+          <Route path="/annual-leave" component={AnnualLeave}></Route>
+          <Route path="/faqs" component={Faq} />
+          <Route path="/policies" component={Policies} />
+          
+          <Route path="/rota" component={TeamShifts} />
           <div className="section whitebg">
             <div className="content">
               <Contact />
             </div>
-          </div>
-          <div className="rota">
-            <Route path="/rota" component={TeamShifts} />
           </div>
         </BrowserRouter>
       )

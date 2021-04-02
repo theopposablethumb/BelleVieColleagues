@@ -12,8 +12,9 @@ h4 {font-weight:500; margin-top: 2em}
 input, textarea, select {font-size: 1.1em; line-height: 1.5em; }
 textarea {font-family: 'Roboto', sans-serif; font-weight: 400;}
 
-ul {padding: 0 1em;}
-ul ul {font-size: 1em; margin: 0; padding: 0 1em 0.75em 1em;}
+ul {padding: 0 1em; margin-left: 1em;}
+ul ul, ol ol {font-size: 1em; margin: 0; padding: 0 1em 0.75em 1em;}
+ol ol {list-style-type: lower-alpha;}
 li {margin: 0.75em 0;}
 a {color: #BA7800; text-decoration: none;}
 a:hover {text-decoration: underline;} 
@@ -65,7 +66,7 @@ nav a:last-child {border-right: none;}
 nav a.active {color: #333; text-decoration: none;}
 nav a:hover {text-decoration: none;}
 nav a.active:hover {text-decoration: underline;}
-
+button.menu {display: none}
 
 .content .form {background: #FFF; padding: 0 2.5em 1em 2.5em; margin: 1.25em 0 2.5em 0; border-radius: 4px; border: 1px solid #E4E4E4;}
 .content form p {color: #333;}
@@ -117,62 +118,233 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
 }
 
 @media screen and (max-width: 768px) {
-	h1 {font-size: 2em;}
+	h1 {font-size: 1.5em;}
 	h1.custom {font-size: 3em;}
+    h2 {font-size: 1.5em; font-weight: 500;}
+    h3 {font-size: 1.25em; font-weight: 500; margin-top: 0.25em;}
 	p {margin-top: 0.8em;}
 
     p, ul, input, label, select, textarea {font-size: 1em; width: 100%; box-sizing: border-box;}
     
-    nav, .content {width: 90%; margin: auto;}
+    .section.teal {position: relative;}
+    nav {width: 100%; padding: 0;}
+    .content {padding: 0 1em;}
+    button.menu {display: block; background: none; height: 1.5em; width: 2em; padding: 1em; margin: 0.5em 1em; position: relative; float: right;}
+    button.menu:focus {border: none; outline: 0; box-shadow: none;}
+    button.menu:before { content: ""; position: absolute; left: 0; top: 0.21em; bottom: 0.21em; height: 1.5em; width: 2em; background: linear-gradient(to bottom, #185D6F, #185D6F 20%, #D3F1F1 20%, #D3F1F1 40%, #185D6F 40%, #185D6F 60%, #D3F1F1 60%, #D3F1F1 80%, #185D6F 80%, #185D6F 100%); transition: linear-gradient 1s;}
+    button.menu.active {position: absolute; top: 0; right: 0;}
+    button.menu.active:before {background: linear-gradient(to bottom, #D3F1F1, #D3F1F1 40%, #185D6F 40%, #185D6F 60%, #D3F1F1 60%, #D3F1F1 100%);}
 
-    .flex {display: block;}
+    nav.close {display: none}
+    nav.open {display: block;}
+    nav a {width: 100%; padding: 0.5em 1em; box-sizing: border-box; border-right: none;}
+    nav a.active {background: #185D6F; color: #fff; text-decoration: none;}
+    nav a.active:hover {text-decoration: none;}
+    nav a:first-child {padding-left: 1em; margin-top: 2.5em;}
+
+
     .left, .right {float: none; overflow: visible; }
 
     .profile {width: 100%; padding: 0;}
-    .profile img {display: block; margin: auto;}
-    .profile div {text-align: center;}
+    .profile img {display: inline-block; margin: 0.2em 2em auto 0; height: 4em; width: 4em;}
 
     .login, .logout {float: none; display: block; margin: 1.5em auto; }
 
     .progress span {display: none;}
+
+    footer {margin-top: 2em;}
 }
 
 
 /* Rota Styles */
 .rota {padding: 1.5em;}
+.rota h2, .assignSupport h2 {font-size: 1.25em; font-weight: 500;}
 
-ul.team {list-style-type: none; padding: 0;}
-.team li {display: inline-block; width: 50%;}
-.team img, .support img {width: 50px; height: 50px;}
-.team li p, .support p {font-size: 1em; display: inline-block; margin: 0 0.5em;}
-.support p {font-size: 1.25em}
+em {font-style: normal; color: #747474;}
+p.overtime {color: #7E2323;}
 
-.shift {padding-top: 1em; margin-bottom: 2em; border-radius: 4px; background: #F5F5F5; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); position: relative;}
+.teamStats {display: flex;}
+
+.capacity {padding: 0.5em 1.5em 1em 1.5em; background: #DAF1F1; text-align: center;}
+.utilisation {padding: 0.5em 1.5em 1em 1.5em; background: #F5F5F5;}
+.barChart {margin-top: 0.85em; height: 1.4em; width: 100%; background: #ddd; position: relative;} 
+.barChart div {height: 100%; display: inline-block;}
+
+.utilisation ul {list-style-type: none; padding: 0;}
+.utilisation li {margin: 0 0 0.75em 0;}
+.utilisation li:before {content: " "; display: inline-block; height: 1em; width: 1em; margin: 0 0.5em 0 0;}
+
+.barChart .visits, .utilisation li.visits:before {background: #009688;}
+.barChart .travel, .utilisation li.travel:before {background: #91DBD4;}
+.barChart .benchTime, .utilisation li.benchTime:before {background: #F0B387;}
+.barChart .overTime, .utilisation li.overTime:before {background: #7E2323;}
+.barChart .overTime {position: absolute; top: 0; right: 0;}
+
+.assignSupport {padding: 1.4em; background: #fff; }
+.assignSupport div.progress {width: 100%; height: 4px; margin: 0.25em 0; box-shadow: none; background: #C8C8C8; padding: 0;}
+.assignSupport .colleague div.progress {padding: 0;}
+div.progress .completed {height: 100%; background: #009688; padding: 0;}
+.colleague div.progress.overtime {margin: 0.75em 0 0.5em; }
+div.progress.overtime .completed {background: #7E2323;}
+
+.assignSupport img {width: 60px; height: 60px;}
+.assignSupport .colleague div {padding: 0 1em;}
+.assignSupport .colleague p {margin: 0.2em 0;}
+
+ul.team, .assignSupport ul {list-style-type: none; padding: 0.2em; margin: 0;}
+.assignSupport li {margin-top: 2.8em;}
+.team li {opacity: 1; transition: opacity 0.25s ease-out;}
+.team img {width: 40px; height: 40px;}
+.team li p {font-size: 0.75em; margin: 0 0.5em;}
+.assignSupport li {opacity: 1; transition: opacity 0.25s ease-out;}
+.team li.unselected, .assignSupport li.unselected {opacity: 0.4;}
+.team li.selected img, .assignSupport li.selected img {box-shadow: 0 0 0 2px #fff, 0 0 0 4px #009688;}
+
+
+.colleague {display: flex;}
+.colleague img {border-radius: 50%; border: 1px solid #333;}
+.colleague h4 {margin: 0; font-size: 1em;}
+.colleague div {padding-top: 0.25em;}
+.shift .colleague div {padding: 0;}
+.colleague div p {margin-top: 0;}
+
+.shifts {margin-top: 1.25em;}
+.shift, .meeting {padding-top: 1em; margin-bottom: 2em; border-radius: 4px; background: #F5F5F5; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); position: relative;}
+.meeting {margin-top: 1.5em; padding-bottom: 1em; padding-left: 1em; display: flex;}
 
 .shift button {padding: 0.5em; margin: 0; background: none; position: absolute; top: 0; right: 0.5em; height: fit-content;}
 .shift button:focus {border: none; outline: 0; box-shadow: 0 0 0;}
 .shift button {transform: none;}
 .shift.close button {transform: rotate(180deg);}
 
+
 .stats.close, .close .stats.open {display: none;}
 .close .stats.close {display: block;}
 
-
-.shift h4, .shift p {color: #185D6F; margin-left: 1em; margin-right: 1em; }
-.shift h4 {margin: 0;}
-.shift p {margin-top: 0.4em}
+.shift h4, .shift p, .meeting h4, .meeting p {color: #185D6F; margin: 0 0 0 1em;}
+.shift h4, .meeting h4 {margin-left: 0.75em;}
+.shift p, .meeting p {margin-top: 0.4em}
 
 .shift.close .visit, .shift.close .free {display: none}
+
+.support img {width: 50px; height: 50px;}
 
 .visit, .free { padding: 0.85em; margin: 0.85em 1em 0 1em; border-radius: 4px;}
 .visit {background: #fff;}
 .free {background: #F2FFFF; border: #DAF1F1 2px solid;}
 
-.shift h4 {margin: 0 1em 0; color: #185D6F;}
 .free h4 {color: #333;}
 .visit h4, .free h4 {margin: 0;}
 .visit p, .free p {font-weight: 500; color: #333; margin: 0.85em 0 0;}
 .free p {color: #185D6F;}
 
-.support {width: 100%; box-sizing: border-box; border-top: 1px solid #BFBFBF; background: #fff; padding: 0.85em 1em; margin-top: 1em;}
+.support {width: 100%; box-sizing: border-box; border-radius: 0 0 4px 4px; border-top: 1px solid #BFBFBF; background: #fff; padding: 0.85em 1em; margin-top: 1em;}
 
+.modal {position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 6; background: rgba(0, 0, 0, 0.75);}
+.modal.hide {display: none;}
+.modal div { padding: 1.25em 2em; box-shadow: 0 24px 24px rgba(0, 0, 0, 0.25); margin: 3em auto;}
+.modal h2, .modal p {margin: 0;}
+.modal p {margin-top: 1.5em}
+.modal .actions {width: 100%; margin: 1.5em 0 0 0; box-shadow: none; padding: 0; text-align: right;}
+.modal .actions button {position: relative; transform: rotate(0); background: none; color: #009688; text-transform: uppercase; padding: 0.625em 0.5em 0.625em 1.5em; font-weight: 500; font-size: 1em;}
+
+@media screen and (min-width: 1401px) {
+    .rota h2, .assignSupport h2 {font-size: 1.25em; font-weight: 500;}
+    .rota p, .assignSupport p, .teamStats p, .assignSupport ul, .teamStats ul {font-size: 1em}
+
+    .capacity, .utilisation {width: 50%; box-sizing: border-box;}
+    .utilisation ul {column-count: 4; column-fill: balance; column-gap: 0;}
+
+    .assignSupport {position: relative; background: none; padding: 0;}
+    ul.team {display: none;}
+    .team li {display: inline-block; width: 20%;}
+
+    .day {display: flex; flex-wrap: wrap;}
+    .day h2 {width: 100%; font-weight: 300; color: #333; text-transform: capitalize; margin: 0.5em 0 1em; border-bottom: 1px solid #ccc;}
+    .shift {width: 19%; margin-left: 0; margin-right: 1%; box-sizing: border-box;}
+    .shift.selected {border: 2px solid #009688;}
+    .support {width: 100%; box-sizing: border-box; border-radius: 0 0 4px 4px; border-top: 1px solid #BFBFBF; background: #fff; padding: 0.85em 1em; margin-top: 1em;}
+    .shift .support button {position: relative; transform: rotate(0); background: #185D6F; padding: 0.625em 2em; font-weight: 500;}
+
+    .assignSupport ul.sticky {position: fixed; top: 0; left: 0; z-index: 5; width: 100%; padding: 0 1.5em; background: #fff; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);}
+    .assignSupport li {width: 20%; display: inline-block; margin-top: 1em;}
+    .assignSupport ul.sticky p {display: none;}
+
+    .modal div {background: #fff; width: 80vw; max-height: 90vh; box-sizing: border-box; overflow-y: scroll;}
+    .modal ul {font-size: 1em}
+}
+
+@media screen and (max-width: 1400px) {
+    .rota h2, .assignSupport h2 {font-size: 1.25em; font-weight: 500;}
+    .rota p, .assignSupport p, .teamStats p, .assignSupport ul, .teamStats ul {font-size: 1em}
+    
+    .capacity, .utilisation {width: 50%; box-sizing: border-box;}
+    .utilisation ul {column-count: 4; column-fill: balance; column-gap: 0;}
+
+    ul.team {display: none;}
+    .assignSupport {position: normal; background: none; padding: 0;}
+    .assignSupport ul.sticky {position: fixed; top: 0; left: 0; z-index: 5; width: 100%; padding: 0 1.5em; background: #fff; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);}
+    .assignSupport li {width: 25%; display: inline-block; margin-top: 1.5em}
+    .assignSupport ul.sticky p {display: none;}
+    .team li {display: inline-block; width: 25%;}
+
+    .day {display: flex; flex-wrap: wrap;}
+    .day h2 {width: 100%; font-weight: 300; color: #333; text-transform: capitalize; margin: 0.5em 0 1em; border-bottom: 1px solid #ccc;}
+    .shift {width: 23%; margin-left: 1%; margin-right: 1%; box-sizing: border-box;}
+    .shift.selected {border: 2px solid #009688;}
+    .support {width: 100%; box-sizing: border-box; border-radius: 0 0 4px 4px; border-top: 1px solid #BFBFBF; background: #fff; padding: 0.85em 1em; margin-top: 1em;}
+    .shift .support button {position: relative; transform: rotate(0); background: #185D6F; padding: 0.625em 2em; font-weight: 500;}
+
+    .modal div {background: #fff; width: 80vw; max-height: 90vh; box-sizing: border-box; overflow-y: scroll;}
+}
+
+@media screen and (max-width: 1200px) {
+    .utilisation ul {column-count: 3; column-fill: balance; column-gap: 0;}
+    .shift {width: 31%; margin-left: 1%; margin-right: 1%; box-sizing: border-box;}
+}
+
+@media screen and (max-width: 900px) {
+    
+    .utilisation ul {column-count: 3; column-fill: balance; column-gap: 0;}
+    ul.team {display: block;}
+    .team li {display: inline-block; width: 33%;}
+
+    .assignSupport {position: fixed; bottom: 0; left: 0; z-index: 4; box-sizing: border-box; width: 100vw; height: 5vh; transition: height 0.25s ease-out; border-radius: 8px 8px 0 0; border: 1px solid #ccc; box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.25); padding: 1.4em; background: #fff; }
+    .assignSupport.open {height: 60vh; }
+    .assignSupport .inner {margin-top: 1em; height: 60vh; overflow-y: scroll;}
+    .assignSupport ul.sticky {position: relative; top: 0; left: 0; z-index: 5; width: 100%; padding-left: 0; background: none; box-shadow: none;}
+    .assignSupport li {width: 50%; display: inline-block;}
+    .assignSupport ul.sticky p {display: block;}
+
+    .shift {width: 48%; margin-left: 1%; margin-right: 1%; box-sizing: border-box;}
+}
+
+@media screen and (max-width: 850px) { 
+    .teamStats {display: block;}
+    .capacity, .utilisation {width: 100%;}
+
+    .shift {width: 45%; margin-left: 2%; margin-right: 2%;}
+}
+
+@media screen and (max-width: 600px) {
+    
+    .utilisation ul {column-count: 2; column-fill: balance; column-gap: 0;}
+    .team li {display: inline-block; width: 50%;}
+
+    .shifts {display: block;}
+    .shift {width: 100%; margin-left: 0; margin-right: 0; display: block;}
+
+    .assignSupport {position: fixed; bottom: 0; left: 0; z-index: 4; box-sizing: border-box; width: 100vw; height: 5vh; transition: height 0.25s ease-out; border-radius: 8px 8px 0 0; border: 1px solid #ccc; box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.25);}
+    .assignSupport.open {height: 60vh; }
+    .assignSupport .inner {margin-top: 1em; height: 60vh; overflow-y: scroll;}
+
+    .assignSupport img {width: 60px; height: 60px;}
+    .assignSupport .colleague div {padding: 0 1em;}
+    .assignSupport .colleague p {margin: 0.2em 0;}
+
+    .handle {height: 4px; border-top: 1px solid #C3C3C3; border-bottom: 1px solid #C3C3C3; width: 60%; margin: auto;}
+}
+
+@media screen and (max-width: 500px) {
+    .assignSupport li {width: 100%; display: block;}
+} 
