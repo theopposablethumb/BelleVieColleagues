@@ -11,7 +11,6 @@ let ReportingHours = () => {
                     <li><a href="#getPaid">When you will get paid and how much</a></li>
                     <li><a href="#hoursSpreadSheet">Where are hours reported?</a></li>
                     <li><a href="#recordingShift">How to record a shift</a></li>
-                    <li><a href="#recordingOt">Recording Overtime</a></li>
                     <li><a href="#meetings">Team / buddy meetings</a> </li>
                     <li><a href="#mileage">Mileage</a></li>
                     <li><a href="#expenses">Expenses</a></li>
@@ -56,44 +55,20 @@ let ReportingHours = () => {
                             <li>You can also record your buddy meetings and team meetings here, as well as any holiday</li>
                         </ol>
                     </li>
-                    <li>Record the shift start time in Column E under the heading "Start Time", <strong>please make sure you use the 24h format eg: 14:00 NOT 2:00pm</strong></li>
-                    <li>Record the time the shift ended in Column F under the heading "End Time"</li>
-                    <li>Add any notes regarding the shift in Column G under "Notes", for example initials of people visited, or the reason for doing overtime (eg covering for a colleague)</li>
-                    <li>Record your mileage in Column K under the heading "Mileage". For a normal shift your mileage is the distance travelled between visits, but not from your home to your first visit or your last visit to your home. <strong>Please read the section below on Mileage for more detail on recording Mileage correctly</strong></li>
-                    <li>Record your expenses in Column M under the heading "Expenses". Please note Expenses must be a justifiable expense. Please familiarise yourself with the rules on Expenses in the Expenses section</li>
-                    <li>All other fields you can leave alone, as these will be calculated automatically</li>
-                </ol>
-
-                <h2 id="recordingOt">Recording Overtime</h2>
-                <p>To record overtime you first need to be able to know whether the hours you have worked would be classed as overtime or normal shift. <strong>We would define overtime as any hours you have worked outside of your “agreed shifts”.</strong></p>
-                <p>You can enter your overtime into the reporting hours spreadsheet following the same process as your normal shift by selecting “Overtime” from the drop down menu in column B (type)</p>
-                <ol>
-                    <li>Enter the date of the overtime you worked in column B under the heading "Date"</li>
-                    <li>Enter the type of work in column C under the heading "Shift", but select "Overtime"</li>
-                    <li>For Overtime, the starting time will be the start of your first visit, <strong>if the overtime is less than 2 hours.</strong> Please record this in Column E under the heading "Start Time"</li>
-                    <li>The end time for overtime will end time of your last shift <strong>if the overtime is less than 2 hours.</strong> Record this in Column F under the heading "End Time"</li>
-                    <li>Add any notes regarding the shift in Column G under "Notes", for example initials of people visited, or the reason for doing overtime (eg covering for a colleague)</li>
-                    <li>Record your mileage in Column K under the heading "Mileage". For a normal shift your mileage is the distance travelled between visits, but not from your home to your first visit or your last visit to your home. <strong>Please read the section below on Mileage for more detail on recording Mileage correctly</strong></li>
-                    <li>Record your expenses in Column M under the heading "Expenses". Please note Expenses must be a justifiable expense. Please familiarise yourself with the rules on Expenses in the Expenses section</li>
-                    <li>All other fields you can leave alone, as these will be calculated automatically</li>
-                </ol>
-                <h3>Recording overtime when a shift has run longer than the agreed time in your rota</h3>
-                <p>Sometimes visits or shifts may overrun, and a shift may last longer than originally planned, or you may need to start a shift earlier than normal. If this happens...</p>
-                <ol>
-                    <li>Record the agreed shift as normal following the steps outlined above for agreed shifts</li>
-                    <li>For any time that you overran outside of the agreed shift, please record this as a new row in the sheet
+                    <li>Record the start time of your first visit on the shift in Column E under the heading "Start Time", <strong>please make sure you use the 24h format eg: 14:00 NOT 2:00pm</strong></li>
+                    <li>Record the end time of your last visit on the shift in Column F under the heading "End Time"</li>
+                    <li>You're start time may be earlier than the agreed shift start time, and the end time may be earlier than the agreed shift end time.
                         <ol>
-                            <li>Enter the date , start time, and end time as before</li>
-                            <li>Select "Overtime" in Column C under the heading "Shift"</li>
-                            <li><strong>Please note: You should not include travel time and mileage from home to first visit and from last visit home as your whole shift will be longer than 2 hours</strong></li>
+                            <li>All agreed shifts are 5 hours in length and this will be calculated for you.</li>
+                            <li>Even if the start and end time of your visits don't equate to 5 hours you will still be paid for a 5 hour shift.</li>
+                            <li>An earlier start time or a later end time don't qualify as Overtime if they fall outside of your agreed shift time, as the duration of time spent on visits may still be under the agreed 5 hour shift duration.</li>
+                            <li>Any visits that fall outside of the 5 hour shift duration will be automatically recorded as overtime.</li>
                         </ol>
                     </li>
-                    <li>Please include a note as to why you have had to start early or finish later than expected, this helps us understand what the overtime was and the overall demand in the team</li>
-                </ol>
-                <h3>Other types of Overtime</h3>
-                <ol>
-                    <li>Overtime training: Any training completed outside of your agreed shift/contracted hours (including e-learning). Please try to complete eLearning during any free time you have on agreed shifts</li>
-                    <li>Overtime shadowing: Any shadowing you have completed outside of your agreed shift/contracted hours (including e-learning). If you want to record shadowing done within your usual hours, record as a shift and write details of the shadowing in “notes”</li>
+                    <li>Add any notes regarding the shift in Column G under "Notes", for example initials of people visited, or the reason for doing overtime (eg covering for a colleague)</li>
+                    <li>Record your mileage in Column K under the heading "Mileage". For a normal shift your mileage is the distance travelled between visits, but not from your home to your first visit or your last visit to your home. <strong>Please read the section below on Mileage for more detail on recording Mileage correctly</strong></li>
+                    <li>Record your expenses in Column M under the heading "Expenses". Please note Expenses must be a justifiable expense. Please familiarise yourself with the rules on Expenses in the Expenses section</li>
+                    <li>All other fields you can leave alone, as these will be calculated automatically</li>
                 </ol>
 
                 <h2 id="meetings">Team / buddy meetings</h2> 
