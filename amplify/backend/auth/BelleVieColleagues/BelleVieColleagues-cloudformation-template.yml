@@ -165,10 +165,6 @@ Parameters:
     Type: String
   
             
-        
-  authProviders:
-    Type: CommaDelimitedList
-      
   hostedUIProviderCreds:
     Type: String
   
@@ -176,9 +172,6 @@ Parameters:
             
 Conditions:
   ShouldNotCreateEnvResources: !Equals [ !Ref env, NONE ]
-  
-  ShouldOutputAppClientSecrets: !Equals [!Ref userpoolClientGenerateSecret, true ]
-  
 
 Resources:
   
@@ -250,7 +243,6 @@ Resources:
       
       MfaConfiguration: !Ref mfaConfiguration
       SmsVerificationMessage: !Ref smsVerificationMessage
-      SmsAuthenticationMessage: !Ref smsAuthenticationMessage
       SmsConfiguration:
         SnsCallerArn: !GetAtt SNSRole.Arn
         ExternalId: bellevcb1a642d_role_external_id
@@ -324,7 +316,7 @@ Resources:
             - ' }'
             - '};'
       Handler: index.handler
-      Runtime: nodejs12.x
+      Runtime: nodejs10.x
       Timeout: '300'
       Role: !GetAtt
         - UserPoolClientRole
@@ -450,7 +442,7 @@ Resources:
 
 
       Handler: index.handler
-      Runtime: nodejs12.x
+      Runtime: nodejs10.x
       Timeout: '300'
       Role: !GetAtt
         - UserPoolClientRole
@@ -582,7 +574,7 @@ Resources:
             - '} '
 
       Handler: index.handler
-      Runtime: nodejs12.x
+      Runtime: nodejs10.x
       Timeout: '300'
       Role: !GetAtt
         - UserPoolClientRole
@@ -681,7 +673,7 @@ Resources:
             - '}'
 
       Handler: index.handler
-      Runtime: nodejs12.x
+      Runtime: nodejs10.x
       Timeout: '300'
       Role: !GetAtt
         - UserPoolClientRole
@@ -803,7 +795,6 @@ Outputs :
     Description: The user pool app client id
   AppClientSecret:
     Value: !GetAtt UserPoolClientInputs.appSecret
-    Condition: ShouldOutputAppClientSecrets
   
   
   
