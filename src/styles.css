@@ -13,7 +13,7 @@ input, textarea, select {font-size: 1.1em; line-height: 1.5em; }
 textarea {font-family: 'Roboto', sans-serif; font-weight: 400;}
 
 ul {padding: 0 1em; margin-left: 1em;}
-ul ul {font-size: 1em; margin: 0; padding: 0 1em 0.75em 1em;}
+ul ul, ol ol {font-size: 1em; margin: 0; padding: 0 1em 0.75em 1em;}
 li {margin: 0.75em 0;}
 a {color: #BA7800; text-decoration: none;}
 a:hover {text-decoration: underline;} 
