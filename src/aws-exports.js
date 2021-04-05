@@ -24,7 +24,7 @@ const awsmobile = {
     "aws_cloud_logic_custom": [
         {
             "name": "colleagues",
-            "endpoint": "https://z8un72vpt1.execute-api.eu-west-2.amazonaws.com/dev",
+            "endpoint": "https://jwmxyu9di5.execute-api.eu-west-2.amazonaws.com/prod",
             "region": "eu-west-2"
         }
     ]
