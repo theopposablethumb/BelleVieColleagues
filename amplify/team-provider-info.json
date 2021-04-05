@@ -1,22 +1,4 @@
 {
-  "prod": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-belleviecolleagues-prod-95147-authRole",
-      "UnauthRoleArn": "arn:aws:iam::245111508555:role/amplify-belleviecolleagues-prod-95147-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::245111508555:role/amplify-belleviecolleagues-prod-95147-authRole",
-      "Region": "eu-west-2",
-      "DeploymentBucketName": "amplify-belleviecolleagues-prod-95147-deployment",
-      "UnauthRoleName": "amplify-belleviecolleagues-prod-95147-unauthRole",
-      "StackName": "amplify-belleviecolleagues-prod-95147",
-      "StackId": "arn:aws:clonpm udformation:eu-west-2:245111508555:stack/amplify-belleviecolleagues-prod-95147/426a1530-69f3-11eb-b35e-023a5acac3f0",
-      "AmplifyAppId": "d3ihtjzvgz37vw"
-    },
-    "categories": {
-      "auth": {
-        "BelleVieColleagues": {}
-      }
-    }
-  },
   "dev": {
     "awscloudformation": {
       "AuthRoleName": "amplify-belleviecolleagues-dev-164130-authRole",

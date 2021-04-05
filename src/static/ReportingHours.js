@@ -1,5 +1,7 @@
 let ReportingHours = () => {
     return (
+<<<<<<< HEAD
+<<<<<<< HEAD
         <div className="section offwhitebg">
             <div className="content">
                 <h1>Reporting your monthly hours</h1>
@@ -11,7 +13,6 @@ let ReportingHours = () => {
                     <li><a href="#getPaid">When you will get paid and how much</a></li>
                     <li><a href="#hoursSpreadSheet">Where are hours reported?</a></li>
                     <li><a href="#recordingShift">How to record a shift</a></li>
-                    <li><a href="#recordingOt">Recording Overtime</a></li>
                     <li><a href="#meetings">Team / buddy meetings</a> </li>
                     <li><a href="#mileage">Mileage</a></li>
                     <li><a href="#expenses">Expenses</a></li>
@@ -72,25 +73,6 @@ let ReportingHours = () => {
                     <li>All other fields you can leave alone, as these will be calculated automatically</li>
                 </ol>
 
-                <h2 id="recordingOt">Recording Overtime</h2>
-                <p>Any visits or hours you have worked in addition to your agreed shifts is overtime. Please note if an agreed shift overruns or is lnoger than 5 hours any overtime is calculated automatically.</p>
-                <p>You can enter your overtime into the reporting hours spreadsheet following the same process as your normal shift by selecting “Overtime” from the drop down menu in column B (type)</p>
-                <ol>
-                    <li>Enter the date of the overtime you worked in column B under the heading "Date"</li>
-                    <li>Enter the type of work in column C under the heading "Shift", but select "Overtime"</li>
-                    <li>For Overtime, the starting time will be the start of your first visit, <strong>if the overtime is less than 2 hours.</strong> Please record this in Column E under the heading "Start Time"</li>
-                    <li>The end time for overtime will end time of your last shift <strong>if the overtime is less than 2 hours.</strong> Record this in Column F under the heading "End Time"</li>
-                    <li>Add any notes regarding the shift in Column G under "Notes", for example initials of people visited, or the reason for doing overtime (eg covering for a colleague)</li>
-                    <li>Record your mileage in Column K under the heading "Mileage". For a normal shift your mileage is the distance travelled between visits, but not from your home to your first visit or your last visit to your home. <strong>Please read the section below on Mileage for more detail on recording Mileage correctly</strong></li>
-                    <li>Record your expenses in Column M under the heading "Expenses". Please note Expenses must be a justifiable expense. Please familiarise yourself with the rules on Expenses in the Expenses section</li>
-                    <li>All other fields you can leave alone, as these will be calculated automatically</li>
-                </ol>
-                <h3>Other types of Overtime</h3>
-                <ol>
-                    <li>Overtime training: Any training completed outside of your agreed shift/contracted hours (including e-learning). Please try to complete eLearning during any free time you have on agreed shifts</li>
-                    <li>Overtime shadowing: Any shadowing you have completed outside of your agreed shift/contracted hours (including e-learning). If you want to record shadowing done within your usual hours, record as a shift and write details of the shadowing in “notes”</li>
-                </ol>
-
                 <h2 id="meetings">Team / buddy meetings</h2> 
                 <p>All colleagues are paid to attend 2 hours of meetings each week. These are your weekly team meetings (1.5 hours) and your 30 minute buddy meeting which is your opportunity to reflect on how your week has gone. Please record all of these in the reporting hours spreadsheet. </p>
                 <ol>
@@ -119,6 +101,12 @@ let ReportingHours = () => {
                 </ol>
             </div>
         </div>
+=======
+        <p>Something</p>
+>>>>>>> parent of 6218f62 (Merge branch 'Development' into staging)
+=======
+        <p>Something</p>
+>>>>>>> parent of 6218f62 (Merge branch 'Development' into staging)
     )
 }
 
