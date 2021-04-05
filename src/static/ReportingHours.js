@@ -1,8 +1,5 @@
 let ReportingHours = () => {
     return (
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
         <div className="section offwhitebg">
             <div className="content">
                 <h1>Reporting your monthly hours</h1>
@@ -102,15 +99,6 @@ let ReportingHours = () => {
                 </ol>
             </div>
         </div>
-=======
-        <p>Something</p>
->>>>>>> parent of 6218f62 (Merge branch 'Development' into staging)
-=======
-        <p>Something</p>
->>>>>>> parent of 6218f62 (Merge branch 'Development' into staging)
-=======
-        <p>Something</p>
->>>>>>> parent of 6218f62 (Merge branch 'Development' into staging)
     )
 }
 
