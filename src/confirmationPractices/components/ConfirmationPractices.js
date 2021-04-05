@@ -1,4 +1,6 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+
 import {UpdateSpreadSheet} from '../../api/Sheets'; 
 import {questions} from '../data';
 import {teams} from '../data';
@@ -68,11 +70,16 @@ class confirmationPractices extends React.Component {
 
     render() {
         return(
-            <div className="section offwhitebg">
-                <div className="content">
-                    {this.renderFormConfirmation()}
+            <>
+                <Helmet>
+                    <title>Confirmation Practices</title>
+                </Helmet>
+                <div className="section offwhitebg">
+                    <div className="content">
+                        {this.renderFormConfirmation()}
+                    </div>
                 </div>
-            </div>
+            </>
         )
     }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Amplify, { Auth, Hub } from 'aws-amplify';
 import awsconfig from './aws-exports';
 import { BrowserRouter, Route } from 'react-router-dom';
+import Helmet from 'react-helmet';
 
 import Header from './common/Header';
 import Footer from './common/Footer';
@@ -102,6 +103,9 @@ class App extends React.Component {
   render() {
     return(
       <>
+        <Helmet>
+          <title>Team Hub BelleVie Care</title>
+        </Helmet>
         <Header />
         <main>
               {this.renderLogin()}
