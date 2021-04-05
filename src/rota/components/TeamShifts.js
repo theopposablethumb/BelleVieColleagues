@@ -1,4 +1,6 @@
 import React from 'react';
+import Helmet from 'react-helmet';
+
 import Team from './Team';
 import TeamCapacity from './TeamCapacity';
 import TeamUtilisation from './TeamUtilisation';
@@ -105,6 +107,9 @@ class TeamShifts extends React.Component {
     render() {
         return(
             <>
+                <Helmet>
+                    <title>Rota Prototype</title>
+                </Helmet>
                 <div className="teamStats">
                     <TeamCapacity colleagues={this.state.colleagues} visits={this.state.visits} />
                     <TeamUtilisation team={'Oxford'} shifts={this.state.shifts} colleagues={this.state.colleagues} visits={this.state.visits} />
