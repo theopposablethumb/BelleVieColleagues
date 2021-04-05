@@ -1,10 +1,17 @@
+import Helmet from 'react-helmet';
+
 let AnnualLeave = () => {
     return (
-        <div className="section offwhitebg">
-            <div className="content">
-                <p>In progress....</p>
+        <>
+            <Helmet>
+                <title>Annual Leave Guide</title>
+            </Helmet>
+            <div className="section offwhitebg">
+                <div className="content">
+                    <p>In progress...</p>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
