@@ -11,6 +11,11 @@ let Faq = () => {
                     <h1>Frequently asked questions</h1>
                     <p>Not sure what you can claim as expenses or need some help logging your overtime? Hopefully we have the answer here.</p>
                     
+                    <div className="new">
+                        <h2>New "What if...?" checklist</h2>
+                        <p><a href="https://docs.google.com/document/d/1LuiYXIloJer7o-XFSweqxzZPqZwzNFKwowIRr5XtsXg/edit?usp=sharing">We have a new "What if...?" checklist available</a> to help you all if the unforeseen happens</p>
+                    </div>
+
                     <h2 className="underline">Overtime</h2>
                     <p>Overtime is work logged outside of your agreed shifts.</p>
                     <ul>

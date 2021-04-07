@@ -13,6 +13,10 @@ let Policies = () => {
                     <ul>
                         <li><a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1naCA9kyx6kiLrPhgi5hBBdD_SJB7YQfh/view?usp=sharing">The BelleVie Handbook is intended to help us to live our values and achieve our purpose together.</a></li>
                     </ul>
+                    
+                    <h2>What if...?</h2>
+                    <ul><li><a href="https://docs.google.com/document/d/1LuiYXIloJer7o-XFSweqxzZPqZwzNFKwowIRr5XtsXg/edit?usp=sharing">"What if...?" checklist</a> to help you all if the unforeseen happens</li></ul>
+                    
                     <h2>About You</h2> 
                     <ul>
                         <li><a target="_blank" rel="noreferrer" href="https://drive.google.com/file/d/1c7z82s_3Om2PsF7zx7ge55mMQsCpRJ9B/view?usp=sharing">How we expect you to behave at work</a></li>
