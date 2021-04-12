@@ -48,7 +48,7 @@ class confirmationPractices extends React.Component {
 
             UpdateSpreadSheet(name, email, team, token, values);
 
-            return <Confirmation answers={this.state.answers} questions={questions} team={this.state.team} />
+            return <Confirmation answers={this.state.answers} questions={questions} team={this.state.team} email={email} />
         } else {
             return (
                 <>
