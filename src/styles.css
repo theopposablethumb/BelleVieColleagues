@@ -21,6 +21,7 @@ a:hover {text-decoration: underline;}
 p a {text-decoration: underline;}
 p a.button {text-decoration: none;} 
 p a:hover {text-decoration: none;}
+p.date {display: none;}
 
 strong {font-weight: 500;}
 
@@ -35,9 +36,10 @@ h2.underline {border-bottom: 2px solid;}
 .teal {background: #D3F1F1}
 
 button {font-size: 1em; font-weight: 500; padding: 0.625em 2em; display: inline-block; margin: 1.5em 1.5em 0 0; border-radius: 8px; border: none;}
+a.button {display: inline-block; padding: 0.625em 2em; margin: 1.5em 1.5em 0 0; border-radius: 8px;}
 
 .dark {background: #185D6F; color: #FFF;}
-button.dark:hover {background: #489982;}
+button.dark:hover, a.dark:hover {background: #489982;}
 button.light {background: #FFC247; color: #333;}
 button.light:hover {background: #BA7800; color: #FFF;}
 button:focus {box-shadow: 0 0 0 2px #FFF, 0 0 0 6px #2D9CDB;}
@@ -83,6 +85,9 @@ form p.error {margin-top: 0.5em; color: #CC0300;}
 
 .new {padding-bottom: 2em;}
 
+button.printMe, button.printMe:hover, a.mail, a.mail:hover {background-image: url('icons/printer.svg'); background-repeat: no-repeat; background-position: 12px center; background-size: 2.5em; font-size: 1.25em; padding: 1em 1em 1em 4em; margin-left: 0.2em}
+a.mail, a.mail:hover {background-image: url('icons/mail.svg');}
+
 .result {padding: 1.5em; border-top: 2px solid #ddd; margin: 1.5em 0;}
 .result p {padding: 0.75em; border-radius: 8px; background: #fff; border: 1px solid #ddd;}
 
@@ -122,7 +127,7 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
 	h1 {font-size: 1.5em;}
 	h1.custom {font-size: 3em;}
     h2 {font-size: 1.5em; font-weight: 500;}
-    h3 {font-size: 1.25em; font-weight: 500; margin-top: 0.25em;}
+    h3 {font-size: 1.25em; font-weight: 500; margin-top: 1.5em;}
 	p {margin-top: 0.8em;}
 
     p, ul, input, label, select, textarea {font-size: 1em; width: 100%; box-sizing: border-box;}
@@ -153,7 +158,21 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
 
     .progress span {display: none;}
 
+    button.printMe, button.printMe:hover, a.mail, a.mail:hover {background-size: 1.25em; font-size: 1em; padding: 0.75em 0.75em 0.75em 2.5em;}
+    a.mail {margin-bottom: 2em;}
+    
     footer {margin-top: 2em;}
+}
+
+@media print {
+    body {background: #fff;}
+    header, nav, footer, .profile, .section:last-of-type, .logout, .printMe, a.mail, .progress {display: none;}
+    h1, h2, h3, p, ul, ol {color: #000;}
+    h2 {margin-top: 1.5em;}
+    h3 {margin-top: 1em;}
+    p {margin-top: 0.5em;}
+    p.date {display: block; margin: 1.5em 0;}
+    .result, .result p {border: none; padding: 0;}
 }
 
 
