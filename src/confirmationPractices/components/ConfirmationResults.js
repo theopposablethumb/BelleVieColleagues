@@ -31,6 +31,7 @@ let Confirmation = (props) => {
             <h2>Thank you for submitting your confirmation practices</h2>
             <p className="date"><strong>{date}</strong></p>
             <p>Reviewing your confirmation practices is a great opportunity to reflect on how well you're doing and your contribution to the wellbeing of the people we support</p>
+            <p>Printing your confirmation practices will also give you the opportunity to save them as a PDF.</p>
             <button className="dark printMe" onClick={(e) => {printPage(e)}}>Print my results</button>
             <a className="button dark mail" target="_blank" rel="noreferrer" href={`mailto: ${props.email}?subject=ConfirmationPractices&body=${answersText}`}>Email my results to me</a>
             <h3>{props.team} Team</h3>
