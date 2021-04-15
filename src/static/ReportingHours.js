@@ -24,28 +24,28 @@ let ReportingHours = () => {
                     </ul>
 
                     <h2 id="when">When to report your monthly hours</h2>
-                    <p>Please complete your reporting hours by end of day on the 21st to give us plenty of time to make sure you get paid correctly and on time</p>
-                    <p>Hours worked should be reported for the preiod starting on the 21st of each month until the 20th of the following month. We will post reminders in Slack. However it may be easier to report your hours throughout the month, instead of leaving it to the 20th.</p>
+                    <p>Please complete your reporting hours by the end of the 20th to give us plenty of time to make sure you get paid correctly and on time</p>
+                    <p>Hours worked should be reported for the period starting on the 21st of each month until the 20th of the following month. We will post reminders in Slack. However it may be easier to report your hours throughout the month, instead of leaving it to the 20th.</p>
 
                     <h2 id="getPaid">When you will get paid and how much</h2>
                     <p>You will be paid on the 25th of each month by the end of the day.</p>
-                    <p>Your pay will include any acceptable expenses + overtime you have declared on your spreadsheet between the 21st of the previous month - 20th of the current month.</p>
+                    <p>Your pay will include any {/* Sarah is creating an acceptable expenses policy document, link to it here when ready */} acceptable expenses + overtime you have declared on your spreadsheet between the 21st of the previous month - 20th of the current month.</p>
                     <p>Everyone at BelleVie is paid an annual fixed salary based on their contracted hours, so your monthly pay will reflect a 12th of your annual salary.</p>
 
                     <h2 id="hoursSpreadSheet">Where are hours reported?</h2>
-                    <p>Each team has a "Reporting Hours" spreadsheet in their team folder on <a href="https://drive.google.com/">Google Drive</a>. Please make sure you are logged n to Google Drive using your @belleviecare.co.uk email, and not a personal email address.</p>
+                    <p>Each team has a "Reporting Hours" spreadsheet in their team folder on <a href="https://drive.google.com/">Google Drive</a>. Please make sure you are logged in to Google Drive using your @belleviecare.co.uk email, and not a personal email address.</p>
                     <h3>Finding the Reporting Hours spreadsheet in Google Drive</h3>
                     <p>First you'll need to find your team folder. Your team folder is where your rota is stored, and any other documents which are shared and used within your team.</p>
                     <ol>
                         <li>Once logged into Google Drive, click "Shared with me" on the left hand side</li>
                         <li>Find the folder "Care Teams"</li>
-                        <li>Open the folder "Team Folders</li>
+                        <li>Open the folder "Team Folders"</li>
                         <li>Open your team folder</li>
                     </ol>
                     <p>Once inside your team folder... </p>
                     <ol>
                         <li>Open the folder "Reporting Hours / Holiday"</li>
-                        <li>You'll find a list of spreadsheets with the naming convention "MonthYear_ReportingTime & Expenses_TeamName" </li>
+                        <li>You'll find a list of spreadsheets with the naming convention "MonthYear_ReportingTime & Expenses_TeamName" {/* some name formats for spreadsheets */}</li>
                         <li>Open the spreadsheet for the current month - for example "April 2021_Reporting Time & Expenses_Oxford"</li>
                     </ol> 
                     <p>You can also search for the name of the spreadsheet in Drive. Enter "Reporting Time & Expenses", and select your teams spreadsheet from the list</p> 
@@ -79,27 +79,30 @@ let ReportingHours = () => {
                     </ol>
 
                     <h2 id="recordingOt">Recording Overtime</h2>
-                    <p>Any visits or hours you have worked in addition to your agreed shifts is overtime. Please note if an agreed shift overruns or is lnoger than 5 hours any overtime is calculated automatically.</p>
+                    <p>Any visits or hours you have worked in addition to your agreed shifts is overtime. Please note if an agreed shift overruns or is longer than 5 hours any overtime is calculated automatically.</p>
                     <p>You can enter your overtime into the reporting hours spreadsheet following the same process as your normal shift by selecting “Overtime” from the drop down menu in column B (type)</p>
                     <ol>
                         <li>Enter the date of the overtime you worked in column B under the heading "Date"</li>
                         <li>Enter the type of work in column C under the heading "Shift", but select "Overtime"</li>
-                        <li>For Overtime, the starting time will be the start of your first visit, <strong>if the overtime is less than 2 hours.</strong> Please record this in Column E under the heading "Start Time"</li>
-                        <li>The end time for overtime will end time of your last shift <strong>if the overtime is less than 2 hours.</strong> Record this in Column F under the heading "End Time"</li>
+                        <li>For Overtime, the starting time will be the time you left home, <strong>if the overtime is less than 2 hours.</strong> Please record this in Column E under the heading "Start Time"</li>
+                        <li>The end time for overtime will be the time you arrive home after your last visit <strong>if the overtime is less than 2 hours.</strong> Record this in Column F under the heading "End Time"</li>
                         <li>Add any notes regarding the shift in Column G under "Notes", for example initials of people visited, or the reason for doing overtime (eg covering for a colleague)</li>
-                        <li>Record your mileage in Column K under the heading "Mileage". For a normal shift your mileage is the distance travelled between visits, but not from your home to your first visit or your last visit to your home. <strong>Please read the section below on Mileage for more detail on recording Mileage correctly</strong></li>
-                        <li>Record your expenses in Column M under the heading "Expenses". Please note Expenses must be a justifiable expense. Please familiarise yourself with the rules on Expenses in the Expenses section</li>
+                        <li>Record your mileage in Column K under the heading "Mileage". If the overtime is less than 2 hours, your mileage will include your travel from your home to your first visit, and from your last visit to your home.  <strong>Please read the section below on Mileage for more detail on recording Mileage correctly</strong></li>
+                        <li>Record your expenses in Column M under the heading "Expenses". Please note Expenses must be a justifiable expense. <strong>Please familiarise yourself with the rules on Expenses in the Expenses section</strong></li>
                         <li>All other fields you can leave alone, as these will be calculated automatically</li>
                     </ol>
                     <h3>Other types of Overtime</h3>
                     <ol>
-                        <li>Overtime training: Any training completed outside of your agreed shift/contracted hours (including e-learning). Please try to complete eLearning during any free time you have on agreed shifts</li>
-                        <li>Overtime shadowing: Any shadowing you have completed outside of your agreed shift/contracted hours (including e-learning). If you want to record shadowing done within your usual hours, record as a shift and write details of the shadowing in “notes”</li>
+                        <li><strong>Overtime training:</strong> Any training completed outside of your agreed shift/contracted hours (including e-learning). Overtime training should be agreed with your Regional Coach. Please try to complete eLearning during any free time you have on agreed shifts</li>
+                        <li><strong>Overtime shadowing:</strong> Any shadowing you have completed outside of your agreed shift/contracted hours (including e-learning). If you want to record shadowing done within your usual hours, record as a shift and write details of the shadowing in “notes”</li>
                     </ol>
                     <h2 id="meetings">Team / buddy meetings</h2> 
-                    <p>All colleagues are paid to attend 2 hours of meetings each week. These are your weekly team meetings (1.5 hours) and your 30 minute buddy meeting which is your opportunity to reflect on how your week has gone. Please record all of these in the reporting hours spreadsheet. </p>
+                    <p>All colleagues are paid to attend 2 hours of meetings each week. These are your weekly team meetings (1.5 hours) and your 30 minute buddy meeting which is your opportunity to reflect on how you are doing at work.</p>
+                    <h3>Buddy meeting</h3>
+                    <p>You're buddy meeting is expected to take place every two weeks, and every other week your 30 minutes can be used for an activity of your choice, for example catching up on admin, slack, or another buddy meeting if you feel you need one. Please record all of these in the reporting hours spreadsheet. </p>
+                    <h3>Recording meetings</h3>
                     <ol>
-                        <li>Enter the date of the meeting column B under the heading "Date"</li>
+                        <li>Enter the date of the meeting in column B under the heading "Date"</li>
                         <li>For Team Meetings select "Team Meeting" in column C under the heading "Shift"</li>
                         <li>For Buddy Meetings select "Buddy Meeting" in column C under the heading "Shift"</li>
                         <li>Enter the start time for the meeting in Column E under the heading "Start Time"</li>
@@ -112,15 +115,16 @@ let ReportingHours = () => {
                     <ol>
                         <li>For each shift enter the total amount of mileage you are able to claim in column K under the heading “Mileage”. This will automatically calculate total mileage and total amount you will be reimbursed</li>
                         <li>Please enter any notes about your mileage in column L - For example if there is a reason your mileage may be particularly high or you have had to make an extra trip</li>
+                        <li>In general visits home during shift shouldn't be reported as mileage unless you have a gap between visits which is longer than 2 hours</li>
                     </ol>
 
                     <h2 id="expenses">Expenses</h2>
                     <p>You can also claim for any purchases you have made that are directly related to your work or in the case where you have had to purchase something for someone we support. Where possible, the person we support should be paying for their own purchases however sometimes this cannot be avoided.</p>
-                    <p>You must provide a receipt for expenses to be able to claim them. Unfortunately if you re unable to present a receipt we are unable to reimburse you. You can send all receipts to Jessica by Slack or email jessica.aldred@belleviecare.co.uk (In the case of Jessica’s absence please forward to Violaine)</p>
+                    <p>You must provide a receipt for expenses to be able to claim them. Unfortunately if you re unable to present a receipt we are unable to reimburse you. You can send all receipts to Sarah Brady by Slack or email sarah.brady@belleviecare.co.uk (In the case of Sarah’s absence please forward to Jessica Aldred - jessica.aldred@belleviecare.co.uk)</p>
                     <ol>
                         <li>For each shift where you incurred an expense enter the amount in Column M under the heading "Expenses"</li>
                         <li>Please add a note stating what the expense was for and the intials of the person you support who the expense was for</li>
-                        <li><strong>Please make sure you keep all VAT Receipts for expenses, otherwise we are unable to reimburse you</strong></li>
+                        <li><strong>Please make sure you keep all receipts for expenses, otherwise we are unable to reimburse you</strong></li>
                     </ol>
                 </div>
             </div>
