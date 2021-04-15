@@ -33,7 +33,7 @@ let ReportingHours = () => {
                     <p>Everyone at BelleVie is paid an annual fixed salary based on their contracted hours, so your monthly pay will reflect a 12th of your annual salary.</p>
 
                     <h2 id="hoursSpreadSheet">Where are hours reported?</h2>
-                    <p>Each team has a "Reporting Hours" spreadsheet in their team folder on <a href="https://drive.google.com/">Google Drive</a>. Please make sure you are logged in to Google Drive using your @belleviecare.co.uk email, and not a personal email address.</p>
+                    <p>Each team has a "Reporting Hours" spreadsheet in their team folder on <a href="https://drive.google.com/">Google Drive</a>. Please make sure you are logged in to Google Drive using your <strong>@belleviecare.co.uk</strong> email, and not a personal email address.</p>
                     <h3>Finding the Reporting Hours spreadsheet in Google Drive</h3>
                     <p>First you'll need to find your team folder. Your team folder is where your rota is stored, and any other documents which are shared and used within your team.</p>
                     <ol>
@@ -73,8 +73,8 @@ let ReportingHours = () => {
                             </ol>
                         </li>
                         <li>Add any notes regarding the shift in Column G under "Notes", for example initials of people visited, or the reason for doing overtime (eg covering for a colleague)</li>
-                        <li>Record your mileage in Column K under the heading "Mileage". For a normal shift your mileage is the distance travelled between visits, but not from your home to your first visit or your last visit to your home. <strong>Please read the section below on Mileage for more detail on recording Mileage correctly</strong></li>
-                        <li>Record your expenses in Column M under the heading "Expenses". Please note Expenses must be a justifiable expense. Please familiarise yourself with the rules on Expenses in the Expenses section</li>
+                        <li>Record your mileage in Column K under the heading "Mileage". For a normal shift your mileage is the distance travelled between visits, but not from your home to your first visit or your last visit to your home. <strong>Please read the <a href="#mileage">section below on Mileage</a> for more detail on recording Mileage correctly</strong></li>
+                        <li>Record your expenses in Column M under the heading "Expenses". Please note Expenses must be a justifiable expense. Please familiarise yourself with the rules on Expenses in <a href="#expenses">the Expenses section</a></li>
                         <li>All other fields you can leave alone, as these will be calculated automatically</li>
                     </ol>
 
@@ -87,8 +87,8 @@ let ReportingHours = () => {
                         <li>For Overtime, the starting time will be the time you left home, <strong>if the overtime is less than 2 hours.</strong> Please record this in Column E under the heading "Start Time"</li>
                         <li>The end time for overtime will be the time you arrive home after your last visit <strong>if the overtime is less than 2 hours.</strong> Record this in Column F under the heading "End Time"</li>
                         <li>Add any notes regarding the shift in Column G under "Notes", for example initials of people visited, or the reason for doing overtime (eg covering for a colleague)</li>
-                        <li>Record your mileage in Column K under the heading "Mileage". If the overtime is less than 2 hours, your mileage will include your travel from your home to your first visit, and from your last visit to your home.  <strong>Please read the section below on Mileage for more detail on recording Mileage correctly</strong></li>
-                        <li>Record your expenses in Column M under the heading "Expenses". Please note Expenses must be a justifiable expense. <strong>Please familiarise yourself with the rules on Expenses in the Expenses section</strong></li>
+                        <li>Record your mileage in Column K under the heading "Mileage". If the overtime is less than 2 hours, your mileage will include your travel from your home to your first visit, and from your last visit to your home.  <strong>Please read the <a href="#mileage">section below on Mileage</a> for more detail on recording Mileage correctly</strong></li>
+                        <li>Record your expenses in Column M under the heading "Expenses". Please note Expenses must be a justifiable expense. <strong>Please familiarise yourself with the rules on Expenses in <a href="#expenses">the Expenses section</a></strong></li>
                         <li>All other fields you can leave alone, as these will be calculated automatically</li>
                     </ol>
                     <h3>Other types of Overtime</h3>
@@ -120,7 +120,7 @@ let ReportingHours = () => {
 
                     <h2 id="expenses">Expenses</h2>
                     <p>You can also claim for any purchases you have made that are directly related to your work or in the case where you have had to purchase something for someone we support. Where possible, the person we support should be paying for their own purchases however sometimes this cannot be avoided.</p>
-                    <p>You must provide a receipt for expenses to be able to claim them. Unfortunately if you re unable to present a receipt we are unable to reimburse you. You can send all receipts to Sarah Brady by Slack or email sarah.brady@belleviecare.co.uk (In the case of Sarah’s absence please forward to Jessica Aldred - jessica.aldred@belleviecare.co.uk)</p>
+                    <p>You must provide a receipt for expenses to be able to claim them. Unfortunately if you re unable to present a receipt we are unable to reimburse you. You can send all receipts to Sarah Brady by Slack or email <a href="mailto: sarah.brady@belleviecare.co.uk">sarah.brady@belleviecare.co.uk</a> (In the case of Sarah’s absence please forward to Jessica Aldred - <a href="mailto: jessica.aldred@belleviecare.co.uk">jessica.aldred@belleviecare.co.uk</a>)</p>
                     <ol>
                         <li>For each shift where you incurred an expense enter the amount in Column M under the heading "Expenses"</li>
                         <li>Please add a note stating what the expense was for and the intials of the person you support who the expense was for</li>
