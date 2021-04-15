@@ -19,7 +19,7 @@ class Navigation extends React.Component {
                 <nav className={this.state.open ? 'open' : 'close'}>
                     <NavLink exact to="/">Confirmation Practices</NavLink>
                     <NavLink to="/reporting-hours">Reporting Hours</NavLink>
-                    <NavLink to="/annual-leave">Annual Leave</NavLink>
+                    {/*<NavLink to="/annual-leave">Annual Leave</NavLink>*/}
                     <NavLink to="/faqs">FAQs</NavLink>
                     <NavLink to="/policies">Policies</NavLink>
                     <NavLink to="/rota">Rota Prototype</NavLink>
