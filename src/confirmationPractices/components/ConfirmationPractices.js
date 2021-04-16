@@ -57,7 +57,9 @@ class confirmationPractices extends React.Component {
                         <option value="default" disabled>Select Team</option>
                         {teams.map( team => {return <option key={team} value={team}>{team}</option>})}
                     </select>
-                    
+                    <div className="form">
+                        <p>To protect the data of people we support please avoid sharing personal information in your Confirmation Practice answers</p>
+                    </div>
                     <div className="form">
                         <Question question={questions[this.state.level]} level={this.state.level} />
                         <Progress total={questions} progress={this.state.level} />

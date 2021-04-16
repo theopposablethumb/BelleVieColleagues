@@ -54,6 +54,7 @@ let ReportingHours = () => {
                     <h2 id="recordingShift">How to record a shift</h2>
                     <p>Along the bottom of the spreadsheet you'll see some tabs with each colleagues name. Click on your name, this will be where you enter your own hours.</p>
                     <p>You can find all the shifts you've worked by looking at your team’s rota and clicking on the “agreed shift” tab. You will work off a two-week rolling rota so you will need to know if the date falls within week 1 or week 2. Shifts are usually AM or PM and are normally 5 hours in duration. </p>
+                    <p><strong>Abingdon team:</strong> shifts for the Abingdon team are not set at 5 hours so please select you agreed shift length in column G of the reporting hours spreadsheet</p>
                     <ol>
                         <li>Enter the date of each shift you worked in column B under the heading "Date"</li>
                         <li>Enter the type of work in column C under the heading "Shift"
@@ -72,6 +73,7 @@ let ReportingHours = () => {
                                 <li>Any visits that fall outside of the 5 hour shift duration will be automatically recorded as overtime.</li>
                             </ol>
                         </li>
+                        <li><strong>If you are in the Abingdon team</strong> please select your agreed shift length in column G of the reporting hours spreadsheet</li>
                         <li>Add any notes regarding the shift in Column G under "Notes", for example initials of people visited, or the reason for doing overtime (eg covering for a colleague)</li>
                         <li>Record your mileage in Column K under the heading "Mileage". For a normal shift your mileage is the distance travelled between visits, but not from your home to your first visit or your last visit to your home. <strong>Please read the <a href="#mileage">section below on Mileage</a> for more detail on recording Mileage correctly</strong></li>
                         <li>Record your expenses in Column M under the heading "Expenses". Please note Expenses must be a justifiable expense. Please familiarise yourself with the rules on Expenses in <a href="#expenses">the Expenses section</a></li>
