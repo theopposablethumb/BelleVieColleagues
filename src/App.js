@@ -16,6 +16,7 @@ import Policies from './static/Policies';
 import Contact from './common/Contact';
 
 import TeamShifts from './rota/components/TeamShifts';
+import CreateConfirmationPractices from './confirmationPractices/components/CreateConfirmationPractices';
 
 
 Amplify.configure(awsconfig);
@@ -84,6 +85,7 @@ class App extends React.Component {
             </div>
           </div>
           <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} /> ) } />
+          <Route path="/create-confirmation-practices"  component={CreateConfirmationPractices} />
           <Route path="/reporting-hours" component={ReportingHours}></Route>
           <Route path="/annual-leave" component={AnnualLeave}></Route>
           <Route path="/faqs" component={Faq} />
