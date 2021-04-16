@@ -1,4 +1,4 @@
-export let teams = ['Oxford', 'Witney and Wantage', 'Abingdon', 'Durham', 'Henley'];
+export let teams = ['Oxford', 'Witney', 'Wantage', 'Abingdon', 'Durham', 'Henley'];
 
 export let questions = [
     {
