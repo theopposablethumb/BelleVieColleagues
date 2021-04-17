@@ -23,7 +23,7 @@ export let questions = [
     },
     {
         title: 'Communicating compassionately',
-        question: 'I am asking for what I need to do my best work (either using Compassionate Communication with individuals,or bringing tensions to the team meeting)',
+        question: 'I am asking for what I need to do my best work (either using Compassionate Communication with individuals, or bringing tensions to the team meeting)',
         checks: ['Do I speak up when I see a problem or a mistake?', 'Do I use O (I observe) F (I feel) N ( I need) R ( I request / ask) when challenging others?', 'Do I raise tensions at team meetings?', 'Does our team talk about the things that matter together, so we get the best from each other to keep improving?', 'Are we following our team agreement?']
     },
     {

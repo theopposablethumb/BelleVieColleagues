@@ -9,19 +9,42 @@ class Fields extends React.Component {
         reasonDisplay: '',
         improvementDisplay: '' 
     }
+
+
+    submitAnswer() {
+        let answer = this.props.answer;
+        let question = this.props.question._id;
+        let score = this.state.score;
+        let reason = this.state.reason;
+        let improvement = this.state.improvement;
+        
+        fetch(`http://localhost:8080/confirmationanswers/answers/${answer}`, {
+            method: 'PUT',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({question: question, score: score, reason: reason, improvement: improvement})
+        }).then(res => {
+            if (res.status !== 200 && res.status !== 201) {
+              throw new Error("Can't update answers!");
+            }
+            return res.json();
+          })
+          .then(resData => {
+            console.log(resData);
+          })
+          .catch(this.catchError);
+    };
     
-    updateValue(event, type) {
+    updateValue(e, type) {
         let key = type;
         let displayValue = type + 'Display';
-        this.setState({[key]: event.target.value});
-        this.setState({[displayValue]: event.target.value});
+        this.setState({[key]: e.target.value});
+        this.setState({[displayValue]: e.target.value});
     }
 
     save(e) {
         e.preventDefault();
         let answers = Object.assign({}, this.state);
-        delete answers.reasonDisplay;
-        delete answers.improvementDisplay;
+        this.submitAnswer();
         if (this.props.level < questions.length - 1) {
             this.props.saveAnswers(answers);
             document.querySelector('.title').scrollIntoView({ behavior: 'smooth' });
@@ -32,7 +55,7 @@ class Fields extends React.Component {
         
     }
 
-    clearDisplayValue(event) {
+    clearDisplayValue(e) {
         this.setState({reasonDisplay: '', improvementDisplay: ''});
     }
 
@@ -45,10 +68,9 @@ class Fields extends React.Component {
     }
 
     render() {
-        let score = this.props.question + 'Score';
-        let reason = this.props.question + 'Reason';
-        let improvement = this.props.question + 'Improvement';
-    
+        let score = this.props.question.title + 'Score';
+        let reason = this.props.question.title + 'Reason';
+        let improvement = this.props.question.title + 'Improvement';
         return (
             <form onSubmit={ (e) => this.save(e) }>
                 <label htmlFor={score} >Score <strong>{this.state.score}</strong></label>

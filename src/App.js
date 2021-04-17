@@ -16,7 +16,7 @@ import Policies from './static/Policies';
 import Contact from './common/Contact';
 
 import TeamShifts from './rota/components/TeamShifts';
-import CreateConfirmationPractices from './confirmationPractices/components/CreateConfirmationPractices';
+import CreateConfirmationPractices from './confirmationPractices/components/admin/CreateConfirmationPractices';
 
 
 Amplify.configure(awsconfig);
@@ -73,7 +73,6 @@ class App extends React.Component {
           </div>
         </div>
       )
-
     } else {
       return (
         <BrowserRouter>
