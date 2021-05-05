@@ -1,0 +1,27 @@
+type Question
+  @model
+  @auth(
+    rules: [
+      { allow: groups, groups: ["leadershipCircle"], queries: [get, list], mutations: [create, update, delete] }
+      { allow: groups, groups: ["supportWorkers"], queries: [get, list], mutations: null }
+    ]
+  ) {
+  id: ID!
+  title: String!
+  question: String!
+  checks: [String]
+}
+
+type Answers 
+  @model 
+  @auth(
+    rules: [
+      { allow: groups, groups: ["leadershipCircle"], queries: [get, list], mutations: [create, update, delete] }
+      { allow: groups, groups: ["supportWorkers"], queries: [get, list], mutations: [create] }
+    ]
+  ) {
+  id: ID!
+  answers: [Question]!
+  colleague: String!
+  team: String!
+}

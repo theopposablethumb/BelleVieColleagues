@@ -10,11 +10,13 @@
     "env": {
       "Type": "String"
     },
-    "deploymentBucketName": {
-      "Type": "String"
-    },
     "s3Key": {
-      "Type": "String"
+      "Type": "String",
+      "Default": "*VALUE FROM Code/S3Key*"
+    },
+    "deploymentBucketName": {
+      "Type": "String",
+      "Default": "*VALUE FROM Code/S3Bucket*"
     }
   },
   "Conditions": {
@@ -74,12 +76,8 @@
         "Layers": [],
         "Timeout": "25",
         "Code": {
-          "S3Bucket": {
-            "Ref": "deploymentBucketName"
-          },
-          "S3Key": {
-            "Ref": "s3Key"
-          }
+          "S3Bucket": "amplify-belleviecolleagues-dev-164130-deployment",
+          "S3Key": "amplify-builds/bellevieColleagues-6f77502f423069614769-build.zip"
         }
       }
     },
