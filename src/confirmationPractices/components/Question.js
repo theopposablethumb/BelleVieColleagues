@@ -1,4 +1,7 @@
-let Question = (props) => {
+import React from 'react';
+
+const Question = (props) => {
+
     return(
         <>
             <h2 className="title">{props.level + 1}. {props.question.title}</h2>

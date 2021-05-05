@@ -25,8 +25,8 @@ export const listQuestions = /* GraphQL */ `
         title
         question
         checks
-        createdAt
-        updatedAt
+        # createdAt
+        # updatedAt
       }
       nextToken
     }

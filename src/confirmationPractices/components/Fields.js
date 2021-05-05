@@ -3,6 +3,7 @@ import {questions} from './../data';
 
 class Fields extends React.Component {
     state = {
+        question: this.props.question,
         score: '3',
         reason: null,
         improvement: null,
@@ -10,11 +11,11 @@ class Fields extends React.Component {
         improvementDisplay: '' 
     }
     
-    updateValue(event, type) {
+    updateValue(e, type) {
         let key = type;
         let displayValue = type + 'Display';
-        this.setState({[key]: event.target.value});
-        this.setState({[displayValue]: event.target.value});
+        this.setState({[key]: e.target.value});
+        this.setState({[displayValue]: e.target.value});
     }
 
     save(e) {
@@ -32,7 +33,7 @@ class Fields extends React.Component {
         
     }
 
-    clearDisplayValue(event) {
+    clearDisplayValue(e) {
         this.setState({reasonDisplay: '', improvementDisplay: ''});
     }
 
@@ -45,10 +46,9 @@ class Fields extends React.Component {
     }
 
     render() {
-        let score = this.props.question + 'Score';
-        let reason = this.props.question + 'Reason';
-        let improvement = this.props.question + 'Improvement';
-    
+        let score = this.props.question.title + 'Score';
+        let reason = this.props.question.title + 'Reason';
+        let improvement = this.props.question.title + 'Improvement';
         return (
             <form onSubmit={ (e) => this.save(e) }>
                 <label htmlFor={score} >Score <strong>{this.state.score}</strong></label>

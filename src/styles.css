@@ -44,10 +44,13 @@ button.light {background: #FFC247; color: #333;}
 button.light:hover {background: #BA7800; color: #FFF;}
 button:focus {box-shadow: 0 0 0 2px #FFF, 0 0 0 6px #2D9CDB;}
 
-button.ghost {background: #FFF; border: 1px solid #BA7800;}
+button.ghost {background: #FFF; border: 2px solid #BA7800; color: #BA7800;}
 
-button.ghost:hover {border: 2px solid #BA7800;}
+button.ghost:hover {border: 2px solid #BA7800; background: #BA7800; color: #fff;}
 button.ghost:focus:before {border: 1px solid #BA7800;}
+
+.checks input, .checks button {display: inline-block;}
+.checks button.ghost {margin-left: 2em}
 
 .section {overflow: auto;}
 nav, .content {max-width: 1200px; margin: 0 auto 0 auto; box-sizing: border-box; overflow: auto;}
