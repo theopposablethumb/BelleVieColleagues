@@ -21,8 +21,6 @@ import CreateConfirmationPractices from './confirmationPractices/components/admi
 
 Amplify.configure(awsconfig);
 
-
-
 class App extends React.Component {
   constructor(props) {
     super(props);

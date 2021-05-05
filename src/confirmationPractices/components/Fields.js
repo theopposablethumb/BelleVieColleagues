@@ -3,36 +3,13 @@ import {questions} from './../data';
 
 class Fields extends React.Component {
     state = {
+        question: this.props.question,
         score: '3',
         reason: null,
         improvement: null,
         reasonDisplay: '',
         improvementDisplay: '' 
     }
-
-
-    submitAnswer() {
-        let answer = this.props.answer;
-        let question = this.props.question._id;
-        let score = this.state.score;
-        let reason = this.state.reason;
-        let improvement = this.state.improvement;
-        
-        fetch(`http://localhost:8080/confirmationanswers/answers/${answer}`, {
-            method: 'PUT',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({question: question, score: score, reason: reason, improvement: improvement})
-        }).then(res => {
-            if (res.status !== 200 && res.status !== 201) {
-              throw new Error("Can't update answers!");
-            }
-            return res.json();
-          })
-          .then(resData => {
-            console.log(resData);
-          })
-          .catch(this.catchError);
-    };
     
     updateValue(e, type) {
         let key = type;
@@ -44,7 +21,8 @@ class Fields extends React.Component {
     save(e) {
         e.preventDefault();
         let answers = Object.assign({}, this.state);
-        this.submitAnswer();
+        delete answers.reasonDisplay;
+        delete answers.improvementDisplay;
         if (this.props.level < questions.length - 1) {
             this.props.saveAnswers(answers);
             document.querySelector('.title').scrollIntoView({ behavior: 'smooth' });

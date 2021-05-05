@@ -7,7 +7,7 @@ class Profile extends React.Component {
     }
 
     getColleague() {
-        fetch(`http://localhost:8080/colleague/tesni.moyo@belleviecare.co.uk`, {
+        fetch(`http://localhost:8080/colleague/test.tester@belleviecare.co.uk`, {
             method: 'GET',
             headers: {'Content-Type': 'application/json'},
         }).then(res => {

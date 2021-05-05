@@ -1,8 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import {UpdateSpreadSheet} from '../../api/Sheets'; 
-import {questions} from '../data';
 import Question from './Question';
 import Fields from './Fields';
 import Confirmation from './ConfirmationResults'
@@ -15,6 +13,7 @@ class confirmationPractices extends React.Component {
         level: 0,
         team: null,
         answer: null,
+        answers: [],
         hasLoaded: false,
         isSubmitted: false,
     };
@@ -61,27 +60,33 @@ class confirmationPractices extends React.Component {
     }
 
     setAnswers = (answer) => {
-        this.setState({level: this.state.level +1});
+        this.setState({level: this.state.level +1, answers: [...this.state.answers, answer]});
+    }
+
+    createAnswer() {
+        let colleague = this.props.user.attributes.email;
+        let team = this.state.team;
+        let answers = this.state.answers;
+
+        fetch(`http://localhost:8080/confirmationanswers/answers/${colleague}`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({colleague: colleague, team: team, answers: answers})
+        }).then(res => {
+            if (res.status !== 200 && res.status !== 201) {
+              throw new Error("Can't update answers!");
+            }
+        })
     }
 
     completeForm = () => {
         this.setState({isSubmitted: true});
+        this.createAnswer();
     }
 
     renderFormConfirmation() {
         if (this.state.isSubmitted === true && this.state.team) {
-            // let name = this.props.user.attributes.name;
-            let email = this.props.user.attributes.email;
-            // let token = this.props.user.attributes.website;
-            // let team = this.state.team;
-        
-            // let answers = this.state.answers.map(answer => Object.values(answer));
-            // let values = Array.prototype.concat(...answers);
-
-
-            // UpdateSpreadSheet(name, email, team, token, values);
-
-            return <Confirmation colleague={this.props.user.attributes.email} />
+            return <Confirmation answers={this.state.answers} />
         } else if (this.state.hasLoaded === true) {
             return (
                 <>  

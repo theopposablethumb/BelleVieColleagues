@@ -12,7 +12,6 @@ class Navigation extends React.Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div className="section teal">
                 <button onClick={(e) => this.openNav(e)} className={this.state.open ? 'menu active' : 'menu close'}></button>

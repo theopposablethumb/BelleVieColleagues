@@ -1,30 +1,10 @@
-import { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 
 import Result from './Result';
 
 let Confirmation = (props) => {
-    const [answers, setState] = useState([]);
 
     document.querySelector('h2').scrollIntoView({ behavior: 'smooth' });
-
-    console.log(props);
-    
-    useEffect(() => {
-        const colleague = props.colleague
-        fetch(`http://localhost:8080/confirmationanswers/colleague-latest-answers/${colleague}`, {
-            method: 'GET',
-            headers: {'Content-Type': 'application/json'}
-        }).then(res => {
-            if (res.status !== 200) {
-                throw new Error("Failed to fetch answers");
-            }
-            return res.json();
-        }).then(data => {
-            console.log(data);
-            setState(data.answers)
-        })
-    })
 
     let printPage = (e) => {
         e.preventDefault();
@@ -45,7 +25,7 @@ let Confirmation = (props) => {
             <button className="dark printMe" onClick={(e) => {printPage(e)}}>Print my results</button>
             
             <h3>{props.team} Team</h3>
-            {answers.answers.map((answer, i) => { return <Result key={i} score={answer.score} reason={answer.reason} improvement={answer.improvement}  />})}
+            {props.answers.map((answer, i) => { return <Result question={answer.question} key={i} score={answer.score} reason={answer.reason} improvement={answer.improvement}  />})}
         </>
     )
 }
