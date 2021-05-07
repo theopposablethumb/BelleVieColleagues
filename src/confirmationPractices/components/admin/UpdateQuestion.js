@@ -35,14 +35,13 @@ class UpdateQuestion extends React.Component {
         }
     }
 
-
-    updateQuestion = (e, id) => {
+    updateQuestion = (e, id, title, question, checks) => {
         e.preventDefault();
         const qExists = this.props.currentQuestions.find(question => question === id);
         if (!qExists) {
-            createQuestion(id).then(res => this.setState({isSubmitted: true}) );
+            createQuestion(id, title, question, checks).then(res => this.setState({isSubmitted: true}) );
         } else {
-            updateQuestion(id).then(res => this.setState({isSubmitted: true}) );
+            updateQuestion(id, title, question, checks).then(res => this.setState({isSubmitted: true}) );
         }
     }
 
@@ -73,7 +72,7 @@ class UpdateQuestion extends React.Component {
                             <button className="dark" onClick={(e) => {this.addNewCheck(e)}}>Add another question</button>
                         </div>
                         {this.state.isSubmitted ? <p className="success">Successfully updated Confirmation Practice {this.state.title}</p> : null}
-                        <button className="dark" onClick={(e) => {this.updateQuestion(e, this.props.question.id)}}>Update Confirmation Practice</button>
+                        <button className="dark" onClick={(e) => {this.updateQuestion(e, this.props.question.id, this.state.title, this.state.question, this.state.checks)}}>Update Confirmation Practice</button>
                     </form>
                 </div>
             </div>

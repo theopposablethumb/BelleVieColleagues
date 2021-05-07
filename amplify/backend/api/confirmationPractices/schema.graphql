@@ -14,14 +14,6 @@ type Question
   updatedAt:AWSDateTime
 }
 
-type Answer
-  @model{
-    question: [Question]!
-    score: Int!
-    reason: String!
-    Improvement: String!
-  }
-
 type Answers 
   @model 
   @auth(
@@ -31,7 +23,7 @@ type Answers
     ]
   ) {
   id: ID!
-  answers: [Answer]!
+  answers: [AWSJSON]!
   colleague: String!
   team: String!
 }

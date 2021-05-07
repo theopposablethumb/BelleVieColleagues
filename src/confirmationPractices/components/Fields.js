@@ -2,7 +2,7 @@ import React from 'react';
 
 class Fields extends React.Component {
     state = {
-        question: this.props.questions[this.props.level],
+        question: this.props.question,
         score: '3',
         reason: null,
         improvement: null,
@@ -22,6 +22,7 @@ class Fields extends React.Component {
         let answers = Object.assign({}, this.state);
         delete answers.reasonDisplay;
         delete answers.improvementDisplay;
+        console.log(answers);
         if (this.props.level < this.props.questions.length - 1) {
             this.props.saveAnswers(answers);
             document.querySelector('.title').scrollIntoView({ behavior: 'smooth' });
@@ -33,10 +34,7 @@ class Fields extends React.Component {
     }
 
     clearDisplayValue(e) {
-        if (!this.props.team) {
-            alert('Please select your team');
-        }
-        this.setState({reasonDisplay: '', improvementDisplay: ''});
+        this.setState({question: this.props.question, reasonDisplay: '', improvementDisplay: ''});
     }
 
     button() {
@@ -48,9 +46,9 @@ class Fields extends React.Component {
     }
 
     render() {
-        let score = this.state.question.title + 'Score';
-        let reason = this.state.question.title + 'Reason';
-        let improvement = this.state.question.title + 'Improvement';
+        let score = this.state.question + 'Score';
+        let reason = this.state.question + 'Reason';
+        let improvement = this.state.question + 'Improvement';
         return (
             <form onSubmit={ (e) => this.save(e) }>
                 <label htmlFor={score} >Score <strong>{this.state.score}</strong></label>

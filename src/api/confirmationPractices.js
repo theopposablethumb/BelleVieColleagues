@@ -17,17 +17,17 @@ const client = new AWSAppSyncClient({
   },
 });
 
-export const createQuestion = (id) => {
+export const createQuestion = (id, title, question, checks) => {
     return client.mutate({ 
         mutation: gql(mutations.createQuestion), 
-        variables: {input: {id: id, title: this.state.title, question: this.state.question, checks: this.state.checks }
+        variables: {input: {id: id, title: title, question: question, checks: checks }
     }})
 }
 
-export const updateQuestion = (id) => {
+export const updateQuestion = (id, title, question, checks) => {
     return client.mutate({ 
         mutation: gql(mutations.updateQuestion), 
-        variables: {input: {id: id, title: this.state.title, question: this.state.question, checks: this.state.checks }
+        variables: {input: {id: id, title: title, question: question, checks: checks }
     }})
 }
 
@@ -35,9 +35,9 @@ export const getQuestions = async () => {
     return await API.graphql({ query: queries.listQuestions }).then(res => {return(res)});
 }
 
-export const createAnswers = (colleague, answers) => {
+export const createAnswers = (colleague, answers, team) => {
     return client.mutate({ 
         mutation: gql(mutations.createAnswers), 
-        variables: {input: {colleague: colleague, answers: answers }
+        variables: {input: {colleague: colleague, answers: JSON.stringify(answers), team: team }
     }})
 }

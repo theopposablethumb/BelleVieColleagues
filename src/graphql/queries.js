@@ -36,17 +36,10 @@ export const getAnswer = /* GraphQL */ `
   query GetAnswer($id: ID!) {
     getAnswer(id: $id) {
       id
-      question {
-        id
-        title
-        question
-        checks
-        createdAt
-        updatedAt
-      }
+      question
       score
       reason
-      Improvement
+      improvement
       createdAt
       updatedAt
     }
@@ -61,17 +54,10 @@ export const listAnswers = /* GraphQL */ `
     listAnswers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        question {
-          id
-          title
-          question
-          checks
-          createdAt
-          updatedAt
-        }
+        question
         score
         reason
-        Improvement
+        improvement
         createdAt
         updatedAt
       }
@@ -83,22 +69,7 @@ export const getAnswers = /* GraphQL */ `
   query GetAnswers($id: ID!) {
     getAnswers(id: $id) {
       id
-      answers {
-        id
-        question {
-          id
-          title
-          question
-          checks
-          createdAt
-          updatedAt
-        }
-        score
-        reason
-        Improvement
-        createdAt
-        updatedAt
-      }
+      answers
       colleague
       team
       createdAt
@@ -115,14 +86,7 @@ export const listAnswerss = /* GraphQL */ `
     listAnswerss(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        answers {
-          id
-          score
-          reason
-          Improvement
-          createdAt
-          updatedAt
-        }
+        answers
         colleague
         team
         createdAt

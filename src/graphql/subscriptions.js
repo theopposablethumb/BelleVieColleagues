@@ -41,17 +41,10 @@ export const onCreateAnswer = /* GraphQL */ `
   subscription OnCreateAnswer {
     onCreateAnswer {
       id
-      question {
-        id
-        title
-        question
-        checks
-        createdAt
-        updatedAt
-      }
+      question
       score
       reason
-      Improvement
+      improvement
       createdAt
       updatedAt
     }
@@ -61,17 +54,10 @@ export const onUpdateAnswer = /* GraphQL */ `
   subscription OnUpdateAnswer {
     onUpdateAnswer {
       id
-      question {
-        id
-        title
-        question
-        checks
-        createdAt
-        updatedAt
-      }
+      question
       score
       reason
-      Improvement
+      improvement
       createdAt
       updatedAt
     }
@@ -81,17 +67,10 @@ export const onDeleteAnswer = /* GraphQL */ `
   subscription OnDeleteAnswer {
     onDeleteAnswer {
       id
-      question {
-        id
-        title
-        question
-        checks
-        createdAt
-        updatedAt
-      }
+      question
       score
       reason
-      Improvement
+      improvement
       createdAt
       updatedAt
     }
@@ -101,22 +80,7 @@ export const onCreateAnswers = /* GraphQL */ `
   subscription OnCreateAnswers {
     onCreateAnswers {
       id
-      answers {
-        id
-        question {
-          id
-          title
-          question
-          checks
-          createdAt
-          updatedAt
-        }
-        score
-        reason
-        Improvement
-        createdAt
-        updatedAt
-      }
+      answers
       colleague
       team
       createdAt
@@ -128,22 +92,7 @@ export const onUpdateAnswers = /* GraphQL */ `
   subscription OnUpdateAnswers {
     onUpdateAnswers {
       id
-      answers {
-        id
-        question {
-          id
-          title
-          question
-          checks
-          createdAt
-          updatedAt
-        }
-        score
-        reason
-        Improvement
-        createdAt
-        updatedAt
-      }
+      answers
       colleague
       team
       createdAt
@@ -155,22 +104,7 @@ export const onDeleteAnswers = /* GraphQL */ `
   subscription OnDeleteAnswers {
     onDeleteAnswers {
       id
-      answers {
-        id
-        question {
-          id
-          title
-          question
-          checks
-          createdAt
-          updatedAt
-        }
-        score
-        reason
-        Improvement
-        createdAt
-        updatedAt
-      }
+      answers
       colleague
       team
       createdAt

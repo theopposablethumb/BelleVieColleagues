@@ -53,17 +53,10 @@ export const createAnswer = /* GraphQL */ `
   ) {
     createAnswer(input: $input, condition: $condition) {
       id
-      question {
-        id
-        title
-        question
-        checks
-        createdAt
-        updatedAt
-      }
+      question
       score
       reason
-      Improvement
+      improvement
       createdAt
       updatedAt
     }
@@ -76,17 +69,10 @@ export const updateAnswer = /* GraphQL */ `
   ) {
     updateAnswer(input: $input, condition: $condition) {
       id
-      question {
-        id
-        title
-        question
-        checks
-        createdAt
-        updatedAt
-      }
+      question
       score
       reason
-      Improvement
+      improvement
       createdAt
       updatedAt
     }
@@ -99,17 +85,10 @@ export const deleteAnswer = /* GraphQL */ `
   ) {
     deleteAnswer(input: $input, condition: $condition) {
       id
-      question {
-        id
-        title
-        question
-        checks
-        createdAt
-        updatedAt
-      }
+      question
       score
       reason
-      Improvement
+      improvement
       createdAt
       updatedAt
     }
@@ -122,22 +101,7 @@ export const createAnswers = /* GraphQL */ `
   ) {
     createAnswers(input: $input, condition: $condition) {
       id
-      answers {
-        id
-        question {
-          id
-          title
-          question
-          checks
-          createdAt
-          updatedAt
-        }
-        score
-        reason
-        Improvement
-        createdAt
-        updatedAt
-      }
+      answers
       colleague
       team
       createdAt
@@ -152,22 +116,7 @@ export const updateAnswers = /* GraphQL */ `
   ) {
     updateAnswers(input: $input, condition: $condition) {
       id
-      answers {
-        id
-        question {
-          id
-          title
-          question
-          checks
-          createdAt
-          updatedAt
-        }
-        score
-        reason
-        Improvement
-        createdAt
-        updatedAt
-      }
+      answers
       colleague
       team
       createdAt
@@ -182,22 +131,7 @@ export const deleteAnswers = /* GraphQL */ `
   ) {
     deleteAnswers(input: $input, condition: $condition) {
       id
-      answers {
-        id
-        question {
-          id
-          title
-          question
-          checks
-          createdAt
-          updatedAt
-        }
-        score
-        reason
-        Improvement
-        createdAt
-        updatedAt
-      }
+      answers
       colleague
       team
       createdAt
