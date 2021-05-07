@@ -46,54 +46,6 @@ export const deleteQuestion = /* GraphQL */ `
     }
   }
 `;
-export const createAnswer = /* GraphQL */ `
-  mutation CreateAnswer(
-    $input: CreateAnswerInput!
-    $condition: ModelAnswerConditionInput
-  ) {
-    createAnswer(input: $input, condition: $condition) {
-      id
-      question
-      score
-      reason
-      improvement
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const updateAnswer = /* GraphQL */ `
-  mutation UpdateAnswer(
-    $input: UpdateAnswerInput!
-    $condition: ModelAnswerConditionInput
-  ) {
-    updateAnswer(input: $input, condition: $condition) {
-      id
-      question
-      score
-      reason
-      improvement
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteAnswer = /* GraphQL */ `
-  mutation DeleteAnswer(
-    $input: DeleteAnswerInput!
-    $condition: ModelAnswerConditionInput
-  ) {
-    deleteAnswer(input: $input, condition: $condition) {
-      id
-      question
-      score
-      reason
-      improvement
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const createAnswers = /* GraphQL */ `
   mutation CreateAnswers(
     $input: CreateAnswersInput!

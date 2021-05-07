@@ -37,45 +37,6 @@ export const onDeleteQuestion = /* GraphQL */ `
     }
   }
 `;
-export const onCreateAnswer = /* GraphQL */ `
-  subscription OnCreateAnswer {
-    onCreateAnswer {
-      id
-      question
-      score
-      reason
-      improvement
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateAnswer = /* GraphQL */ `
-  subscription OnUpdateAnswer {
-    onUpdateAnswer {
-      id
-      question
-      score
-      reason
-      improvement
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteAnswer = /* GraphQL */ `
-  subscription OnDeleteAnswer {
-    onDeleteAnswer {
-      id
-      question
-      score
-      reason
-      improvement
-      createdAt
-      updatedAt
-    }
-  }
-`;
 export const onCreateAnswers = /* GraphQL */ `
   subscription OnCreateAnswers {
     onCreateAnswers {

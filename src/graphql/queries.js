@@ -32,39 +32,6 @@ export const listQuestions = /* GraphQL */ `
     }
   }
 `;
-export const getAnswer = /* GraphQL */ `
-  query GetAnswer($id: ID!) {
-    getAnswer(id: $id) {
-      id
-      question
-      score
-      reason
-      improvement
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listAnswers = /* GraphQL */ `
-  query ListAnswers(
-    $filter: ModelAnswerFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listAnswers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        question
-        score
-        reason
-        improvement
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const getAnswers = /* GraphQL */ `
   query GetAnswers($id: ID!) {
     getAnswers(id: $id) {
