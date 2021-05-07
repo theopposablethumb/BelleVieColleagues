@@ -1,21 +1,5 @@
 import React from 'react';
-import Amplify, { API, Auth } from 'aws-amplify';
-import AWSAppSyncClient, { AUTH_TYPE } from 'aws-appsync';
-import gql from 'graphql-tag';
-import * as mutations from '../../../graphql/mutations';
-
-import awsconfig from '../../../aws-exports';
-
-Amplify.configure(awsconfig);
-
-const client = new AWSAppSyncClient({
-  url: awsconfig.aws_appsync_graphqlEndpoint,
-  region: awsconfig.aws_appsync_region,
-  auth: {
-    type: AUTH_TYPE.AMAZON_COGNITO_USER_POOLS,
-    jwtToken: async () => (await Auth.currentSession()).getIdToken().getJwtToken(),
-  },
-});
+import { createQuestion, updateQuestion } from '../../../api/confirmationPractices';
 
 class UpdateQuestion extends React.Component {
     state = {
@@ -54,10 +38,12 @@ class UpdateQuestion extends React.Component {
 
     updateQuestion = (e, id) => {
         e.preventDefault();
-        client.mutate({ 
-            mutation: gql(mutations.updateQuestion), 
-            variables: {input: {id: id, title: this.state.title, question: this.state.question, checks: this.state.checks, createdAt: new Date(), }
-        }});
+        const qExists = this.props.currentQuestions.find(question => question === id);
+        if (!qExists) {
+            createQuestion(id).then(res => this.setState({isSubmitted: true}) );
+        } else {
+            updateQuestion(id).then(res => this.setState({isSubmitted: true}) );
+        }
     }
 
     render() {
@@ -86,7 +72,7 @@ class UpdateQuestion extends React.Component {
                             )})}
                             <button className="dark" onClick={(e) => {this.addNewCheck(e)}}>Add another question</button>
                         </div>
-
+                        {this.state.isSubmitted ? <p className="success">Successfully updated Confirmation Practice {this.state.title}</p> : null}
                         <button className="dark" onClick={(e) => {this.updateQuestion(e, this.props.question.id)}}>Update Confirmation Practice</button>
                     </form>
                 </div>

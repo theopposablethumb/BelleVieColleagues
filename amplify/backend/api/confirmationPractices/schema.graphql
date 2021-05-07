@@ -10,7 +10,17 @@ type Question
   title: String!
   question: String!
   checks: [String]
+  createdAt: AWSDateTime
+  updatedAt:AWSDateTime
 }
+
+type Answer
+  @model{
+    question: [Question]!
+    score: Int!
+    reason: String!
+    Improvement: String!
+  }
 
 type Answers 
   @model 
@@ -21,7 +31,7 @@ type Answers
     ]
   ) {
   id: ID!
-  answers: [Question]!
+  answers: [Answer]!
   colleague: String!
   team: String!
 }

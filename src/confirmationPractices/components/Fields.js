@@ -1,9 +1,8 @@
 import React from 'react';
-import {questions} from './../data';
 
 class Fields extends React.Component {
     state = {
-        question: this.props.question,
+        question: this.props.questions[this.props.level],
         score: '3',
         reason: null,
         improvement: null,
@@ -23,7 +22,7 @@ class Fields extends React.Component {
         let answers = Object.assign({}, this.state);
         delete answers.reasonDisplay;
         delete answers.improvementDisplay;
-        if (this.props.level < questions.length - 1) {
+        if (this.props.level < this.props.questions.length - 1) {
             this.props.saveAnswers(answers);
             document.querySelector('.title').scrollIntoView({ behavior: 'smooth' });
         } else {
@@ -34,11 +33,14 @@ class Fields extends React.Component {
     }
 
     clearDisplayValue(e) {
+        if (!this.props.team) {
+            alert('Please select your team');
+        }
         this.setState({reasonDisplay: '', improvementDisplay: ''});
     }
 
     button() {
-        if (this.props.level < questions.length - 1) {
+        if (this.props.level < this.props.questions.length - 1) {
             return <button onClick={ (e) => this.clearDisplayValue(e) } className="dark">Next</button>
         } else {
             return <button className="dark">Complete</button>
@@ -46,9 +48,9 @@ class Fields extends React.Component {
     }
 
     render() {
-        let score = this.props.question.title + 'Score';
-        let reason = this.props.question.title + 'Reason';
-        let improvement = this.props.question.title + 'Improvement';
+        let score = this.state.question.title + 'Score';
+        let reason = this.state.question.title + 'Reason';
+        let improvement = this.state.question.title + 'Improvement';
         return (
             <form onSubmit={ (e) => this.save(e) }>
                 <label htmlFor={score} >Score <strong>{this.state.score}</strong></label>

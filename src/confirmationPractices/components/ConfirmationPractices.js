@@ -1,11 +1,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { getQuestions, createAnswers } from '../../api/confirmationPractices';
+
 
 import Question from './Question';
 import Fields from './Fields';
 import Confirmation from './ConfirmationResults'
 import Progress from './Progress';
-
 
 class confirmationPractices extends React.Component {
     state = {
@@ -18,35 +19,34 @@ class confirmationPractices extends React.Component {
         isSubmitted: false,
     };
 
+    getConfirmationPractices = () => {
+        getQuestions().then((res) => {
+            const allQuestions = res.data.listQuestions.items;
+            this.setState({questions: [...allQuestions], hasLoaded: true});
+        });
+        
+    };
 
-    getConfirmationPractices() {
-        fetch(`http://localhost:8080/confirmationpractices/questions`, {
-            method: 'GET',
-            headers: {'Content-Type': 'application/json'},
-        }).then(res => {
-            if (res.status !== 200) {
-                throw new Error("Failed to fetch confirmation practices");
-            }
-            return res.json();
-            }).then(data => {
-                this.setState({questions: data.questions});
-            })
-    }
+    // getColleague() {
+    //     // let email = this.props.user.attributes.email;
+    //     fetch(`http://localhost:8080/colleague/tesni.moyo@belleviecare.co.uk`, {
+    //         method: 'GET',
+    //         headers: {'Content-Type': 'application/json'},
+    //     }).then(res => {
+    //         if (res.status !== 200) {
+    //             throw new Error("Failed to fetch colleague");
+    //         }
+    //         return res.json();
+    //         }).then(data => {
+    //             let team = data.team.replace(/ .*/,'');
+    //             this.setState({team: team, hasLoaded: true});
+    //         })
+    // }
 
-    getColleague() {
-        // let email = this.props.user.attributes.email;
-        fetch(`http://localhost:8080/colleague/tesni.moyo@belleviecare.co.uk`, {
-            method: 'GET',
-            headers: {'Content-Type': 'application/json'},
-        }).then(res => {
-            if (res.status !== 200) {
-                throw new Error("Failed to fetch colleague");
-            }
-            return res.json();
-            }).then(data => {
-                let team = data.team.replace(/ .*/,'');
-                this.setState({team: team, hasLoaded: true});
-            })
+    setTeam = (e) => {
+        console.log(e);
+        let team = e.target.value;
+        this.setState({team: team});
     }
 
     answer = (answer) => {
@@ -56,27 +56,19 @@ class confirmationPractices extends React.Component {
 
     componentDidMount() {
         this.getConfirmationPractices();
-        this.getColleague();
+        // this.getColleague();
     }
 
     setAnswers = (answer) => {
         this.setState({level: this.state.level +1, answers: [...this.state.answers, answer]});
     }
 
+    //need a graphQL call here
     createAnswer() {
-        let colleague = this.props.user.attributes.email;
-        let team = this.state.team;
-        let answers = this.state.answers;
-
-        fetch(`http://localhost:8080/confirmationanswers/answers/${colleague}`, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({colleague: colleague, team: team, answers: answers})
-        }).then(res => {
-            if (res.status !== 200 && res.status !== 201) {
-              throw new Error("Can't update answers!");
-            }
-        })
+        createAnswers(this.props.user.attributes.email, this.state.answers)
+        .then(res => {
+            console.log(res);
+        });
     }
 
     completeForm = () => {
@@ -85,15 +77,28 @@ class confirmationPractices extends React.Component {
     }
 
     renderFormConfirmation() {
+        console.log(this.state.isSubmitted);
+        console.log(this.state.team);
         if (this.state.isSubmitted === true && this.state.team) {
             return <Confirmation answers={this.state.answers} />
         } else if (this.state.hasLoaded === true) {
             return (
                 <>  
+                    <label htmlFor="team">Please select your team</label>
+                    <select name="team" required onChange={(e) => {this.setTeam(e)}}>
+                        <option value="default" disabled selected>Select Team</option>
+                        <option value="Oxford">Oxford</option>
+                        <option value="Witney">Witney</option>
+                        <option value="Wantage">Wantage</option>
+                        <option value="Abingdon">Abingdon</option>
+                        <option value="Durham">Durham</option>
+                        <option value="Henley">Henley</option>
+                        <option value="Northumberland">Henley</option>
+                    </select>
                     <div className="form">
                         <Question question={this.state.questions[this.state.level]} colleague={this.props.user.attributes.email} answer={this.answer} team={this.state.team} level={this.state.level} />
                         <Progress total={this.state.questions} progress={this.state.level} />
-                        <Fields question={this.state.questions[this.state.level]} answer={this.state.answer} saveAnswers={this.setAnswers} level={this.state.level} complete={this.completeForm} email={this.props.user.attributes.email} team={this.state.team}/>  
+                        <Fields answer={this.state.answer} saveAnswers={this.setAnswers} questions={this.state.questions} level={this.state.level} complete={this.completeForm} email={this.props.user.attributes.email} team={this.state.team}/>  
                     </div> 
                 </>
             )

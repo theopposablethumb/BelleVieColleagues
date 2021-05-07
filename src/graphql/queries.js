@@ -25,8 +25,55 @@ export const listQuestions = /* GraphQL */ `
         title
         question
         checks
-        # createdAt
-        # updatedAt
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getAnswer = /* GraphQL */ `
+  query GetAnswer($id: ID!) {
+    getAnswer(id: $id) {
+      id
+      question {
+        id
+        title
+        question
+        checks
+        createdAt
+        updatedAt
+      }
+      score
+      reason
+      Improvement
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listAnswers = /* GraphQL */ `
+  query ListAnswers(
+    $filter: ModelAnswerFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listAnswers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        question {
+          id
+          title
+          question
+          checks
+          createdAt
+          updatedAt
+        }
+        score
+        reason
+        Improvement
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -38,9 +85,17 @@ export const getAnswers = /* GraphQL */ `
       id
       answers {
         id
-        title
-        question
-        checks
+        question {
+          id
+          title
+          question
+          checks
+          createdAt
+          updatedAt
+        }
+        score
+        reason
+        Improvement
         createdAt
         updatedAt
       }
@@ -62,9 +117,9 @@ export const listAnswerss = /* GraphQL */ `
         id
         answers {
           id
-          title
-          question
-          checks
+          score
+          reason
+          Improvement
           createdAt
           updatedAt
         }
