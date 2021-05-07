@@ -30,6 +30,7 @@ class App extends React.Component {
 
     this.state = {
       user: null,
+      isLeaderShipCircle: false
     }
   }
 
@@ -56,11 +57,17 @@ class App extends React.Component {
   
   getUser() {
     Auth.currentAuthenticatedUser()
-      .then(userData => this.setState({ user: userData}))
+      .then(userData => {
+        const group = userData.signInUserSession.accessToken.payload["cognito:groups"];
+        if (group.includes('leadershipCircle')) {
+          this.setState({user: userData, isLeaderShipCircle: true});
+        } else {
+          this.setState({ user: userData })
+        }
+      })
       .catch(err => this.setState({ user: null}));
   }
-
-
+  
   renderLogin() {
     if (!this.state.user) {
       return (
@@ -74,15 +81,15 @@ class App extends React.Component {
     } else {
       return (
         <BrowserRouter>
-          <Navigation />
+          <Navigation circle={this.state.isLeaderShipCircle} />
           <div className="section whitebg">
             <div className="content">
               <button className="logout dark" onClick={() => Auth.signOut()}>Sign Out</button>
               <Profile user={this.state.user} />
             </div>
           </div>
-          <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} /> ) } />
-          <Route path="/create-confirmation-practices"  component={CreateConfirmationPractices} />
+          <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> ) } />
+          {this.state.isLeaderShipCircle ? <Route path="/edit-confirmation-practices"  component={CreateConfirmationPractices} /> : null}
           <Route path="/reporting-hours" component={ReportingHours}></Route>
           <Route path="/annual-leave" component={AnnualLeave}></Route>
           <Route path="/faqs" component={Faq} />
@@ -105,7 +112,7 @@ class App extends React.Component {
         <Helmet>
           <title>Team Hub BelleVie Care</title>
         </Helmet>
-        <Header />
+        <Header/>
         <main>
               {this.renderLogin()}
         </main>

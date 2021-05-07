@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { getQuestions, createAnswers } from '../../api/confirmationPractices';
 
+import { getQuestions, createAnswers } from '../../api/confirmationPractices';
 
 import Question from './Question';
 import Fields from './Fields';
@@ -26,6 +26,7 @@ class confirmationPractices extends React.Component {
         });
         
     };
+    
 
     // getColleague() {
     //     // let email = this.props.user.attributes.email;
@@ -66,7 +67,6 @@ class confirmationPractices extends React.Component {
         this.setState({level: this.state.level +1, answers: [...this.state.answers, answer]});
     }
 
-    //need a graphQL call here
     createAnswer() {
         console.log(this.state.answers);
         createAnswers(this.props.user.attributes.email, this.state.answers, this.state.team)
@@ -113,6 +113,8 @@ class confirmationPractices extends React.Component {
                 <Helmet>
                     <title>Confirmation Practices</title>
                 </Helmet>
+                <div className="section teal">
+                </div>
                 <div className="section offwhitebg">
                     <div className="content">
                     {this.renderFormConfirmation()}
