@@ -44,10 +44,13 @@ button.light {background: #FFC247; color: #333;}
 button.light:hover {background: #BA7800; color: #FFF;}
 button:focus {box-shadow: 0 0 0 2px #FFF, 0 0 0 6px #2D9CDB;}
 
-button.ghost {background: #FFF; border: 1px solid #BA7800;}
+button.ghost {background: #FFF; border: 2px solid #BA7800; color: #BA7800;}
 
-button.ghost:hover {border: 2px solid #BA7800;}
+button.ghost:hover {border: 2px solid #BA7800; background: #BA7800; color: #fff;}
 button.ghost:focus:before {border: 1px solid #BA7800;}
+
+.checks input, .checks button {display: inline-block;}
+.checks button.ghost {margin-left: 2em}
 
 .section {overflow: auto;}
 nav, .content {max-width: 1200px; margin: 0 auto 0 auto; box-sizing: border-box; overflow: auto;}
@@ -82,7 +85,7 @@ input::placeholder, textarea::placeholder {color: #888888;}
 input:focus, textarea:focus {border: 2px solid #185D6F; outline: none;}
 input:invalid, input.error, textarea:invalid, textarea.invalid {border: 2px solid #CC0300;}
 form p.error {margin-top: 0.5em; color: #CC0300;}
-
+form p.success {margin-top: 0.5em; color: #CC0300;}
 .new {padding-bottom: 2em;}
 
 button.printMe, button.printMe:hover, a.mail, a.mail:hover {background-image: url('icons/printer.svg'); background-repeat: no-repeat; background-position: 12px center; background-size: 2.5em; font-size: 1.25em; padding: 1em 1em 1em 4em; margin-left: 0.2em}

@@ -1,8 +1,8 @@
 import React from 'react';
-import {questions} from './../data';
 
 class Fields extends React.Component {
     state = {
+        question: this.props.question,
         score: '3',
         reason: null,
         improvement: null,
@@ -10,11 +10,11 @@ class Fields extends React.Component {
         improvementDisplay: '' 
     }
     
-    updateValue(event, type) {
+    updateValue(e, type) {
         let key = type;
         let displayValue = type + 'Display';
-        this.setState({[key]: event.target.value});
-        this.setState({[displayValue]: event.target.value});
+        this.setState({[key]: e.target.value});
+        this.setState({[displayValue]: e.target.value});
     }
 
     save(e) {
@@ -22,7 +22,8 @@ class Fields extends React.Component {
         let answers = Object.assign({}, this.state);
         delete answers.reasonDisplay;
         delete answers.improvementDisplay;
-        if (this.props.level < questions.length - 1) {
+        console.log(answers);
+        if (this.props.level < this.props.questions.length - 1) {
             this.props.saveAnswers(answers);
             document.querySelector('.title').scrollIntoView({ behavior: 'smooth' });
         } else {
@@ -32,12 +33,12 @@ class Fields extends React.Component {
         
     }
 
-    clearDisplayValue(event) {
-        this.setState({reasonDisplay: '', improvementDisplay: ''});
+    clearDisplayValue(e) {
+        this.setState({question: this.props.question, reasonDisplay: '', improvementDisplay: ''});
     }
 
     button() {
-        if (this.props.level < questions.length - 1) {
+        if (this.props.level < this.props.questions.length - 1) {
             return <button onClick={ (e) => this.clearDisplayValue(e) } className="dark">Next</button>
         } else {
             return <button className="dark">Complete</button>
@@ -45,10 +46,9 @@ class Fields extends React.Component {
     }
 
     render() {
-        let score = this.props.question + 'Score';
-        let reason = this.props.question + 'Reason';
-        let improvement = this.props.question + 'Improvement';
-    
+        let score = this.state.question + 'Score';
+        let reason = this.state.question + 'Reason';
+        let improvement = this.state.question + 'Improvement';
         return (
             <form onSubmit={ (e) => this.save(e) }>
                 <label htmlFor={score} >Score <strong>{this.state.score}</strong></label>
