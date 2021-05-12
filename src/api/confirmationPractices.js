@@ -36,8 +36,14 @@ export const getQuestions = async () => {
 }
 
 export const createAnswers = (colleague, answers, team) => {
+    console.log(answers);
     return client.mutate({ 
         mutation: gql(mutations.createAnswers), 
         variables: {input: {colleague: colleague, answers: JSON.stringify(answers), team: team }
     }})
 }
+ 
+export const colleagueAnswers = async (colleague) => {
+    console.log(colleague);
+    return await API.graphql({query: queries.listAnswers, variables: { colleague: colleague }}).then(res => {return(res)});
+};

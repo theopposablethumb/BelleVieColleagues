@@ -9,6 +9,7 @@ import Footer from './common/Footer';
 import Navigation from './common/Navigation';
 import Profile from './common/Profile';
 import ConfirmationPractices from './confirmationPractices/components/ConfirmationPractices';
+import HistoricalResults from './confirmationPractices/components/HistoricalResults';
 import ReportingHours from './static/ReportingHours';
 import AnnualLeave from './static/AnnualLeave';
 import Faq from './static/Faq';
@@ -17,6 +18,7 @@ import Contact from './common/Contact';
 
 import TeamShifts from './rota/components/TeamShifts';
 import CreateConfirmationPractices from './confirmationPractices/components/admin/CreateConfirmationPractices';
+import ReviewTeamConfirmationPractices from './confirmationPractices/components/admin/ReviewTeamConfirmationPractices';
 
 
 Amplify.configure(awsconfig);
@@ -89,7 +91,9 @@ class App extends React.Component {
             </div>
           </div>
           <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> ) } />
+          <Route path="/completed-confirmation-practices" render={props => (<HistoricalResults {...props} user={this.state.user} />)} />
           {this.state.isLeaderShipCircle ? <Route path="/edit-confirmation-practices"  component={CreateConfirmationPractices} /> : null}
+          {this.state.isLeaderShipCircle ? <Route path="/review-team-confirmation-practices"  component={ReviewTeamConfirmationPractices} /> : null}
           <Route path="/reporting-hours" component={ReportingHours}></Route>
           <Route path="/annual-leave" component={AnnualLeave}></Route>
           <Route path="/faqs" component={Faq} />
