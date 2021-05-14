@@ -21,7 +21,7 @@ import Contact from './common/Contact';
 import TeamShifts from './rota/components/TeamShifts';
 import CreateConfirmationPractices from './confirmationPractices/components/admin/CreateConfirmationPractices';
 import ReviewTeamConfirmationPractices from './confirmationPractices/components/admin/ReviewTeamConfirmationPractices';
-import ColleagueAnswer from './confirmationPractices/components/admin/ColleagueAnswer';
+
 
 Amplify.configure(awsconfig);
 
@@ -85,13 +85,14 @@ class App extends React.Component {
     } else {
       return (
         <BrowserRouter>
-          <Navigation />
+          <Navigation circle={this.state.isLeaderShipCircle} />
           <div className="section whitebg">
             <div className="content">
               <button className="logout dark" onClick={() => Auth.signOut()}>Sign Out</button>
               <Profile user={this.state.user} />
             </div>
           </div>
+<<<<<<< HEAD
           <Route path="/" exact component={Home} />
           <Route path="/confirmation-practices" render={props => ( <ConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> ) } />
           {this.state.isLeaderShipCircle ? <Route path="/leadership-confirmation-practices" render={props => ( <LeadershipConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> )} /> : null }
@@ -99,6 +100,12 @@ class App extends React.Component {
           {this.state.isLeaderShipCircle ? <Route path="/edit-confirmation-practices" render={props => (<CreateConfirmationPractices {...props} circle={this.state.isLeaderShipCircle} />)} /> : null}
           {this.state.isLeaderShipCircle ? <Route path="/review-team-confirmation-practices" render={props => (<ReviewTeamConfirmationPractices {...props} circle={this.state.isLeaderShipCircle} />)} /> : null}
           {this.state.isLeaderShipCircle ? <Route name="colleaguecp" path="/colleague-answer/:id" component={ColleagueAnswer} /> : null}
+=======
+          <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> ) } />
+          <Route path="/completed-confirmation-practices" render={props => (<HistoricalResults {...props} user={this.state.user} />)} />
+          {this.state.isLeaderShipCircle ? <Route path="/edit-confirmation-practices"  component={CreateConfirmationPractices} /> : null}
+          {this.state.isLeaderShipCircle ? <Route path="/review-team-confirmation-practices"  component={ReviewTeamConfirmationPractices} /> : null}
+>>>>>>> parent of 4662871 (Fully working confirmation practices for colleagues)
           <Route path="/reporting-hours" component={ReportingHours}></Route>
           <Route path="/annual-leave" component={AnnualLeave}></Route>
           <Route path="/faqs" component={Faq} />

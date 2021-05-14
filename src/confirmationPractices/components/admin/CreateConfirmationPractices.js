@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 import { API } from 'aws-amplify';
 import * as queries from '../../../graphql/queries';
 
-import Navigation from '../Navigation';
 import UpdateQuestion from './UpdateQuestion';
 
 class CreateConfirmationPractices extends React.Component {
@@ -42,7 +41,6 @@ class CreateConfirmationPractices extends React.Component {
                 <Helmet>
                     <title>Create Confirmation Practices</title>
                 </Helmet>
-                <Navigation circle={this.props.circle} path={this.props.match.path} />
                 <div className="section offwhitebg">
                     <div className="content">
                         <h1>Create Confirmation Practice Questions</h1>

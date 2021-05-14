@@ -32,17 +32,11 @@ export const listQuestions = /* GraphQL */ `
     }
   }
 `;
-
 export const getAnswers = /* GraphQL */ `
   query GetAnswers($id: ID!) {
     getAnswers(id: $id) {
       id
-      answers {
-        question
-        score
-        reason
-        improvement
-      }
+      answers
       colleague
       team
       createdAt
@@ -50,8 +44,8 @@ export const getAnswers = /* GraphQL */ `
     }
   }
 `;
-export const listAnswerss = /* GraphQL */ `
-  query ListAnswerss(
+export const listAnswers = /* GraphQL */ `
+  query ListAnswers(
     $filter: ModelAnswersFilterInput
     $limit: Int
     $nextToken: String
@@ -59,12 +53,7 @@ export const listAnswerss = /* GraphQL */ `
     listAnswerss(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        answers {
-          question
-          score
-          reason
-          improvement
-        }
+        answers
         colleague
         team
         createdAt
@@ -73,4 +62,4 @@ export const listAnswerss = /* GraphQL */ `
       nextToken
     }
   }
-`;
+`; 
