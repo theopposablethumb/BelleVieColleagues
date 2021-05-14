@@ -17,7 +17,6 @@ class Navigation extends React.Component {
                 <button onClick={(e) => this.openNav(e)} className={this.state.open ? 'menu active' : 'menu close'}></button>
                 <nav className={this.state.open ? 'open' : 'close'}>
                     <NavLink exact to="/">Confirmation Practices</NavLink>
-                    {this.props.circle ? <NavLink to="/edit-confirmation-practices">Admin Confirmation Practices</NavLink> : null}
                     <NavLink to="/reporting-hours">Reporting Hours</NavLink>
                     {/*<NavLink to="/annual-leave">Annual Leave</NavLink>*/}
                     <NavLink to="/faqs">FAQs</NavLink>

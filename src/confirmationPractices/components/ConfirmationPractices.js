@@ -1,9 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link, useRouteMatch } from 'react-router-dom'
 
 import { getQuestions, createAnswers } from '../../api/confirmationPractices';
 
+import Navigation from './Navigation';
 import Question from './Question';
 import Fields from './Fields';
 import Confirmation from './ConfirmationResults'
@@ -112,10 +112,7 @@ class confirmationPractices extends React.Component {
                 <Helmet>
                     <title>Confirmation Practices</title>
                 </Helmet>
-                <div className="section tabs">
-                    <Link to={"/"}>Questions</Link>
-                    <Link to={"/completed-confirmation-practices"}>Previous Answers</Link>
-                </div>
+                <Navigation circle={this.props.circle} />
                 <div className="section offwhitebg">
                     <div className="content">
                     {this.renderFormConfirmation()}
