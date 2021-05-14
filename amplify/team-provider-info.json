@@ -18,7 +18,7 @@
       "function": {
         "bellevieColleagues": {
           "deploymentBucketName": "amplify-belleviecolleagues-dev-164130-deployment",
-          "s3Key": "amplify-builds/bellevieColleagues-6f644e6e655664596a78-build.zip"
+          "s3Key": "amplify-builds/bellevieColleagues-6f77502f423069614769-build.zip"
         }
       }
     }

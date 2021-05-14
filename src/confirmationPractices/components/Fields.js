@@ -22,6 +22,7 @@ class Fields extends React.Component {
         let answers = Object.assign({}, this.state);
         delete answers.reasonDisplay;
         delete answers.improvementDisplay;
+        console.log(answers);
         if (this.props.level < this.props.questions.length - 1) {
             this.props.saveAnswers(answers);
             document.querySelector('.title').scrollIntoView({ behavior: 'smooth' });
