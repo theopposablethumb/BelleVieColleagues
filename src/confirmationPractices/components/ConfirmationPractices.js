@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 
 import { getQuestions, createAnswers } from '../../api/confirmationPractices';
 
+import Navigation from './Navigation';
 import Question from './Question';
 import Fields from './Fields';
 import Confirmation from './ConfirmationResults'
@@ -50,7 +51,6 @@ class confirmationPractices extends React.Component {
     }
 
     answer = (answer) => {
-        console.log(answer);
         this.setState({answer: answer});
     }
 
@@ -68,7 +68,6 @@ class confirmationPractices extends React.Component {
     }
 
     createAnswer() {
-        console.log(this.state.answers);
         createAnswers(this.props.user.attributes.email, this.state.answers, this.state.team)
         .then(res => {
             console.log(res);
@@ -113,8 +112,7 @@ class confirmationPractices extends React.Component {
                 <Helmet>
                     <title>Confirmation Practices</title>
                 </Helmet>
-                <div className="section teal">
-                </div>
+                <Navigation circle={this.props.circle} />
                 <div className="section offwhitebg">
                     <div className="content">
                     {this.renderFormConfirmation()}

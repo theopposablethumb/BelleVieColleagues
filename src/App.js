@@ -9,6 +9,7 @@ import Footer from './common/Footer';
 import Navigation from './common/Navigation';
 import Profile from './common/Profile';
 import ConfirmationPractices from './confirmationPractices/components/ConfirmationPractices';
+import HistoricalResults from './confirmationPractices/components/HistoricalResults';
 import ReportingHours from './static/ReportingHours';
 import AnnualLeave from './static/AnnualLeave';
 import Faq from './static/Faq';
@@ -17,7 +18,8 @@ import Contact from './common/Contact';
 
 import TeamShifts from './rota/components/TeamShifts';
 import CreateConfirmationPractices from './confirmationPractices/components/admin/CreateConfirmationPractices';
-
+import ReviewTeamConfirmationPractices from './confirmationPractices/components/admin/ReviewTeamConfirmationPractices';
+import ColleagueAnswer from './confirmationPractices/components/admin/ColleagueAnswer';
 
 Amplify.configure(awsconfig);
 
@@ -81,7 +83,7 @@ class App extends React.Component {
     } else {
       return (
         <BrowserRouter>
-          <Navigation circle={this.state.isLeaderShipCircle} />
+          <Navigation />
           <div className="section whitebg">
             <div className="content">
               <button className="logout dark" onClick={() => Auth.signOut()}>Sign Out</button>
@@ -89,7 +91,10 @@ class App extends React.Component {
             </div>
           </div>
           <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> ) } />
-          {this.state.isLeaderShipCircle ? <Route path="/edit-confirmation-practices"  component={CreateConfirmationPractices} /> : null}
+          <Route path="/completed-confirmation-practices" render={props => (<HistoricalResults {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} />)} />
+          {this.state.isLeaderShipCircle ? <Route path="/edit-confirmation-practices" render={props => (<CreateConfirmationPractices {...props} circle={this.state.isLeaderShipCircle} />)} /> : null}
+          {this.state.isLeaderShipCircle ? <Route path="/review-team-confirmation-practices" render={props => (<ReviewTeamConfirmationPractices {...props} circle={this.state.isLeaderShipCircle} />)} /> : null}
+          {this.state.isLeaderShipCircle ? <Route name="colleaguecp" path="/colleague-answer/:id" component={ColleagueAnswer} /> : null}
           <Route path="/reporting-hours" component={ReportingHours}></Route>
           <Route path="/annual-leave" component={AnnualLeave}></Route>
           <Route path="/faqs" component={Faq} />

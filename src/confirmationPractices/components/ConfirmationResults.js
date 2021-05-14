@@ -25,6 +25,7 @@ let Confirmation = (props) => {
             <button className="dark printMe" onClick={(e) => {printPage(e)}}>Print my results</button>
             
             <h3>{props.team} Team</h3>
+            {console.log(props.answers)}
             {props.answers.map((answer, i) => { return <Result question={answer.question} key={i} score={answer.score} reason={answer.reason} improvement={answer.improvement}  />})}
         </>
     )

@@ -32,11 +32,17 @@ export const listQuestions = /* GraphQL */ `
     }
   }
 `;
+
 export const getAnswers = /* GraphQL */ `
   query GetAnswers($id: ID!) {
     getAnswers(id: $id) {
       id
-      answers
+      answers {
+        question
+        score
+        reason
+        improvement
+      }
       colleague
       team
       createdAt
@@ -53,7 +59,12 @@ export const listAnswerss = /* GraphQL */ `
     listAnswerss(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        answers
+        answers {
+          question
+          score
+          reason
+          improvement
+        }
         colleague
         team
         createdAt
