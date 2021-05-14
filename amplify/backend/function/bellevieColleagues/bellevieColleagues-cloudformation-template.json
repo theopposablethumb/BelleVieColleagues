@@ -10,10 +10,10 @@
     "env": {
       "Type": "String"
     },
-    "s3Key": {
+    "deploymentBucketName": {
       "Type": "String"
     },
-    "deploymentBucketName": {
+    "s3Key": {
       "Type": "String"
     }
   },

@@ -27,8 +27,12 @@
     ],
     "userpoolClientGenerateSecret": true,
     "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [],
-    "userpoolClientReadAttributes": [],
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
     "userpoolClientLambdaRole": "BelleVcb1a642d_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
     "sharedId": "cb1a642d",
@@ -63,6 +67,5 @@
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
     "usernameCaseSensitive": false,
     "dependsOn": [],
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://staging-colleagues.belleviecare.co.uk/\"],\"LogoutURLs\":[\"https://staging-colleagues.belleviecare.co.uk/\"]}",
-    "authProviders": []
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://colleagues.belleviecare.co.uk/\"],\"LogoutURLs\":[\"https://colleagues.belleviecare.co.uk/\"]}"
 }
