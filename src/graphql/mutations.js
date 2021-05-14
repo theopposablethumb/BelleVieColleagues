@@ -53,12 +53,7 @@ export const createAnswers = /* GraphQL */ `
   ) {
     createAnswers(input: $input, condition: $condition) {
       id
-      answers {
-        question
-        score
-        reason
-        improvement
-      }
+      answers
       colleague
       team
       createdAt
@@ -73,12 +68,7 @@ export const updateAnswers = /* GraphQL */ `
   ) {
     updateAnswers(input: $input, condition: $condition) {
       id
-      answers {
-        question
-        score
-        reason
-        improvement
-      }
+      answers
       colleague
       team
       createdAt
@@ -93,12 +83,7 @@ export const deleteAnswers = /* GraphQL */ `
   ) {
     deleteAnswers(input: $input, condition: $condition) {
       id
-      answers {
-        question
-        score
-        reason
-        improvement
-      }
+      answers
       colleague
       team
       createdAt

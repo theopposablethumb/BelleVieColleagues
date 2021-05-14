@@ -41,12 +41,7 @@ export const onCreateAnswers = /* GraphQL */ `
   subscription OnCreateAnswers {
     onCreateAnswers {
       id
-      answers {
-        question
-        score
-        reason
-        improvement
-      }
+      answers
       colleague
       team
       createdAt
@@ -58,12 +53,7 @@ export const onUpdateAnswers = /* GraphQL */ `
   subscription OnUpdateAnswers {
     onUpdateAnswers {
       id
-      answers {
-        question
-        score
-        reason
-        improvement
-      }
+      answers
       colleague
       team
       createdAt
@@ -75,12 +65,7 @@ export const onDeleteAnswers = /* GraphQL */ `
   subscription OnDeleteAnswers {
     onDeleteAnswers {
       id
-      answers {
-        question
-        score
-        reason
-        improvement
-      }
+      answers
       colleague
       team
       createdAt

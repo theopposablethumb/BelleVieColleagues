@@ -59,8 +59,6 @@ class ReviewTeamConfirmationPractices extends React.Component {
                             <option value="Northumberland">Northumberland</option>
                         </select>    
                     </div>
-                </div>
-                <div className="section whitebg results">
                     <div className="content">
                         {this.state.hasLoaded ? this.renderAnswers() : null}
                     </div>
