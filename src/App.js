@@ -92,7 +92,7 @@ class App extends React.Component {
               <Profile user={this.state.user} />
             </div>
           </div>
-          <Route path="/" component={Home} />
+          <Route path="/" exact component={Home} />
           <Route path="/confirmation-practices" render={props => ( <ConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> ) } />
           {this.state.isLeaderShipCircle ? <Route path="/leadership-confirmation-practices" render={props => ( <LeadershipConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> )} /> : null }
           <Route path="/completed-confirmation-practices" render={props => (<HistoricalResults {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} />)} />
