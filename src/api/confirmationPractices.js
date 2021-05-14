@@ -36,8 +36,26 @@ export const getQuestions = async () => {
 }
 
 export const createAnswers = (colleague, answers, team) => {
+    console.log(answers);
     return client.mutate({ 
         mutation: gql(mutations.createAnswers), 
         variables: {input: {colleague: colleague, answers: JSON.stringify(answers), team: team }
     }})
 }
+ 
+export const colleagueAnswers = async (colleague) => {
+    return await API.graphql({query: queries.listAnswers, variables: { colleague: colleague }}).then(res => {return(res)});
+};
+
+export const teamAnswers = async (team) => {
+    let filter = {
+        team: {
+            eq: team
+        } 
+    };
+    return await API.graphql({query: queries.listAnswers, variables: { filter: filter }}).then(res => {return(res)});
+};
+
+export const colleagueAnswer = async (id) => {
+    return await API.graphql({query: queries.getAnswers, variables: { id: id } }).then(res => {return(res)});
+};

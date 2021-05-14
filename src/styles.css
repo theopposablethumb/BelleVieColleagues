@@ -72,6 +72,9 @@ nav a:hover {text-decoration: none;}
 nav a.active:hover {text-decoration: underline;}
 button.menu {display: none}
 
+a.tile {display: inline-block; font-size: 1.25em; text-align: center; width: 30%; padding: 3em 0; box-sizing: border-box; background: #FFF; margin: 1em; border: 1px solid #E4E4E4;}
+a.tile:hover {box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);}
+
 .content .form, .new {background: #FFF; padding: 0 2.5em 1em 2.5em; margin: 1.25em 0 2.5em 0; border-radius: 4px; border: 1px solid #E4E4E4;}
 .content form p {color: #333;}
 label, input, textarea, select {display: block; width: 60%;}
@@ -120,6 +123,7 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
 
 @media screen and (max-width: 1200px) {
     nav, .content {max-width: 1024px;}
+    a.tile {width: 29%;}
 }
 
 @media screen and (max-width: 1024px) {
@@ -151,6 +155,7 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
     nav a.active:hover {text-decoration: none;}
     nav a:first-child {padding-left: 1em; margin-top: 2.5em;}
 
+    a.tile {display: block; width: 100%; margin: 1em 0; padding: 1.5em 0;}
 
     .left, .right {float: none; overflow: visible; }
 

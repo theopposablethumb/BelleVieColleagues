@@ -44,8 +44,8 @@ export const getAnswers = /* GraphQL */ `
     }
   }
 `;
-export const listAnswerss = /* GraphQL */ `
-  query ListAnswerss(
+export const listAnswers = /* GraphQL */ `
+  query ListAnswers(
     $filter: ModelAnswersFilterInput
     $limit: Int
     $nextToken: String
@@ -62,4 +62,4 @@ export const listAnswerss = /* GraphQL */ `
       nextToken
     }
   }
-`;
+`; 

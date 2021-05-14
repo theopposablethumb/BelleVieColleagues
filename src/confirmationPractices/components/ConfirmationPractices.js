@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { Link } from 'react-router-dom'
 
 import { getQuestions, createAnswers } from '../../api/confirmationPractices';
 
@@ -7,6 +8,7 @@ import Question from './Question';
 import Fields from './Fields';
 import Confirmation from './ConfirmationResults'
 import Progress from './Progress';
+import Navigation from './admin/Navigation';
 
 class confirmationPractices extends React.Component {
     state = {
@@ -81,6 +83,7 @@ class confirmationPractices extends React.Component {
     }
 
     renderFormConfirmation() {
+        console.log(this.state);
         if (this.state.isSubmitted === true && this.state.team) {
             return <Confirmation answers={this.state.answers} />
         } else if (this.state.hasLoaded === true) {
@@ -108,6 +111,7 @@ class confirmationPractices extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         return(
             <>
                 <Helmet>
