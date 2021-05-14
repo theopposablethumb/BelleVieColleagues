@@ -1,6 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
-<<<<<<< HEAD
 import Navigation from '../Navigation';
 import {teamAnswers} from '../../../api/confirmationPractices';
 
@@ -66,14 +66,6 @@ class ReviewTeamConfirmationPractices extends React.Component {
             </>
         )
     };
-=======
-let ReviewTeamConfirmationPractices = () => {
-    return (
-        <div>
-            
-        </div>
-    );
->>>>>>> parent of 4662871 (Fully working confirmation practices for colleagues)
 }
 
 export default ReviewTeamConfirmationPractices;

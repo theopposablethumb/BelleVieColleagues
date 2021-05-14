@@ -156,7 +156,6 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
     nav a.active:hover {text-decoration: none;}
     nav a:first-child {padding-left: 1em; margin-top: 2.5em;}
 
-
     a.tile {display: block; width: 100%; margin: 1em 0; padding: 1.5em 0;}
 
     .left, .right {float: none; overflow: visible; }
