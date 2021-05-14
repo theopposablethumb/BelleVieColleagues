@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link, useRouteMatch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { getQuestions, createAnswers } from '../../api/confirmationPractices';
 
@@ -8,6 +8,7 @@ import Question from './Question';
 import Fields from './Fields';
 import Confirmation from './ConfirmationResults'
 import Progress from './Progress';
+import Navigation from './admin/Navigation';
 
 class confirmationPractices extends React.Component {
     state = {
@@ -80,6 +81,7 @@ class confirmationPractices extends React.Component {
     }
 
     renderFormConfirmation() {
+        console.log(this.state);
         if (this.state.isSubmitted === true && this.state.team) {
             return <Confirmation answers={this.state.answers} />
         } else if (this.state.hasLoaded === true) {
@@ -107,15 +109,13 @@ class confirmationPractices extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         return(
             <>
                 <Helmet>
                     <title>Confirmation Practices</title>
                 </Helmet>
-                <div className="section tabs">
-                    <Link to={"/"}>Questions</Link>
-                    <Link to={"/completed-confirmation-practices"}>Previous Answers</Link>
-                </div>
+                <Navigation circle={this.props.circle} />
                 <div className="section offwhitebg">
                     <div className="content">
                     {this.renderFormConfirmation()}

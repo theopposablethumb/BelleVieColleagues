@@ -8,10 +8,11 @@ import Header from './common/Header';
 import Footer from './common/Footer';
 import Navigation from './common/Navigation';
 import Profile from './common/Profile';
-import Home from './static/Home';
+// import Home from './static/Home';
 import ConfirmationPractices from './confirmationPractices/components/ConfirmationPractices';
-import LeadershipConfirmationPractices from './confirmationPractices/LeadershipConfirmationPractices';
+// import LeadershipConfirmationPractices from './confirmationPractices/LeadershipConfirmationPractices';
 import HistoricalResults from './confirmationPractices/components/HistoricalResults';
+import ColleagueAnswer from './confirmationPractices/components/admin/ColleagueAnswer';
 import ReportingHours from './static/ReportingHours';
 import AnnualLeave from './static/AnnualLeave';
 import Faq from './static/Faq';
@@ -93,17 +94,13 @@ class App extends React.Component {
             </div>
           </div>
 
-          <Route path="/" exact component={Home} />
-          <Route path="/confirmation-practices" render={props => ( <ConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> ) } />
-          {this.state.isLeaderShipCircle ? <Route path="/leadership-confirmation-practices" render={props => ( <LeadershipConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> )} /> : null }
+          {/* <Route path="/" exact component={Home} /> */}
+          <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> ) } />
+          {/* {this.state.isLeaderShipCircle ? <Route path="/leadership-confirmation-practices" render={props => ( <LeadershipConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> )} /> : null } */}
           <Route path="/completed-confirmation-practices" render={props => (<HistoricalResults {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} />)} />
           {this.state.isLeaderShipCircle ? <Route path="/edit-confirmation-practices" render={props => (<CreateConfirmationPractices {...props} circle={this.state.isLeaderShipCircle} />)} /> : null}
           {this.state.isLeaderShipCircle ? <Route path="/review-team-confirmation-practices" render={props => (<ReviewTeamConfirmationPractices {...props} circle={this.state.isLeaderShipCircle} />)} /> : null}
           {this.state.isLeaderShipCircle ? <Route name="colleaguecp" path="/colleague-answer/:id" component={ColleagueAnswer} /> : null}
-          <Route path="/" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> ) } />
-          <Route path="/completed-confirmation-practices" render={props => (<HistoricalResults {...props} user={this.state.user} />)} />
-          {this.state.isLeaderShipCircle ? <Route path="/edit-confirmation-practices"  component={CreateConfirmationPractices} /> : null}
-          {this.state.isLeaderShipCircle ? <Route path="/review-team-confirmation-practices"  component={ReviewTeamConfirmationPractices} /> : null}
           <Route path="/reporting-hours" component={ReportingHours}></Route>
           <Route path="/annual-leave" component={AnnualLeave}></Route>
           <Route path="/faqs" component={Faq} />

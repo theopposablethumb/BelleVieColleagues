@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, useRouteMatch } from 'react-router-dom'
 import {colleagueAnswers} from '../../api/confirmationPractices';
+import Navigation from './admin/Navigation';
 
 class HistoricalResults extends React.Component {
     state = {
@@ -32,10 +32,7 @@ class HistoricalResults extends React.Component {
     render() {
         return(
             <>
-                <div className="section tabs">
-                    <Link to={"/"}>Questions</Link>
-                    <Link to={"/completed-confirmation-practices"}>Previous Answers</Link>
-                </div>
+                <Navigation circle={this.props.circle} />
                 <div>
                     {this.state.hasLoaded ? this.renderAnswers() : null}
                 </div>
