@@ -81,7 +81,6 @@ class confirmationPractices extends React.Component {
     }
 
     renderFormConfirmation() {
-        console.log(this.state);
         if (this.state.isSubmitted === true && this.state.team) {
             return <Confirmation answers={this.state.answers} />
         } else if (this.state.hasLoaded === true) {
@@ -109,13 +108,12 @@ class confirmationPractices extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         return(
             <>
                 <Helmet>
                     <title>Confirmation Practices</title>
                 </Helmet>
-                <Navigation circle={this.props.circle} />
+                <Navigation circle={this.props.circle} path={this.props.match.path} />
                 <div className="section offwhitebg">
                     <div className="content">
                     {this.renderFormConfirmation()}
