@@ -14,7 +14,6 @@ class CreateConfirmationPractices extends React.Component {
 
     getQuestions = async () => {
         const questions = await API.graphql({ query: queries.listQuestions });
-        console.log(questions);
         const allQuestions = questions.data.listQuestions.items;
         const questionIds = [];
         allQuestions.forEach(question => {questionIds.push(question.id)});

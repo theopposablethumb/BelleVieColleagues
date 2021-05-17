@@ -117,8 +117,6 @@ class confirmationPractices extends React.Component {
                     <title>Confirmation Practices</title>
                 </Helmet>
                 <Navigation circle={this.props.circle} path={this.props.match.path} />
-                <div className="section teal">
-                </div>
                 <div className="section offwhitebg">
                     <div className="content">
                     {this.renderFormConfirmation()}
