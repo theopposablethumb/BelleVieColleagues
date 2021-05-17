@@ -32,7 +32,7 @@ class HistoricalResults extends React.Component {
     render() {
         return(
             <>
-                <Navigation circle={this.props.circle} />
+                <Navigation circle={this.props.circle} path={this.props.match.path} />
                 <div>
                     {this.state.hasLoaded ? this.renderAnswers() : null}
                 </div>
