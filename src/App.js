@@ -10,7 +10,7 @@ import Navigation from './common/Navigation';
 import Profile from './common/Profile';
 import Home from './static/Home';
 import ConfirmationPractices from './confirmationPractices/components/ConfirmationPractices';
-import LeadershipConfirmationPractices from './confirmationPractices/LeadershipConfirmationPractices';
+import LeadershipConfirmationPractices from './confirmationPractices/components/LeadershipConfirmationPractices';
 import HistoricalResults from './confirmationPractices/components/HistoricalResults';
 import ColleagueAnswer from './confirmationPractices/components/admin/ColleagueAnswer';
 import ReportingHours from './static/ReportingHours';
