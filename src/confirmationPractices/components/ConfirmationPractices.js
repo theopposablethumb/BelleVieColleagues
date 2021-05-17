@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'react-router-dom'
 
 import { getQuestions, createAnswers } from '../../api/confirmationPractices';
 
@@ -69,8 +68,10 @@ class confirmationPractices extends React.Component {
         this.setState({level: this.state.level +1, answers: [...this.state.answers, answer]});
     }
 
+
+      
+
     createAnswer() {
-        console.log(this.state.answers);
         createAnswers(this.props.user.attributes.email, this.state.answers, this.state.team)
         .then(res => {
             console.log(res);
@@ -83,7 +84,6 @@ class confirmationPractices extends React.Component {
     }
 
     renderFormConfirmation() {
-        console.log(this.state);
         if (this.state.isSubmitted === true && this.state.team) {
             return <Confirmation answers={this.state.answers} />
         } else if (this.state.hasLoaded === true) {
@@ -111,12 +111,12 @@ class confirmationPractices extends React.Component {
     }
 
     render() {
-        console.log(this.props)
         return(
             <>
                 <Helmet>
                     <title>Confirmation Practices</title>
                 </Helmet>
+                <Navigation circle={this.props.circle} path={this.props.match.path} />
                 <div className="section teal">
                 </div>
                 <div className="section offwhitebg">

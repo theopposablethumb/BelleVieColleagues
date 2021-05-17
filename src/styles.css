@@ -28,6 +28,7 @@ strong {font-weight: 500;}
 img, .rounded {border-radius: 4px;}
 .shadow {box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);}
 .border {border: 1px solid #E4E4E4;}
+.border-bottom {border-bottom: 1px solid #E4E4E4;}
 
 h2.underline {border-bottom: 2px solid;}
 
@@ -53,7 +54,7 @@ button.ghost:focus:before {border: 1px solid #BA7800;}
 .checks button.ghost {margin-left: 2em}
 
 .section {overflow: auto;}
-nav, .content {max-width: 1200px; margin: 0 auto 0 auto; box-sizing: border-box; overflow: auto;}
+nav, .content, .tabs {max-width: 1200px; margin: 0 auto 0 auto; box-sizing: border-box; overflow: auto;}
 .content {margin-top: 2.375em; margin-bottom: 2.375em;}
 
 header, main, footer {width: 100%; box-sizing: border-box;}
@@ -71,6 +72,9 @@ nav a.active {color: #333; text-decoration: none;}
 nav a:hover {text-decoration: none;}
 nav a.active:hover {text-decoration: underline;}
 button.menu {display: none}
+
+.tabs a {display: inline-block; padding: 1em 0.75em; margin: 2em 1em 0 0; background: #fff; border: 1px solid #E4E4E4; border-bottom: none; border-radius: 3px 3px 0 0;}
+.tabs a:hover, .tabs a.active {background: #F4F4F4;}
 
 a.tile {display: inline-block; font-size: 1.25em; text-align: center; width: 30%; padding: 3em 0; box-sizing: border-box; background: #FFF; margin: 1em; border: 1px solid #E4E4E4;}
 a.tile:hover {box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);}
@@ -142,6 +146,8 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
     .section.teal {position: relative;}
     nav {width: 100%; padding: 0;}
     .content {padding: 0 1em;}
+    .tabs a {display: block; margin: 0;}
+
     button.menu {display: block; background: none; height: 1.5em; width: 2em; padding: 1em; margin: 0.5em 1em; position: relative; float: right;}
     button.menu:focus {border: none; outline: 0; box-shadow: none;}
     button.menu:before { content: ""; position: absolute; left: 0; top: 0.21em; bottom: 0.21em; height: 1.5em; width: 2em; background: linear-gradient(to bottom, #185D6F, #185D6F 20%, #D3F1F1 20%, #D3F1F1 40%, #185D6F 40%, #185D6F 60%, #D3F1F1 60%, #D3F1F1 80%, #185D6F 80%, #185D6F 100%); transition: linear-gradient 1s;}
@@ -154,6 +160,8 @@ a.social {display: block; height: 1.5em; width: 1.5em; float: left; margin: 2.75
     nav a.active {background: #185D6F; color: #fff; text-decoration: none;}
     nav a.active:hover {text-decoration: none;}
     nav a:first-child {padding-left: 1em; margin-top: 2.5em;}
+
+    
 
     a.tile {display: block; width: 100%; margin: 1em 0; padding: 1.5em 0;}
 

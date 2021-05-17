@@ -13,7 +13,6 @@ class CreateConfirmationPractices extends React.Component {
     }
 
     getQuestions = async () => {
-        console.log('yuo');
         const questions = await API.graphql({ query: queries.listQuestions });
         console.log(questions);
         const allQuestions = questions.data.listQuestions.items;
@@ -44,7 +43,7 @@ class CreateConfirmationPractices extends React.Component {
                 <Helmet>
                     <title>Create Confirmation Practices</title>
                 </Helmet>
-                <Navigation circle={this.props.circle} />
+                <Navigation circle={this.props.circle} path={this.props.match.path} />
                 <div className="section offwhitebg">
                     <div className="content">
                         <h1>Create Confirmation Practice Questions</h1>
