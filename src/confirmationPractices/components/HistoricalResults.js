@@ -21,7 +21,6 @@ class HistoricalResults extends React.Component {
     }
 
     renderAnswers = () => {
-        console.log(this.state.answers)
         return (this.state.answers.map(answer => {
             return(
                 <p>{answer}</p>
