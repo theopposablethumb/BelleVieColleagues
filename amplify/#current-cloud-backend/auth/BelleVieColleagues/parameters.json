@@ -22,12 +22,8 @@
     ],
     "userpoolClientGenerateSecret": true,
     "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [
-        "email"
-    ],
-    "userpoolClientReadAttributes": [
-        "email"
-    ],
+    "userpoolClientWriteAttributes": [],
+    "userpoolClientReadAttributes": [],
     "userpoolClientLambdaRole": "BelleVcb1a642d_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
     "sharedId": "cb1a642d",
