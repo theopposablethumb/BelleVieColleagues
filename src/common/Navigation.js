@@ -20,7 +20,7 @@ class Navigation extends React.Component {
                     {this.props.circle ? <NavLink to="/leadership-confirmation-practices">Confirmation Practices</NavLink> : <NavLink to="/confirmation-practices">Confirmation Practices</NavLink> }  
                     {this.props.circle ? <NavLink to="/edit-confirmation-practices">Admin Confirmation Practices</NavLink> : null}
                     <NavLink to="/reporting-hours">Reporting Hours</NavLink>
-                    {/*<NavLink to="/annual-leave">Annual Leave</NavLink>*/}
+                    {/*<NavLink to="/annual-leave">Annual Leave</NavLink> */}
                     <NavLink to="/faqs">FAQs</NavLink>
                     <NavLink to="/policies">Policies</NavLink>
                     <NavLink to="/rota">Rota Prototype</NavLink>

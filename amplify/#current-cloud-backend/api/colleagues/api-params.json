@@ -1,0 +1,38 @@
+{
+  "paths": [
+    {
+      "name": "/colleagues",
+      "lambdaFunction": "bellevieColleagues",
+      "privacy": {
+        "private": true,
+        "auth": [
+          "/GET"
+        ]
+      },
+      "policyResourceName": "/colleagues"
+    }
+  ],
+  "resourceName": "colleagues",
+  "apiName": "colleagues",
+  "functionArns": [
+    {
+      "lambdaFunction": "bellevieColleagues"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 0,
+    "authRoleName": "amplify-belleviecolleagues-dev-164130-authRole",
+    "unAuthRoleName": "amplify-belleviecolleagues-dev-164130-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "bellevieColleagues",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

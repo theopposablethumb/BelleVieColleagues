@@ -23,7 +23,6 @@ import TeamShifts from './rota/components/TeamShifts';
 import CreateConfirmationPractices from './confirmationPractices/components/admin/CreateConfirmationPractices';
 import ReviewTeamConfirmationPractices from './confirmationPractices/components/admin/ReviewTeamConfirmationPractices';
 
-
 Amplify.configure(awsconfig);
 
 class App extends React.Component {

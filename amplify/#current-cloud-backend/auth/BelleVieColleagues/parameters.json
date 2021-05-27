@@ -1,10 +1,10 @@
 {
-    "identityPoolName": "belleviecolleaguesea9c7ac6_identitypool_ea9c7ac6",
+    "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "bellevea9c7ac6",
-    "userPoolName": "belleviecolleaguesea9c7ac6_userpool_ea9c7ac6",
+    "resourceNameTruncated": "bellevcb1a642d",
+    "userPoolName": "BelleVieColleagues",
     "autoVerifiedAttributes": [
-        "email"
+        "phone_number"
     ],
     "mfaConfiguration": "OFF",
     "mfaTypes": [
@@ -20,18 +20,14 @@
     "requiredAttributes": [
         "email"
     ],
-    "userpoolClientGenerateSecret": false,
+    "userpoolClientGenerateSecret": true,
     "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [
-        "email"
-    ],
-    "userpoolClientReadAttributes": [
-        "email"
-    ],
+    "userpoolClientWriteAttributes": [],
+    "userpoolClientReadAttributes": [],
     "userpoolClientLambdaRole": "BelleVcb1a642d_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "ea9c7ac6",
-    "resourceName": "belleviecolleaguesea9c7ac6",
+    "sharedId": "cb1a642d",
+    "resourceName": "BelleVieColleagues",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -45,19 +41,22 @@
             "Arn"
         ]
     },
-    "useDefault": "defaultSocial",
-    "hostedUI": true,
+    "serviceName": "Cognito",
     "usernameAttributes": [
         "email"
     ],
-    "hostedUIDomainName": "belleviecolleaguesea9c7ac6-ea9c7ac6",
+    "useDefault": "defaultSocial",
+    "userPoolGroups": false,
+    "userPoolGroupList": [],
+    "adminQueries": false,
+    "hostedUI": true,
+    "hostedUIDomainName": "5d7cl01ksw3s",
     "authProvidersUserPool": [
         "Google"
     ],
     "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"username\":\"sub\"}}]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
-    "userPoolGroupList": [],
-    "serviceName": "Cognito",
     "usernameCaseSensitive": false,
-    "dependsOn": []
+    "dependsOn": [],
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://staging-colleagues.belleviecare.co.uk/\"],\"LogoutURLs\":[\"https://staging-colleagues.belleviecare.co.uk/\"]}",
+    "authProviders": []
 }

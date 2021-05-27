@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'react-router-dom'
 
 import { getQuestions, createAnswers } from '../../api/confirmationPractices';
 
@@ -52,6 +51,7 @@ class confirmationPractices extends React.Component {
     }
 
     answer = (answer) => {
+        console.log(answer);
         this.setState({answer: answer});
     }
 
@@ -67,6 +67,9 @@ class confirmationPractices extends React.Component {
         } 
         this.setState({level: this.state.level +1, answers: [...this.state.answers, answer]});
     }
+
+
+      
 
     createAnswer() {
         createAnswers(this.props.user.attributes.email, this.state.answers, this.state.team)

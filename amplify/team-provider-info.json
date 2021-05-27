@@ -20,7 +20,7 @@
       "function": {
         "bellevieColleagues": {
           "deploymentBucketName": "amplify-belleviecolleagues-dev-164130-deployment",
-          "s3Key": "amplify-builds/bellevieColleagues-6f644e6e655664596a78-build.zip"
+          "s3Key": "amplify-builds/bellevieColleagues-6f77502f423069614769-build.zip"
         }
       }
     }
@@ -40,6 +40,12 @@
     "categories": {
       "auth": {
         "BelleVieColleagues": {}
+      },
+      "function": {
+        "bellevieColleagues": {
+          "deploymentBucketName": "amplify-amplify35d59827aab74-staging-130501-deployment",
+          "s3Key": "amplify-builds/bellevieColleagues-6f644e6e655664596a78-build.zip"
+        }
       }
     }
   },
@@ -60,7 +66,10 @@
         "BelleVieColleagues": {}
       },
       "function": {
-        "bellevieColleagues": {}
+        "bellevieColleagues": {
+          "deploymentBucketName": "amplify-belleviecolleagues-prod-95147-deployment",
+          "s3Key": "amplify-builds/bellevieColleagues-6f644e6e655664596a78-build.zip"
+        }
       }
     }
   },

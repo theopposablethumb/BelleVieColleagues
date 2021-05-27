@@ -30,7 +30,7 @@ type Answers
     ]
   ) {
   id: ID!
-  answers: [Answer]!
+  answers: [AWSJSON]!
   colleague: String!
   team: String!
 }
