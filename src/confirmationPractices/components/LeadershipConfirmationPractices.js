@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 
 import { createAnswers } from '../../api/confirmationPractices';
 
-import Confirmation from './ConfirmationResults'
 import Navigation from './admin/Navigation';
 
 class LeadershipConfirmationPractices extends React.Component {

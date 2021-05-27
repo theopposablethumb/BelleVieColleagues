@@ -9,11 +9,13 @@
       "UnauthRoleName": "amplify-belleviecolleagues-dev-164130-unauthRole",
       "StackName": "amplify-belleviecolleagues-dev-164130",
       "StackId": "arn:aws:cloudformation:eu-west-2:245111508555:stack/amplify-belleviecolleagues-dev-164130/2d5e0bf0-5f2c-11eb-b1e6-0a4625f9b43e",
-      "AmplifyAppId": "d3ihtjzvgz37vw"
+      "AmplifyAppId": "d3ihtjzvgz37vw",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-belleviecolleagues-dev-164130-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
-        "BelleVieColleagues": {}
+        "BelleVieColleagues": {},
+        "belleviecolleaguesea9c7ac6": {}
       },
       "function": {
         "bellevieColleagues": {

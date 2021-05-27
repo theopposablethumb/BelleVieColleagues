@@ -8,9 +8,9 @@ import Header from './common/Header';
 import Footer from './common/Footer';
 import Navigation from './common/Navigation';
 import Profile from './common/Profile';
-import Home from './static/Home';
+//import Home from './static/Home';
 import ConfirmationPractices from './confirmationPractices/components/ConfirmationPractices';
-import LeadershipConfirmationPractices from './confirmationPractices/LeadershipConfirmationPractices';
+import LeadershipConfirmationPractices from './confirmationPractices/components/LeadershipConfirmationPractices';
 import HistoricalResults from './confirmationPractices/components/HistoricalResults';
 import ColleagueAnswer from './confirmationPractices/components/admin/ColleagueAnswer';
 import ReportingHours from './static/ReportingHours';
@@ -94,7 +94,7 @@ class App extends React.Component {
             </div>
           </div>
 
-          <Route path="/" exact component={Home} />
+          {/* <Route path="/" exact component={Home} /> */}
           <Route path="/confirmation-practices" exact render={props => ( <ConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> ) } />
           {this.state.isLeaderShipCircle ? <Route path="/leadership-confirmation-practices" render={props => ( <LeadershipConfirmationPractices {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} /> )} /> : null }
           <Route path="/completed-confirmation-practices" render={props => (<HistoricalResults {...props} user={this.state.user} circle={this.state.isLeaderShipCircle} />)} />
