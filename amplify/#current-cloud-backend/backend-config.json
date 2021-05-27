@@ -1,6 +1,6 @@
 {
   "auth": {
-    "BelleVieColleagues": {
+    "belleviecolleaguesea9c7ac6": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -28,6 +28,21 @@
           ]
         }
       ]
+    },
+    "confirmationPractices": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authbelleviecolleaguesea9c7ac6"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        }
+      }
     }
   }
 }

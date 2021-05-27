@@ -28,7 +28,7 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "BelleVcb1a642d_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "bellevea9c7ac6_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
     "sharedId": "ea9c7ac6",
     "resourceName": "belleviecolleaguesea9c7ac6",

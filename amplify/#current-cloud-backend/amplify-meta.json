@@ -1,42 +1,41 @@
 {
   "providers": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplify35d59827aab74-staging-130501-authRole",
-      "UnauthRoleArn": "arn:aws:iam::245111508555:role/amplify-amplify35d59827aab74-staging-130501-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::245111508555:role/amplify-amplify35d59827aab74-staging-130501-authRole",
+      "AuthRoleName": "amplify-belleviecolleagues-dev-164130-authRole",
+      "UnauthRoleArn": "arn:aws:iam::245111508555:role/amplify-belleviecolleagues-dev-164130-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::245111508555:role/amplify-belleviecolleagues-dev-164130-authRole",
       "Region": "eu-west-2",
-      "DeploymentBucketName": "amplify-amplify35d59827aab74-staging-130501-deployment",
-      "UnauthRoleName": "amplify-amplify35d59827aab74-staging-130501-unauthRole",
-      "StackName": "amplify-amplify35d59827aab74-staging-130501",
-      "StackId": "arn:aws:cloudformation:eu-west-2:245111508555:stack/amplify-amplify35d59827aab74-staging-130501/45fc91e0-5be9-11eb-b254-06dfe0db4c2c",
+      "DeploymentBucketName": "amplify-belleviecolleagues-dev-164130-deployment",
+      "UnauthRoleName": "amplify-belleviecolleagues-dev-164130-unauthRole",
+      "StackName": "amplify-belleviecolleagues-dev-164130",
+      "StackId": "arn:aws:cloudformation:eu-west-2:245111508555:stack/amplify-belleviecolleagues-dev-164130/2d5e0bf0-5f2c-11eb-b1e6-0a4625f9b43e",
       "AmplifyAppId": "d3ihtjzvgz37vw",
-      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-amplify35d59827aab74-staging-130501-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-belleviecolleagues-dev-164130-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     }
   },
   "auth": {
-    "BelleVieColleagues": {
+    "belleviecolleaguesea9c7ac6": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false,
-      "output": {
-        "AppClientSecret": "3nro57k37pv3ah0mphe7ibclrj4haoj7pcqq7iu3n24315ut09l",
-        "UserPoolId": "eu-west-2_N1uJOXyx1",
-        "AppClientIDWeb": "6b9gujbgthibrjqapf4gqtc3e0",
-        "AppClientID": "3v35vlcrcd4qi1slaihes31qmr",
-        "HostedUIDomain": "5d7cl01ksw3s-staging",
-        "IdentityPoolId": "eu-west-2:0d0e5938-bad1-404b-a024-c2d6047c4930",
-        "IdentityPoolName": "testAuthIdentityPool__staging",
-        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://staging-colleagues.belleviecare.co.uk/\"],\"LogoutURLs\":[\"https://staging-colleagues.belleviecare.co.uk/\"]}",
-        "UserPoolName": "BelleVieColleagues",
-        "UserPoolArn": "arn:aws:cognito-idp:eu-west-2:245111508555:userpool/eu-west-2_N1uJOXyx1"
-      },
-      "lastPushTimeStamp": "2021-05-26T16:33:24.309Z",
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35d59827aab74-staging-130501-deployment/amplify-cfn-templates/auth/BelleVieColleagues-cloudformation-template.yml",
-        "logicalId": "authBelleVieColleagues"
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-belleviecolleagues-dev-164130-deployment/amplify-cfn-templates/auth/belleviecolleaguesea9c7ac6-cloudformation-template.yml",
+        "logicalId": "authbelleviecolleaguesea9c7ac6"
       },
-      "lastPushDirHash": "sysXM65n5COLll4p6dKUKMyfGis="
+      "lastPushTimeStamp": "2021-05-26T15:23:13.322Z",
+      "output": {
+        "UserPoolId": "eu-west-2_0TPU1gAuX",
+        "AppClientIDWeb": "7j5ilupimjr42c7k72roml38fu",
+        "AppClientID": "18qh7612vpf3ssabo1lgapvf0n",
+        "HostedUIDomain": "belleviecolleaguesea9c7ac6-ea9c7ac6-dev",
+        "IdentityPoolId": "eu-west-2:2b29cb3d-68fa-4d46-9278-6c2e5986c4b9",
+        "UserPoolArn": "arn:aws:cognito-idp:eu-west-2:245111508555:userpool/eu-west-2_0TPU1gAuX",
+        "IdentityPoolName": "belleviecolleaguesea9c7ac6_identitypool_ea9c7ac6__dev",
+        "OAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\"],\"LogoutURLs\":[\"http://localhost:3000/\"]}",
+        "UserPoolName": "belleviecolleaguesea9c7ac6_userpool_ea9c7ac6"
+      },
+      "lastPushDirHash": "y/DjO28ZmPxlTeaE6rsOoDJpqX8="
     }
   },
   "function": {
@@ -46,17 +45,17 @@
       "service": "Lambda",
       "output": {
         "Region": "eu-west-2",
-        "Arn": "arn:aws:lambda:eu-west-2:245111508555:function:bellevieColleagues-staging",
-        "Name": "bellevieColleagues-staging",
-        "LambdaExecutionRole": "belleviecolleaguesLambdaRolee928ec26-staging"
+        "Arn": "arn:aws:lambda:eu-west-2:245111508555:function:bellevieColleagues-dev",
+        "Name": "bellevieColleagues-dev",
+        "LambdaExecutionRole": "belleviecolleaguesLambdaRolee928ec26-dev"
       },
-      "lastPushTimeStamp": "2021-05-26T16:33:24.301Z",
+      "lastPushTimeStamp": "2021-05-26T15:23:12.769Z",
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35d59827aab74-staging-130501-deployment/amplify-cfn-templates/function/bellevieColleagues-cloudformation-template.json",
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-belleviecolleagues-dev-164130-deployment/amplify-cfn-templates/function/bellevieColleagues-cloudformation-template.json",
         "logicalId": "functionbellevieColleagues"
       },
       "s3Bucket": {
-        "deploymentBucketName": "amplify-amplify35d59827aab74-staging-130501-deployment",
+        "deploymentBucketName": "amplify-belleviecolleagues-dev-164130-deployment",
         "s3Key": "amplify-builds/bellevieColleagues-6f644e6e655664596a78-build.zip"
       }
     }
@@ -77,14 +76,37 @@
       ],
       "output": {
         "ApiName": "colleagues",
-        "RootUrl": "https://slzdx9uvk8.execute-api.eu-west-2.amazonaws.com/staging",
-        "ApiId": "slzdx9uvk8"
+        "RootUrl": "https://z8un72vpt1.execute-api.eu-west-2.amazonaws.com/dev",
+        "ApiId": "z8un72vpt1"
       },
-      "lastPushTimeStamp": "2021-05-26T16:33:24.304Z",
+      "lastPushTimeStamp": "2021-05-26T15:23:12.772Z",
       "providerMetadata": {
-        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplify35d59827aab74-staging-130501-deployment/amplify-cfn-templates/api/colleagues-cloudformation-template.json",
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-belleviecolleagues-dev-164130-deployment/amplify-cfn-templates/api/colleagues-cloudformation-template.json",
         "logicalId": "apicolleagues"
       }
+    },
+    "confirmationPractices": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authbelleviecolleaguesea9c7ac6"
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "6gyy6kbe7fh47lw4zrlfnot374",
+        "GraphQLAPIEndpointOutput": "https://xmub3cfgxbfdfio3trdendqfp4.appsync-api.eu-west-2.amazonaws.com/graphql"
+      },
+      "lastPushTimeStamp": "2021-05-26T15:23:13.322Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-belleviecolleagues-dev-164130-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiconfirmationPractices"
+      },
+      "lastPushDirHash": "x1d7rfPnnmw+fMUmgOmmaOpqPWw="
     }
   }
 }

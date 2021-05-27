@@ -20,8 +20,9 @@ class confirmationPractices extends React.Component {
         isSubmitted: false,
     };
 
-    getConfirmationPractices = () => {
-        getQuestions().then((res) => {
+
+    getConfirmationPractices = async () => {
+        await getQuestions().then((res) => {
             const allQuestions = res.data.listQuestions.items;
             this.setState({questions: [...allQuestions], hasLoaded: true});
         });
@@ -51,7 +52,6 @@ class confirmationPractices extends React.Component {
     }
 
     answer = (answer) => {
-        console.log(answer);
         this.setState({answer: answer});
     }
 
@@ -84,7 +84,6 @@ class confirmationPractices extends React.Component {
     }
 
     renderFormConfirmation() {
-        console.log(this.state);
         if (this.state.isSubmitted === true && this.state.team) {
             return <Confirmation answers={this.state.answers} />
         } else if (this.state.hasLoaded === true) {

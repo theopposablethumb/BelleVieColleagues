@@ -32,7 +32,6 @@ export const updateQuestion = (id, title, question, checks) => {
 }
 
 export const getQuestions = async () => {
-    console.log('get');
     return await API.graphql({ query: queries.listQuestions }).then(res => {console.log(res); return(res)});
 }
 

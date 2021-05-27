@@ -121,14 +121,6 @@ Parameters:
   usernameAttributes:
     Type: CommaDelimitedList
       
-  
-  adminQueries:
-    Type: String
-            
-  
-  hostedUI:
-    Type: String
-            
   hostedUIDomainName:
     Type: String
   
@@ -153,11 +145,8 @@ Parameters:
   userPoolGroupList:
     Type: CommaDelimitedList
       
-  hostedUIProviderCreds:
-    Type: String
-  
             
-  oAuthMetadata:
+  serviceName:
     Type: String
   
             

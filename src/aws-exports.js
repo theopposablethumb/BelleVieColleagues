@@ -16,15 +16,15 @@ const awsmobile = {
             "profile",
             "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "https://staging-colleagues.belleviecare.co.uk/",
-        "redirectSignOut": "https://staging-colleagues.belleviecare.co.uk/",
+        "redirectSignIn": "http://localhost:3000/",
+        "redirectSignOut": "http://localhost:3000/",
         "responseType": "code"
     },
     "federationTarget": "COGNITO_USER_POOLS",
     "aws_cloud_logic_custom": [
         {
             "name": "colleagues",
-            "endpoint": "https://slzdx9uvk8.execute-api.eu-west-2.amazonaws.com/staging",
+            "endpoint": "https://z8un72vpt1.execute-api.eu-west-2.amazonaws.com/dev",
             "region": "eu-west-2"
         }
     ],
