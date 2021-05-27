@@ -81,6 +81,7 @@ class confirmationPractices extends React.Component {
     }
 
     renderFormConfirmation() {
+        console.log(this.state);
         if (this.state.isSubmitted === true && this.state.team) {
             return <Confirmation answers={this.state.answers} />
         } else if (this.state.hasLoaded === true) {

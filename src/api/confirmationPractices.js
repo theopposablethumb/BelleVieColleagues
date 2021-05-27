@@ -32,7 +32,8 @@ export const updateQuestion = (id, title, question, checks) => {
 }
 
 export const getQuestions = async () => {
-    return await API.graphql({ query: queries.listQuestions }).then(res => {return(res)});
+    console.log('get');
+    return await API.graphql({ query: queries.listQuestions }).then(res => {console.log(res); return(res)});
 }
 
 export const createAnswers = (colleague, answers, team) => {

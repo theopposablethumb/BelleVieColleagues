@@ -30,7 +30,6 @@ yarn-error.log*
 public/index.html
 
 #amplify
-amplify/*
 amplify/\#current-cloud-backend
 amplify/.config/local-*
 amplify/logs

@@ -39,6 +39,8 @@ class CreateConfirmationPractices extends React.Component {
     }
 
     render() {
+        console.log('yes boss');
+        console.log(this.state.questions);
         return(
             <>
                 <Helmet>
